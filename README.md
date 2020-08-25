@@ -7,7 +7,7 @@ The Lookyloo documentation website is built with TBD
 
 
 ### View published documentation
-View all the Lookyloo documentation and our code samples on the
+View all the Lookyloo documentation and code samples on the
 [website]().
 
 
