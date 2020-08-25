@@ -15,14 +15,9 @@ View all the Lookyloo documentation and our code samples on the
 Refer to this [doc]() in the website repo.
 
 ### Website source files
-Source files for the documentation on the website are located within the
-[`/docs`](./docs) directory of this repo.
+- Source files for the documentation on the website are located within the [`/docs`](./docs) directory of this repo. If you want to contribute a fix or add new content to the documentation, you can navigate through this repository. 
 
-If you want to contribute a fix or add new content to the documentation, you can
-navigate through this repository. 
-
-To start contributinng, please read the contributor guidelines. Also, please learn
-about our code of conduct.
+- To start contributinng, please read the contributor guidelines. Also, please learn about our code of conduct.
 
 
 ## Contributing
@@ -30,8 +25,7 @@ We're excited that you're interested in contributing to Lookyloo documentation! 
 
 
 ### Getting Started
-- [How to contribute](TBD) -- Contains information about how
-  to contribute and outlines the roles for contributors.
+- [How to contribute](TBD): Information about how to contribute and outlines the roles for contributors.
 
 - Style Guide
 
