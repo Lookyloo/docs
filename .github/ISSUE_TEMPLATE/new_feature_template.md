@@ -1,6 +1,6 @@
 ---
-name: New/changing feature
-about: For new features in Lookyloo, or updates to existing functionality
+name: New/changing feature for documentation
+about: For new features in Lookyloo, documentation
 title: ''
 labels: ''
 assignees: ''

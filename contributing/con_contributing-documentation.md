@@ -1,4 +1,4 @@
-# Contributing to OpenShift Pipelines Documentation
+# Contributing to Lookyloo Documentation
 
 * [Before You Begin](#Before-You-Begin)
 * [General Information](#General-Information)
@@ -10,10 +10,10 @@
 
 **You can contribute by:**
 - Raising an issue you find in the documentation 
-- Fixing issues by opening a pull request
+- Fixing a documentation issue by opening a pull request
 - Improving documentation or code samples
 
-All bugs, tasks or enhancements are tracked as [GitHub issues](https://github.com/openshift/pipelines-docs/issues). Use labels to indicate requirements and information related to the reported issue.
+All bugs, tasks or enhancements are tracked as [GitHub issues](). Use labels to indicate requirements and information related to the reported issue.
 
 ## Before You Begin
 
@@ -38,10 +38,9 @@ Thank you for your contributions! Please follow this process to submit a patch:
 
 GitHub issues can be used to report bugs or submit feature requests.
 
-When reporting an issue, you can use the [applicable issue reporting template](https://github.com/openshift/pipelines-docs/issues/new/choose). Please include the following information:
+When reporting an issue, you can use the [applicable issue reporting template](). Please include the following information:
 
 * The version of the project you are using (version number, git commit, etc.)
-* Operating system you are using
 * The exact, minimal, steps needed to reproduce the issue. 
 
 
@@ -52,7 +51,6 @@ Make a pull request (PR) to add content to the repository. When making a PR, ens
 * A description of what the PR fixes
 * Associated issue# and issue title (if applicable)
 * The version of the project you are using (version number, git commit, etc.)
-* Operating system you are using
 
 See [here](/contributing/proc_git-setup.md) for more information on using Git and making pull requests.
 

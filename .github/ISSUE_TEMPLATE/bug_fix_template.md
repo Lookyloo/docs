@@ -1,6 +1,6 @@
 ---
 name: Bug 
-about: Report a bug 
+about: Report a documenatation bug 
 title: ''
 labels: kind/bug
 assignees: ''

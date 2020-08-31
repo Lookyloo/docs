@@ -1,6 +1,6 @@
 site:
-  title: OpenShift Pipelines
-  url: https://openshift.github.io/pipelines-docs/
+  title: Lookyloo Docs
+  url: https://lookyloo.github.io/docs/
   start_page: docs::index
 content:
   sources:

@@ -2,7 +2,7 @@
 
 This guide explains how to set up your system to connect to the proper git repositories.
 
-`openshift/pipelines-docs` is a public GitHub repository that hosts the OpenShift Pipelines documentation.
+`lookyloo/docs` is a public GitHub repository that hosts the Lookyloo documentation.
 
 * [Installing Git](#Installing-Git)
 * [Configuring Git](#Configuring-Git)
@@ -60,10 +60,10 @@ $ git config --global push.default simple
 -----------------------------------------
 ### Fork the upstream (GitHub) repository
 
-Fork the `openshift/pipelines-docs` upstream repository to create a copy under your own GitHub ID. Clone your forked repository to bring your GitHub repository files to your local machine. Your forked repository is now the `origin` repository for your local files.
+Fork the `lookyloo/docs` repository to create a copy under your own GitHub ID. Clone your forked repository to bring your GitHub repository files to your local machine. Your forked repository is now the `origin` repository for your local files.
 
 #### Procedure
-1. Open a browser and navigate to the upstream repository located at https://github.com/openshift/pipelines-docs.git
+1. Open a browser and navigate to the upstream repository located at 
 2. Click **Fork** located in the upper right under your profile icon.
 3. Select your user account for the location of the forked repository. This creates your own copy of the repository under your own GitHub ID.
 
@@ -130,7 +130,7 @@ $ git checkout -b <new-topic-branch> upstream/master
 2. If you have not yet added that writer’s remote repository, add it now.
 
 ```
-$ git remote add -f <user> git@github.com:<user>/strimzi-kafka-operator.git
+$ git remote add -f <user> git@github.com:<user>/lookyloo.git
 ```
 
 3. Rebase to bring in the changes that are in that user’s outstanding
