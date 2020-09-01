@@ -1,5 +1,5 @@
 site:
-  title: Lookyloo
+  title: Lookyloo Documentation
   url: https://lookyloo.github.io/docs/
   start_page: docs::index
 content:
@@ -9,5 +9,5 @@ content:
     
 ui:
   bundle:
-    url:  https://lookyloo.github.io/docs/blob/master/ui-bundle.zip?raw=true
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
