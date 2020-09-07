@@ -1,8 +1,9 @@
+[id="implementation-details"]
 = Implementation Details
 
-This code is very heavily inspired by [webplugin](https://github.com/etetoolkit/webplugin) and adapted to use flask as backend.
+This code is very heavily inspired by link:https://github.com/etetoolkit/webplugin[webplugin] and adapted to use flask as backend.
 
 The two core dependencies of this project are the following:
 
-* [ETE Toolkit](http://etetoolkit.org/): A Python framework for the analysis and visualization of trees.
-* [Splash](https://splash.readthedocs.io/en/stable/): Lightweight, scriptable browser as a service with an HTTP API
+* link:(http://etetoolkit.org/)[ETE Toolkit]: A Python framework for the analysis and visualization of trees.
+* link:(https://splash.readthedocs.io/en/stable/)[Splash]: Lightweight, scriptable browser as a service with an HTTP API

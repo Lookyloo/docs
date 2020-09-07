@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Implementation Details :: Lookyloo Documentation</title>
-    <link rel="canonical" href="https://lookyloo.github.io/docs/docs/implementation-details.html">
+    <title>Scrape Cookies :: Lookyloo Documentation</title>
+    <link rel="canonical" href="https://lookyloo.github.io/docs/docs/cookies.html">
     <meta name="generator" content="Antora 2.3.3">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -69,10 +69,10 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="overview.html">Getting Started with Lookyloo</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="implementation-details.html">Implementation Details</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="cookies.html">Scraping Cookies</a>
   </li>
 </ul>
@@ -121,29 +121,38 @@
   <ul>
     <li><a href="index.html">Lookyloo Documentation</a></li>
     <li><a href="overview.html">Getting Started with Lookyloo</a></li>
-    <li><a href="implementation-details.html">Implementation Details</a></li>
+    <li><a href="cookies.html">Scraping Cookies</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/user/docs/modules/ROOT/pages/implementation-details.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/user/docs/modules/ROOT/pages/cookies.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Implementation Details</h1>
+<h1 class="page">Scrape Cookies</h1>
 <div class="paragraph">
-<p>This code is very heavily inspired by <a href="https://github.com/etetoolkit/webplugin">webplugin</a> and adapted to use flask as backend.</p>
+<p>If you want to scrape a website as if you were loggged in, you need to pass your sessions cookies.</p>
 </div>
 <div class="paragraph">
-<p>The two core dependencies of this project are the following:</p>
+<p>You can do it the the following way:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>link:(<a href="http://etetoolkit.org/)">ETE Toolkit</a>: A Python framework for the analysis and visualization of trees.</p>
+<p>Install <a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager/">Cookie Quick Manager</a>.</p>
 </li>
 <li>
-<p>link:(<a href="https://splash.readthedocs.io/en/stable/)">Splash</a>: Lightweight, scriptable browser as a service with an HTTP API</p>
+<p>Click on the icon in the top right of your browser &gt; Manage all cookies</p>
 </li>
-</ul>
+<li>
+<p>Search for a domain and tick the Sub-domain box if needed</p>
+</li>
+<li>
+<p>Right clock on the domain you want to export &gt; save to file &gt; $LOOKYLOO_HOME/cookies.json</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You will need to restart the webserver. After restart, every cookie you have in that file will be available for the browser used by Splash.</p>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
