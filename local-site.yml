@@ -1,12 +1,12 @@
 site:
-  title: Lookyloo Docs
+  title: Lookyloo Documentation
   url: https://lookyloo.github.io/docs/
   start_page: docs::index
 content:
   sources:
     - url: .
-      branches: HEAD       
+      branches: master      
 ui:
   bundle:
-    url: ./ui-bundle.zip
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable  
     snapshot: true

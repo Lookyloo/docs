@@ -1,6 +1,6 @@
 name: docs
 title: Lookyloo Documentation
-version: 
+version: master
 nav:
   - modules/ROOT/nav.adoc
 
