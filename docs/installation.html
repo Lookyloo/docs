@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Implementation Details :: Lookyloo Documentation</title>
-    <link rel="canonical" href="https://lookyloo.github.io/docs/docs/implementation-details.html">
-    <meta name="generator" content="Antora 2.3.3">
+    <title>Untitled :: Lookyloo Documentation</title>
+    <link rel="canonical" href="https://lookyloo.github.io/docs/docs/installation.html">
+    <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
   <body class="article">
@@ -69,7 +69,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="overview.html">Getting Started with Lookyloo</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="implementation-details.html">Implementation Details</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -118,30 +118,24 @@
 <button class="nav-toggle"></button>
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="index.html">Lookyloo Documentation</a></li>
-    <li><a href="overview.html">Getting Started with Lookyloo</a></li>
-    <li><a href="implementation-details.html">Implementation Details</a></li>
-  </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/user/docs/modules/ROOT/pages/implementation-details.adoc">Edit this Page</a></div>
-</div>
+  <div class="edit-this-page"><a href="file:///home/joaedwar/docs/modules/ROOT/pages/installation.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Implementation Details</h1>
-<div class="paragraph">
-<p>This code is very heavily inspired by <a href="https://github.com/etetoolkit/webplugin">webplugin</a> and adapted to use flask as backend.</p>
-</div>
-<div class="paragraph">
-<p>The two core dependencies of this project are the following:</p>
+<div id="installation" class="paragraph">
+<p>Lookyloo requires the following to install:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>link:(<a href="http://etetoolkit.org/)">ETE Toolkit</a>: A Python framework for the analysis and visualization of trees.</p>
+<p><a href="https://python-poetry.org/">Poetry</a>: A tool to handle dependency installation as well as building and packaging of Python packages.</p>
 </li>
 <li>
-<p>link:(<a href="https://splash.readthedocs.io/en/stable/)">Splash</a>: Lightweight, scriptable browser as a service with an HTTP API</p>
+<p><a href="https://splash.readthedocs.io/en/stable/">Splash</a>: A javascript rendering service with an HTTP API. It&#8217;s a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5</p>
+</li>
+<li>
+<p><a href="https://redis.io/">Redis</a>: An open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker</p>
 </li>
 </ul>
 </div>
