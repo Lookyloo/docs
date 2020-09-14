@@ -1,0 +1,18 @@
+[id="use-cases"]
+= Lookyloo Use Cases
+
+
+
+== As a journalist
+
+I can uses Lookyloo to ...
+
+* Do this thing
+* Do that thing 
+
+
+
+== As a lawyer 
+
+I can use Lookyloo to ..
+

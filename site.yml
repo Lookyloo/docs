@@ -1,7 +1,7 @@
 site:
-  title: Lookyloo Documentation
+  title: Lookyloo
   url: https://lookyloo.github.io/docs/
-  start_page: docs::index
+  start_page: doc::index
 content:
   sources:
     - url:  https://lookyloo.github.io/docs/

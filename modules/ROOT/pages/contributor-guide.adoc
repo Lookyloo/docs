@@ -1,3 +1,132 @@
 [id="contributor-guide"]
-= Contributor Guide
+= Contributing to Lookyloo
+
+**You can contribute by:**
+- Raising an issue you find in the code or documentation
+- Fixing issues by opening a pull request
+- Improving documentation or code samples
+
+All bugs, tasks or enhancements are tracked as link:https://https://github.com/Lookyloo/lookyloo/issues/new/choose[GitHub issues]. Use labels to indicate requirements and information related to the reported issue.
+
+== Contributor Behavior
+
+Examples of behavior that contributes to creating a positive environment include:
+
+* Using welcoming and inclusive language
+* Focusing on what is best for the community
+* Being respectful of differing viewpoints and experiences
+* Gracefully accepting constructive criticism
+
+== Before You Begin
+
+* link:https:[Get started] by installing and getting familiar with link:https://git-scm.com/doc[Git].
+* Use link:https:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] to contribute to Lookyloo documentation.
+* Refer to our link:https:[style guide] for guidance on formatting your documentation contributions.
+
+== General Information
+
+Thank you for your contributions. To start contributing to Lookyloo:
+
+. Create an issue describing your proposed change to the repository.
+
+. The repository owners will triage and respond to your issue promptly.
+
+. Fork the repository.
+
+. Submit a pull request with the proposed changes. The required format for the Git commit message is "Issue # <Issue ID> - <issue_message>".
+
+
+== Raising an Issue
+
+GitHub issues can be used to report bugs or submit feature requests.
+
+When reporting an issue, you can use the link:https://github.com/Lookyloo/lookyloo/issues/new/choose[applicable issue reporting template]. Issues should be raised in the corresponding repository.
+ 
+ * link:https://github.com/Lookyloo/docs/issues[Changes to code]
+ * link:https://github.com/Lookyloo/lookyloo/issues[Changes to documentation for website]
+ * link:https://github.com/Lookyloo/PyLookyloo/issues[Changes to PyLooklyloo (CLI)]
+
+Please include the following information when creating an issue:
+
+* Operating system you are using
+* The steps needed to reproduce the issue.
+
+
+== Submit a Pull Request
+
+Make a pull request (PR) to add content to the repository. When making a PR, ensure you include:
+
+* A description of what the PR fixes
+* Associated Issue # and Issue title (if applicable)
+* Operating system you are using
+
+See link:https:[here] for more information on using Git and making pull requests.
+
+
+== Updating Documentation
+
+The source documentation files are located in the `modules/ROOT/pages/` directory in the link:https://github.com/Lookyloo/lookyloo/issues[Lookyloo documentation repository].
+
+This repository uses Antora to publish the documentation and we use asciidoc markup language.
+
+
+
+=== Prerequisites
+The following are required:
+* Install link:https://docs.antora.org[Antora].
+* Install link:https://asciidoctor.org/[AsciiDoctor].
+* Use link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc].
+
+=== Procedure
+To update existing documentation:
+
+. Checkout the branch you want to update, for example:
+
+     ```
+     git checkout main
+     ```
+. Ensure that your forked repository is in sync with the selected upstream repository:
+
+      ```
+      git fetch <lookyloo/docs> 
+      ```
+      ```
+      git reset --hard <lookyloo/docs> main
+      ```
+. Checkout a new feature branch with the <Issue #> as the name, for example:
+
+       ```
+       git checkout -b Issue#123
+       ```
+. Make changes to the documentation.
+
+[NOTE]
+====
+To add a new module to the repository, add the module to the `/modules/ROOT/nav.adoc` file in the following format:
+
+`* xref:<module_filename.adoc>[<module title>]`.
+
+The number of asterisks (*) represents the heading level.
+====
+
+. Preview the documentation on the branch.
+. Push the changes to your fork's feature branch.
+. Submit a pull request against to the dsignated repository.
+
+=== Previewing Documentation Changes
+
+.   To build a preview of the doc, run the command:
+
+       ```
+       antora local-site.yml && <your_preferred_browser> build/site/index.html
+       ```
+
+=== Rendering Documentation
+
+. Run the `./docs_build.sh` script.
+. Run `$<browser> index.html` to review the generated content.
+. Submit a against  the desired Lookyloo repository.
+
+
+
 

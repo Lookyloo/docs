@@ -1,0 +1,40 @@
+[id="components-installation"]
+= Components Installation
+
+== Install Poetry
+
+Use link:https://github.com/python-poetry/poetry/#installation[Poetry]
+
+[IMPORTANT]
+====
+Requires Python 3.7 or higher.
+====
+
+[NOTE] 
+====
+If you want to run a public instance, you should set `only_global_lookups=True`
+in `website/web/__init__.py` and `bin/async_scrape.py` to disallow scraping of private IPs.
+====
+
+
+== Install Splash
+
+You need a running Splash instance, preferably on link:https://splash.readthedocs.io/en/stable/install.html[Docker]
+
+```bash
+sudo apt install docker.io
+sudo docker pull scrapinghub/splash
+sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-caches
+# On a server with a decent abount of RAM, you may want to run it this way:
+# sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash -s 100 -m 50000 --disable-browser-caches
+```
+
+== Install Redis
+
+```bash
+git clone https://github.com/antirez/redis.git
+cd redis
+git checkout 5.0
+make
+cd ..
+```

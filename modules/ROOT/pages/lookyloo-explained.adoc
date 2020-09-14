@@ -1,0 +1,11 @@
+[id="what-is-lookyloo"]
+= What is Lookyloo?
+
+Lookyloo is a web interface allows you to to scrape a website and then displays a tree of domains calling each other.
+
+To get started with Lookyloo, learn about our dependencies and walkthrough the installation process.
+
+
+Lookyloo is ...
+
+User can use Lookyloo to... Checkout the use cases to better understand how Lookyloo can be implemented.

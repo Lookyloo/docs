@@ -1,0 +1,30 @@
+[id="install-lookyloo"]
+= Install Lookyloo
+
+== Prerequisites
+
+* Poetry is installed
+* Redis is installed
+* Splash is installed
+
+
+== Procedure
+
+. To install clone the Lookyloo repository. 
++
+```bash
+git clone https://github.com/Lookyloo/lookyloo.git
+```
+
+. Change directory 
++
+```
+cd lookyloo
+```
+
+. Run the commands:
++
+```
+poetry install
+echo LOOKYLOO_HOME="'`pwd`'" > .env
+```

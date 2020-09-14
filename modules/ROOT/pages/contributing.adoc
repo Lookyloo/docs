@@ -1,0 +1,22 @@
+[id="contributing-to-lookyloo"]
+= Contributing to Lookyloo 
+
+You can contribute to Lookyloo as a:
+
+* Professional 
+* Developer  
+* UX Developer  
+* Technical Writer  
+* Translator
+
+
+== Professional
+Contributors include lawyers, journalist, reserachers. 
+
+== Developer
+
+== UX Developer
+
+== Technical Writer
+
+== Translator

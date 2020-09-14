@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Lookyloo</title>
+    <title>Install Lookyloo :: Lookyloo</title>
     <link rel="canonical" href="https://lookyloo.github.io/docs/docs/install-lookyloo.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -61,7 +61,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">Lookyloo Documentation</a></h3>
+    <h3 class="title"><a href="index.html">Lookyloo</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -117,12 +117,12 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Lookyloo Documentation</span>
+    <span class="title">Lookyloo</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <span class="title">Lookyloo Documentation</span>
+      <span class="title">Lookyloo</span>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="index.html">master</a>
@@ -140,7 +140,7 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">Lookyloo Documentation</a></li>
+    <li><a href="index.html">Lookyloo</a></li>
     <li><a href="installation.html">Installing Lookyloo</a></li>
     <li><a href="install-lookyloo.html">Install Lookyloo</a></li>
   </ul>
@@ -149,7 +149,59 @@
   </div>
   <div class="content">
 <article class="doc">
-
+<h1 class="page">Install Lookyloo</h1>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Poetry is installed</p>
+</li>
+<li>
+<p>Redis is installed</p>
+</li>
+<li>
+<p>Splash is installed</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_procedure"><a class="anchor" href="#_procedure"></a>Procedure</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To install clone the Lookyloo repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/Lookyloo/lookyloo.git</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Change directory</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>cd lookyloo</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run the commands:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>poetry install
+echo LOOKYLOO_HOME="'`pwd`'" &gt; .env</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
