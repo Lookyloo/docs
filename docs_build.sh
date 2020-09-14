@@ -2,7 +2,7 @@
 cd "${0%/*}" # cd to the folder with script
 antora #Verify Antora is installed
 RESULT=($?)
-if [ $RESULT -eq 127 ]; then #if antora is not found in $PATH (probably not installed) 
+if [ $RESULT -eq 127 ]; then #if Antora is not found in $PATH (probably not installed) 
     echo -e '>> \e[31mFAIL\e[0m Antora not found in \$PATH, Install Antora from https://docs.antora.org/antora/2.2/install/install-antora/'
     exit 1
 elif [ -f local-site.yml ]; then
