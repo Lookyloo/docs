@@ -5,7 +5,7 @@ site:
 content:
   sources:
     - url:  https://lookyloo.github.io/docs/
-      branches: 
+      branches: master
     
 ui:
   bundle:
