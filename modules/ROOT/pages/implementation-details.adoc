@@ -5,5 +5,5 @@ This code is very heavily inspired by link:https://github.com/etetoolkit/webplug
 
 The two core dependencies of this project are the following:
 
-* link:(http://etetoolkit.org/)[ETE Toolkit]: A Python framework for the analysis and visualization of trees.
-* link:(https://splash.readthedocs.io/en/stable/)[Splash]: Lightweight, scriptable browser as a service with an HTTP API
+* link:http://etetoolkit.org[ETE Toolkit]: A Python framework for the analysis and visualization of trees.
+* link:https://splash.readthedocs.io/en/stable[Splash]: Lightweight, scriptable browser as a service with an HTTP API.

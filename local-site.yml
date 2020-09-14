@@ -1,5 +1,5 @@
 site:
-  title: Lookyloo Documentation
+  title: Lookyloo
   url: https://lookyloo.github.io/docs/
   start_page: docs::index
 content:
