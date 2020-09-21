@@ -6,5 +6,3 @@ Lookyloo requires the following to install:
 * link:https://splash.readthedocs.io/en/stable/[Splash]: A javascript rendering service with an HTTP API. It's a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.
 * link:https://redis.io/[Redis]: An open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 
-
-To learn more about the components ...

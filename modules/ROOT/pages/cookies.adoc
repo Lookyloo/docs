@@ -3,7 +3,7 @@
 
 If you want to scrape a website as if you were loggged in, you need to pass your sessions cookies.
 
-You can do it the the following way:
+You can do it by using the following procedure:
 
 
 . Install link:https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager[Cookie Quick Manager].

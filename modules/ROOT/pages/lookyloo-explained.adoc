@@ -1,11 +1,17 @@
 [id="what-is-lookyloo"]
 = What is Lookyloo?
 
-Lookyloo is a web interface allows you to to scrape a website and then displays a tree of domains calling each other.
+With Lookyloo you can view the anatomy of connections within a webpage. 
 
-To get started with Lookyloo, learn about our dependencies and walkthrough the installation process.
+Lookyloo is a web interface that allows you to scrape a website and then display a tree of domains that call each other (as related to a particular website page).
+
+Use Lookyloo to map the journey a website page takes - from its intial URL address to the various redirects to third-party affiliations. You can parse the data from the web scrape to get a better understanding of what and who has access to information you may be unwittingly sharing.  
 
 
-Lookyloo is ...
+== Lookyloo Scrape in Action
 
-User can use Lookyloo to... Checkout the use cases to better understand how Lookyloo can be implemented.
+Nodes - 
+
+Connections - 
+
+There will be an image here that explains the process

@@ -8,15 +8,31 @@ This site is a work in progrss
 
 Lookyloo is a web interface that scrapes a website and then displays a tree of domains calling each other.
 
+With Lookyloo you can dissect a website while it is in motion. 
+
+
+
 == What is a Lookyloo?
 
 . People who just come to look.
 . People who go out of their way to look at people or something often causing crowds and more disruption.
-. People who enjoy staring at watching other peoples misfortune. Oftentimes car onlookers to car accidents.
+. People who enjoy staring at or watching other people's misfortune. Oftentimes car onlookers to car accidents.
 
 Same as Looky Lou; often spelled as Looky-loo (hyphen) or lookylou
 In L.A. usually the lookyloo's cause more accidents by not paying full attention to what is ahead of them.
 
 
+== Learn More
+
+Read through our documentation for more infomation. Please also visit our link:https://github.com/Lookyloo/Lookyloo[GitHub repo] and or join link:https://github.com/Lookyloo[organization].
+
+
+== Follow us
+
+Check out our public instance at https://lookyloo.circl.lu/
+
+* link:https://github.com/Lookyloo[Lookyloo Organization on GitHub] 
+* link:https://github.com/Lookyloo/Lookyloo[Lookyloo repository] 
+* link:https://twitter.com/lookyloo_app[Twitter]
 
 

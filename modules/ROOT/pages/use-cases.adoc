@@ -1,6 +1,19 @@
 [id="use-cases"]
 = Lookyloo Use Cases
 
+Using Lookyloo, you can extract data from a webpage so it can be assessed and visualized.
+
+Data obtained by web scraping can be used in a variety of ways.  For example, data is collected from various video sharing sites and then collated on one site so that you can compare, like, and comment on content.
+
+
+*Use LookyLoo to:*
+
+* Observe which vendors have access to your information when you visit a site
+* Identify malicious activity
+* Recognize phishing activity
+* Pinpoint lapses in security and flag suspicious behavior 
+
+
 
 
 == As a journalist

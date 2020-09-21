@@ -72,6 +72,7 @@ This repository uses Antora to publish the documentation and we use asciidoc mar
 
 
 === Prerequisites
+
 The following are required:
 * Install link:https://docs.antora.org[Antora].
 * Install link:https://asciidoctor.org/[AsciiDoctor].

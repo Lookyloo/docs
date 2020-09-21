@@ -1,6 +1,0 @@
-[id="Lookyloo-overview"]
-= Getting Started with Lookyloo
-
-Lookyloo is a web interface allowing to scrape a website and then displays a tree of domains calling each other.
-
-To get started with Lookyloo, learn about our dependencies and walkthrough the installation process.
