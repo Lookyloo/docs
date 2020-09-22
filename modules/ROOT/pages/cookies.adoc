@@ -1,7 +1,7 @@
 [id="capture-cookies"]
 = Capture with pre-defined cookies
 
-= Login cookies from an other browser
+== Login cookies from an other browser
 
 If you want to capture a website as if you were loggged in, you need to pass your session cookies.
 
@@ -15,6 +15,6 @@ You can do it by using the following procedure:
 
 On the capture page, select that file and capture the website.
 
-= Replay cookies from an other lookyloo capture
+== Replay cookies from an other lookyloo capture
 
 You can also replay the downloaded cookies from an hostnode popup in an existing capture.

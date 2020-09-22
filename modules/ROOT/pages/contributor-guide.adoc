@@ -124,12 +124,6 @@ The number of asterisks (*) represents the heading level.
        antora local-site.yml && <your_preferred_browser> build/site/index.html
        ```
 
-[NOTE]
-====
-You will need to change the branch in `local-site.yml` in order to see your changes.
-
-====
-
 === Rendering Documentation
 
 . Run the `./docs_build.sh` script.
