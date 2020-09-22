@@ -3,16 +3,18 @@
 
 [IMPORTANT]
 ====
-This site is a work in progrss
+This site is a work in progress
 ====
 
 Lookyloo is a web interface that scrapes a website and then displays a tree of domains calling each other.
 
-With Lookyloo you can dissect a website while it is in motion. 
+With Lookyloo you can dissect a website while it is in motion.
 
 
 
 == What is a Lookyloo?
+
+Per the definition on link:https://www.urbandictionary.com/define.php?term=lookyloo[Urban Dictionary]:
 
 . People who just come to look.
 . People who go out of their way to look at people or something often causing crowds and more disruption.
@@ -31,8 +33,8 @@ Read through our documentation for more infomation. Please also visit our link:h
 
 Check out our public instance at https://lookyloo.circl.lu/
 
-* link:https://github.com/Lookyloo[Lookyloo Organization on GitHub] 
-* link:https://github.com/Lookyloo/Lookyloo[Lookyloo repository] 
+* link:https://github.com/Lookyloo[Lookyloo Organization on GitHub]
+* link:https://github.com/Lookyloo/Lookyloo[Lookyloo repository]
 * link:https://twitter.com/lookyloo_app[Twitter]
 
 
