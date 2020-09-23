@@ -1,4 +1,12 @@
 [id="concepts"]
-= Concepts 
+= Concepts
 
-To start with Lookyloo there are some concepts a user should be familiar with.  
+To start with Lookyloo there are some concepts a user should be familiar with.
+
+
+* iframe
+* cookie
+* redirect
+* user-agent
+* referer
+* HTTP response code

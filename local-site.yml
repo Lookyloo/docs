@@ -1,12 +1,23 @@
 site:
   title: Lookyloo
-  url: https://lookyloo.github.io/docs/
+  url: https://www.lookyloo.eu/docs/
   start_page: docs::index
+  robots: allow
+
 content:
   sources:
-    - url: .
-      branches: master      
+    - url: ./
+      branches: HEAD
+
+output:
+  dir: ./docs
+
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable  
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+  supplemental_files:
+    - path: ui.yml
+      contents: |
+        static_files: [ .nojekyll ]
+    - path: .nojekyll

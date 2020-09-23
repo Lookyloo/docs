@@ -2,7 +2,7 @@
 ** xref:use-cases.adoc[Use Cases]
 ** xref:concepts.adoc[Concepts]
 *** xref:implementation-details.adoc[Implementation Details]
-*** xref:cookies.adoc[Scraping Cookies]
+*** xref:cookies.adoc[Capture with Cookies]
 * xref:installation.adoc[Installing Lookyloo]
 ** xref:install-components.adoc[Components]
 ** xref:install-lookyloo.adoc[Install Lookyloo]
