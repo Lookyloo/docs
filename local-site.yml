@@ -7,8 +7,6 @@ site:
 content:
   sources:
     - url: ./
-      branches: HEAD
-
 
 ui:
   bundle:
