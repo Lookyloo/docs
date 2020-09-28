@@ -14,21 +14,26 @@ Data obtained by web scraping can be used in a variety of ways.  For example, da
 * Pinpoint lapses in security and flag suspicious behavior 
 
 
+Lookyloo can be used by various professionals, including...
 
+== Journalist
 
-== As a journalist
-
-I can uses Lookyloo to ...
+As a *journalist*, I can uses Lookyloo to ...
 
 * Do this thing
 * Do that thing 
 
 
-== As a lawyer 
+== Legal Professionals 
 
-I can use Lookyloo to ..
+As a *legal professional*, I can use Lookyloo to ...
 
 
-== Site Administrator
+== Site Administrators
 
-== 
+As a *site administrator*, I can use Lookyloo to ...
+
+
+== Educators
+
+As an *educator*, I can use Lookyloo to ...

@@ -2,12 +2,25 @@
 
 = Before You Begin
 
+Before you install Lookyloo, you should be familiar with the following:
 
-= Installation
+*xref:concepts.adoc[Lookyloo Concepts]
+*xref:install-dependencies.adoc[Components installation] 
+*xref:capture-cookies.adoc[Cookies settings]
+
+
+= Installation Dependencies
 
 Lookyloo requires the following to install:
 
 * link:https://python-poetry.org/[Poetry]: A tool to handle dependency installation as well as building and packaging of Python packages.
 * link:https://splash.readthedocs.io/en/stable/[Splash]: A javascript rendering service with an HTTP API. It's a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.
 * link:https://redis.io/[Redis]: An open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+
+
+= Installation Considerations
+
+ 
+
+
 

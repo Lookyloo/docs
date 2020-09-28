@@ -1,0 +1,7 @@
+[id="pylookyloo-install"]
+
+= Install PyLookyloo
+
+```bash
+pip install pylookyloo
+```

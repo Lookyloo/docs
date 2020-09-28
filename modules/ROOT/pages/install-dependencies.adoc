@@ -1,5 +1,5 @@
-[id="components-installation"]
-= Components Installation
+[id="dependencies-installation"]
+= Dependecies Installation
 
 == Install Poetry
 
@@ -21,7 +21,7 @@ sudo docker pull scrapinghub/splash
 
 == Install Redis
 
-NOTE: Redis should be installed from the source, and repository should be in the same directory as the one you will be cloning Lookyloo in to.
+NOTE: Redis should be installed from the source, and the repository should be in the same directory as the one you will be cloning Lookyloo in to.
 
 ```bash
 git clone https://github.com/antirez/redis.git

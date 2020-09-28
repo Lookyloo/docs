@@ -1,7 +1,7 @@
 [id="implementation-details"]
 = Implementation Details
 
-This code is very heavily inspired by link:https://github.com/etetoolkit/webplugin[webplugin] and adapted to use flask as backend.
+Lookyloo code is very heavily inspired by link:https://github.com/etetoolkit/webplugin[webplugin] and adapted to use flask as backend.
 
 The two core dependencies of this project are the following:
 
