@@ -6,9 +6,9 @@ Using Lookyloo, you can extract data from a webpage so it can be assessed and vi
 Data obtained by web scraping can be used in a variety of ways.  For example, data is collected from various video sharing sites and then collated on one site so that you can compare, like, and comment on content.
 
 
-*Use LookyLoo to:*
+*Use Lookyloo to:*
 
-* Observe which vendors have access to your information when you visit a site
+* Observe who has access to your information when you visit a site
 * Identify malicious activity
 * Recognize phishing activity
 * Pinpoint lapses in security and flag suspicious behavior 
@@ -24,8 +24,11 @@ I can uses Lookyloo to ...
 * Do that thing 
 
 
-
 == As a lawyer 
 
 I can use Lookyloo to ..
 
+
+== Site Administrator
+
+== 

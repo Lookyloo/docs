@@ -1,20 +1,14 @@
 [id="capture-cookies"]
-= Capture with pre-defined cookies
+= Capture Cookies
 
-== Login cookies from an other browser
-
-If you want to capture a website as if you were loggged in, you need to pass your session cookies.
+If you want to capture a website as if you were logged in, you need to pass your sessions cookies.
 
 You can do it by using the following procedure:
 
+
 . Install link:https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager[Cookie Quick Manager].
-. Login on the website you want to capture
 . Click on the icon in the top right of your browser > Manage all cookies
 . Search for a domain and tick the Sub-domain box if needed
-. Right clock on the domain you want to export > save to file > `cookies.json`.
+. Right clock on the domain you want to export > save to file > `$LOOKYLOO_HOME/cookies.json`.
 
-On the capture page, select that file and capture the website.
-
-== Replay cookies from an other lookyloo capture
-
-You can also replay the downloaded cookies from an hostnode popup in an existing capture.
+You will need to restart the web server. After restart, every cookie you have in that file will be available for the browser used by Splash.

@@ -1,5 +1,10 @@
 [id="installation"]
 
+= Before You Begin
+
+
+= Installation
+
 Lookyloo requires the following to install:
 
 * link:https://python-poetry.org/[Poetry]: A tool to handle dependency installation as well as building and packaging of Python packages.

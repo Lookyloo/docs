@@ -12,7 +12,7 @@ Requires Python 3.7 or higher.
 
 == Install Splash
 
-You will need a running Splash instance, preferably on link:https://splash.readthedocs.io/en/stable/install.html[Docker]
+You will need a running Splash instance, preferably on link:https://splash.readthedocs.io/en/stable/install.html[Docker].
 
 ```bash
 sudo apt install docker.io
@@ -20,6 +20,8 @@ sudo docker pull scrapinghub/splash
 ```
 
 == Install Redis
+
+NOTE: Redis should be installed from the source, and repository should be in the same directory as the one you will be cloning Lookyloo in to.
 
 ```bash
 git clone https://github.com/antirez/redis.git

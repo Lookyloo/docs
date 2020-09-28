@@ -1,0 +1,83 @@
+= Glossary
+
+You should be familiar with the terms we use in our documentation and our public instance.
+
+== A
+
+== B
+
+== C
+
+* Cookie -
+* CSS - 
+
+== D
+
+== E
+
+* Empty Response - 
+
+== F
+
+== G
+
+== H
+
+* HTML - 
+
+== I
+
+* iframe - 
+
+== J
+* Javascript - 
+
+* JSON - 
+
+== K
+
+== L
+
+* Legit Node -
+
+== M
+
+* Malicious Node -
+
+== N
+
+* Node  -
+
+== O
+
+== P
+
+== Q
+
+== R
+
+* Redirect -  
+
+== S
+
+== T
+
+== U
+
+== V
+
+== W
+
+== X
+
+== Y
+
+== Z
+
+ 
+ 
+
+
+
+
+

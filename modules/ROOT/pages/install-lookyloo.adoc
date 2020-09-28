@@ -3,9 +3,9 @@
 
 == Prerequisites
 
-* Poetry is installed
-* Redis is installed from the sources and the repository is in the same directory as the one you will be cloning lookyloo to
-* Splash is installed
+* Poetry is installed.
+* Redis is installed from the source. The repository should be in the same directory as the one you will be cloning Lookyloo in to.
+* Splash is installed.
 
 == Procedure
 

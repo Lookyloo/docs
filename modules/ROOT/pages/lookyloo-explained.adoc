@@ -5,7 +5,7 @@ With Lookyloo you can view the anatomy of connections within a webpage.
 
 Lookyloo is a web interface that allows you to capture a website and then display a tree of domains that call each other (as related to a particular website page).
 
-Use Lookyloo to map the journey a website page takes - from its intial URL address to the various redirects to third-party affiliations. You can parse the data from the web scrape to get a better understanding of what and who has access to information you may be unwittingly sharing.
+Use Lookyloo to map the journey a website page takes - from entering its intial URL address to the various redirects to third-party affiliations. You can parse the data from the web capture to get a better understanding of what and who has access to information you may be unwittingly sharing.
 
 
 == Lookyloo capture in Action

@@ -66,10 +66,9 @@ See link:https:[here] for more information on using Git and making pull requests
 
 == Updating Documentation
 
+The documentation is written in the Asciidoc markup language and uses Antora. 
+
 The source documentation files are located in the `modules/ROOT/pages/` directory in the link:https://github.com/Lookyloo/lookyloo/issues[Lookyloo documentation repository].
-
-This repository uses Antora to publish the documentation and we use asciidoc markup language.
-
 
 
 === Prerequisites
@@ -109,7 +108,7 @@ To add a new module to the repository, add the module to the `/modules/ROOT/nav.
 
 `* xref:<module_filename.adoc>[<module title>]`.
 
-The number of asterisks (*) represents the heading level.
+The number of asterisks (*) denotes the heading level.
 ====
 
 . Preview the documentation on the branch.

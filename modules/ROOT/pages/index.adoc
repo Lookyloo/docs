@@ -6,9 +6,10 @@
 This site is a work in progress
 ====
 
-Lookyloo is a web interface that scrapes a website and then displays a tree of domains calling each other.
-
 With Lookyloo you can dissect a website while it is in motion.
+
+Lookyloo is a web interface that captures a webpage and then displays a tree of the domains, that call each other.
+
 
 
 
@@ -26,7 +27,7 @@ In L.A. usually the lookyloo's cause more accidents by not paying full attention
 
 == Learn More
 
-Read through our documentation for more infomation. Please also visit our link:https://github.com/Lookyloo/Lookyloo[GitHub repo] and or join link:https://github.com/Lookyloo[organization].
+Read through our documentation for more infomation. Please also visit our link:https://github.com/Lookyloo/Lookyloo[GitHub repo] and join link:https://github.com/Lookyloo[organization].
 
 
 == Follow us
