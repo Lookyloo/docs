@@ -43,6 +43,12 @@ cp config/modules.json.sample config/modules.json
 
 . Edit the config files accordingly: see the `_notes` key in the JSON file.
 
+. Make sure the configuration files are valid, and pull the 3rd party dependencies for the website
++
+```bash
+poetry run update.py --yes
+```
+
 
 == Run Splash
 
