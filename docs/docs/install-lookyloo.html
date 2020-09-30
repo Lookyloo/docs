@@ -169,7 +169,7 @@
     <li><a href="install-lookyloo.html">Install Lookyloo</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/joaedwar/docs/modules/ROOT/pages/install-lookyloo.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/raphael/gits/lookyloo-docs/modules/ROOT/pages/install-lookyloo.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
@@ -260,6 +260,14 @@ cp config/modules.json.sample config/modules.json</code></pre>
 </li>
 <li>
 <p>Edit the config files accordingly: see the <code>_notes</code> key in the JSON file.</p>
+</li>
+<li>
+<p>Make sure the configuration files are valid, and pull the 3rd party dependencies for the website</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry run update.py --yes</code></pre>
+</div>
+</div>
 </li>
 </ol>
 </div>
