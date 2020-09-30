@@ -1,0 +1,27 @@
+site:
+  title: Lookyloo
+  url: https://www.lookyloo.eu/docs/
+  start_page: docs::index
+  robots: allow
+
+content:
+  sources:
+    - url: https://github.com/Lookyloo/docs.git
+      branches: main
+
+output:
+  dir: ./docs
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files:
+    # Okay, that's super weird, but basically, the build script creates files in memory with the content in "contents"
+    - path: ui.yml
+      contents: |
+        static_files: [ .nojekyll, CNAME ]
+    - path: .nojekyll
+    - path: CNAME
+      contents: |
+        www.lookyloo.eu
