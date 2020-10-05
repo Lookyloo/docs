@@ -3,7 +3,7 @@
 
 [IMPORTANT]
 ====
-Poetry, Redis, and Splash, must be installed before you begin installation of Lookyloo. To lean more about Lookyloo dependencies, please see the xref:installation[installation.adoc] page.
+Poetry, Redis, and Splash, must be installed before you begin installation of Lookyloo. To read about Lookyloo dependencies, please see the xref:installation.adoc[installation] page.
 ====
 
 
@@ -40,13 +40,14 @@ cd ..
 ```
 
 
+== Install Lookyloo
 
-== Prerequisites
+=== Prerequisites
 * Poetry is installed.
 * Redis is installed from the source. The repository should be in the same directory as the one you will be cloning Lookyloo in to.
 * Splash is installed.
 
-== Procedure
+=== Procedure
 
 . To install, clone the Lookyloo repository.
 +

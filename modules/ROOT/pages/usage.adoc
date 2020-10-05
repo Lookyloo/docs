@@ -1,4 +1,4 @@
 = Usage
 
-To learn more about using Lookyloo read through our documenttaion.
+To learn more about using Lookyloo read through our documentation.
 // Will definitely add more content to this page.
