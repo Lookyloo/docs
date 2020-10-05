@@ -91,15 +91,6 @@
     <a class="nav-link" href="installation.html">Installing Lookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="install-dependencies.html">Lookyloo Dependencies</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="capture-cookies.html">Capture with Cookies</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo.html">Install Lookyloo</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -107,6 +98,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-docker.html">Run Lookyloo with Docker</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="usage.html">Using Lookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="additions.html">Additions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rename-pending.html">Har2Tree</a>
   </li>
 </ul>
   </li>
@@ -127,7 +136,22 @@
     <a class="nav-link" href="contributing.html">Contributing to Lookyloo</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributor-guide.html">Contributor Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-git.html">Using Git</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contributor-guide-docs.html"> Contributing to Docs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-style-guide.html">Style Guide</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="code-conduct.html">Code of Conduct</a>
@@ -218,6 +242,9 @@
 <p>Gracefully accepting constructive criticism</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Please read our <a href="code-conduct.html" class="page">Code of Conduct</a>.</p>
 </div>
 </div>
 </div>
@@ -320,143 +347,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>See <a href="https:">here</a> for more information on using Git and making pull requests.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_updating_documentation"><a class="anchor" href="#_updating_documentation"></a>Updating Documentation</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The documentation is written in the Asciidoc markup language and uses Antora.</p>
-</div>
-<div class="paragraph">
-<p>The source documentation files are located in the <code>modules/ROOT/pages/</code> directory in the <a href="https://github.com/Lookyloo/lookyloo/issues">Lookyloo documentation repository</a>.</p>
-</div>
-<div class="sect2">
-<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
-<div class="paragraph">
-<p>The following are required:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Install <a href="https://docs.antora.org">Antora</a>.</p>
-</li>
-<li>
-<p>Install <a href="https://asciidoctor.org/">AsciiDoctor</a>.</p>
-</li>
-<li>
-<p>Use <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">AsciiDoc</a>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_procedure"><a class="anchor" href="#_procedure"></a>Procedure</h3>
-<div class="paragraph">
-<p>To update existing documentation:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Checkout the branch you want to update, for example:</p>
-<div class="literalblock">
-<div class="content">
-<pre>     ```
-     git checkout main
-     ```
-. Ensure that your forked repository is in sync with the selected upstream repository:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>      ```
-      git fetch &lt;lookyloo/docs&gt;
-      ```
-      ```
-      git reset --hard &lt;lookyloo/docs&gt; main
-      ```
-. Checkout a new feature branch with the &lt;Issue #&gt; as the name, for example:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>       ```
-       git checkout -b Issue#123
-       ```
-. Make changes to the documentation.</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>To add a new module to the repository, add the module to the <code>/modules/ROOT/nav.adoc</code> file in the following format:</p>
-</div>
-<div class="paragraph">
-<p><code>* xref:&lt;module_filename.adoc&gt;[&lt;module title&gt;]</code>.</p>
-</div>
-<div class="paragraph">
-<p>The number of asterisks (*) denotes the heading level.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Preview the documentation on the branch.</p>
-</li>
-<li>
-<p>Push the changes to your fork&#8217;s feature branch.</p>
-</li>
-<li>
-<p>Submit a pull request against to the dsignated repository.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_previewing_documentation_changes"><a class="anchor" href="#_previewing_documentation_changes"></a>Previewing Documentation Changes</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>To build a preview of the doc, run the command:</p>
-<div class="literalblock">
-<div class="content">
-<pre>```
-antora local-site.yml &amp;&amp; &lt;your_preferred_browser&gt; build/site/index.html
-```</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_rendering_documentation"><a class="anchor" href="#_rendering_documentation"></a>Rendering Documentation</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Run the <code>./docs_build.sh</code> script.</p>
-</li>
-<li>
-<p>Run <code>$&lt;browser&gt; index.html</code> to review the generated content.</p>
-</li>
-<li>
-<p>Submit a pull request against the desired Lookyloo repository.</p>
-</li>
-</ol>
-</div>
+<p>See the <a href="contributor-git.html" class="page">using Git documentation</a> for more information on using Git and making pull requests.</p>
 </div>
 </div>
 </div>

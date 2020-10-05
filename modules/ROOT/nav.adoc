@@ -8,7 +8,7 @@
 ** xref:install-lookyloo-production.adoc[Installing Lookyloo for Production]
 ** xref:install-lookyloo-docker.adoc[Run Lookyloo with Docker]
 * xref:usage.adoc[Using Lookyloo]
-** xref:capture-cookies.adoc[Capture with Cookies]
+** xref:capture-cookies.adoc[Capture with Pre-defined Cookies]
 * xref:additions.adoc[Additions]
 ** xref:rename-pending.adoc[Har2Tree]
 * xref:pylookyloo-overview.adoc[PyLookyloo]

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Capture Cookies :: Lookyloo</title>
+    <title>Capture with pre-defined cookies :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/docs/capture-cookies.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
@@ -91,15 +91,6 @@
     <a class="nav-link" href="installation.html">Installing Lookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="install-dependencies.html">Lookyloo Dependencies</a>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="capture-cookies.html">Capture with Cookies</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo.html">Install Lookyloo</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -107,6 +98,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-docker.html">Run Lookyloo with Docker</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="usage.html">Using Lookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="additions.html">Additions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rename-pending.html">Har2Tree</a>
   </li>
 </ul>
   </li>
@@ -127,7 +136,22 @@
     <a class="nav-link" href="contributing.html">Contributing to Lookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributor-guide.html">Contributor Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-git.html">Using Git</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contributor-guide-docs.html"> Contributing to Docs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-style-guide.html">Style Guide</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="code-conduct.html">Code of Conduct</a>
@@ -165,18 +189,20 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="installation.html">Installing Lookyloo</a></li>
-    <li><a href="install-dependencies.html">Lookyloo Dependencies</a></li>
-    <li><a href="capture-cookies.html">Capture with Cookies</a></li>
+    <li><a href="usage.html">Using Lookyloo</a></li>
+    <li><a href="capture-cookies.html">Capture with Pre-defined Cookies</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="file:///home/joaedwar/docs/modules/ROOT/pages/capture-cookies.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Capture Cookies</h1>
+<h1 class="page">Capture with pre-defined cookies</h1>
+<div class="sect1">
+<h2 id="_login_cookies_from_an_other_browser"><a class="anchor" href="#_login_cookies_from_an_other_browser"></a>Login cookies from an other browser</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>If you want to capture a website as if you were logged in, you need to pass your sessions cookies.</p>
+<p>If you want to capture a website as if you were loggged in, you need to pass your session cookies.</p>
 </div>
 <div class="paragraph">
 <p>You can do it by using the following procedure:</p>
@@ -187,18 +213,31 @@
 <p>Install <a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-quick-manager">Cookie Quick Manager</a>.</p>
 </li>
 <li>
+<p>Login on the website you want to capture</p>
+</li>
+<li>
 <p>Click on the icon in the top right of your browser &gt; Manage all cookies</p>
 </li>
 <li>
 <p>Search for a domain and tick the Sub-domain box if needed</p>
 </li>
 <li>
-<p>Right clock on the domain you want to export &gt; save to file &gt; <code>$LOOKYLOO_HOME/cookies.json</code>.</p>
+<p>Right clock on the domain you want to export &gt; save to file &gt; <code>cookies.json</code>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>You will need to restart the web server. After restart, every cookie you have in that file will be available for the browser used by Splash.</p>
+<p>On the capture page, select that file and capture the website.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_replay_cookies_from_an_other_lookyloo_capture"><a class="anchor" href="#_replay_cookies_from_an_other_lookyloo_capture"></a>Replay cookies from an other lookyloo capture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can also replay the downloaded cookies from an hostnode popup in an existing capture.</p>
+</div>
+</div>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

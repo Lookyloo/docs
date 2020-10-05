@@ -6,8 +6,8 @@ site:
 
 content:
   sources:
-    - url: ./
-      branches: HEAD
+    - url: https://github.com/Lookyloo/docs.git
+      branches: main
 
 output:
   dir: ./docs

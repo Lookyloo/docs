@@ -90,15 +90,6 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="installation.html">Installing Lookyloo</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="install-dependencies.html">Lookyloo Dependencies</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="capture-cookies.html">Capture with Cookies</a>
-  </li>
-</ul>
-  </li>
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="install-lookyloo.html">Install Lookyloo</a>
   </li>
@@ -107,6 +98,24 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-docker.html">Run Lookyloo with Docker</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="usage.html">Using Lookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="additions.html">Additions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rename-pending.html">Har2Tree</a>
   </li>
 </ul>
   </li>
@@ -127,7 +136,22 @@
     <a class="nav-link" href="contributing.html">Contributing to Lookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributor-guide.html">Contributor Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-git.html">Using Git</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contributor-guide-docs.html"> Contributing to Docs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-style-guide.html">Style Guide</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="code-conduct.html">Code of Conduct</a>
@@ -184,11 +208,72 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Poetry, Redis, and Splash, must be installed before you begin installation of Lookyloo. For information on installing these components see the documentation on <a href="install-dependencies.html" class="page">installing dependencies</a>.</p>
+<p>Poetry, Redis, and Splash, must be installed before you begin installation of Lookyloo. To lean more about Lookyloo dependencies, please see the <a href="#installation">installation.adoc</a> page.</p>
 </div>
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_lookyloo_dependencies"><a class="anchor" href="#_install_lookyloo_dependencies"></a>Install Lookyloo Dependencies</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_install_poetry"><a class="anchor" href="#_install_poetry"></a>Install Poetry</h3>
+<div class="paragraph">
+<p>Use <a href="https://github.com/python-poetry/poetry/#installation">Poetry</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Requires Python 3.7 or higher.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_install_splash"><a class="anchor" href="#_install_splash"></a>Install Splash</h3>
+<div class="paragraph">
+<p>You will need a running Splash instance, preferably on <a href="https://splash.readthedocs.io/en/stable/install.html">Docker</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install docker.io
+sudo docker pull scrapinghub/splash</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_install_redis"><a class="anchor" href="#_install_redis"></a>Install Redis</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Redis should be installed from the source, and the repository should be in the same directory as the one you will be cloning Lookyloo in to.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/antirez/redis.git
+cd redis
+git checkout 6.0
+make
+cd ..</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -260,6 +345,14 @@ cp config/modules.json.sample config/modules.json</code></pre>
 </li>
 <li>
 <p>Edit the config files accordingly: see the <code>_notes</code> key in the JSON file.</p>
+</li>
+<li>
+<p>Make sure the configuration files are valid, and pull the 3rd party dependencies for the website</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry run update.py --yes</code></pre>
+</div>
+</div>
 </li>
 </ol>
 </div>

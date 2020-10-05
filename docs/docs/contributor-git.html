@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>PyLookyloo Commands :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/docs/pylookyloo-commands.html">
+    <title>Using Git :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/docs/contributor-git.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -126,7 +126,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="pylookyloo-install.html">Install PyLookyloo</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="pylookyloo-commands.html">Commands</a>
   </li>
 </ul>
@@ -139,7 +139,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributor-guide.html">Contributor Guide</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="contributor-git.html">Using Git</a>
   </li>
 </ul>
@@ -189,132 +189,242 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="pylookyloo-overview.html">PyLookyloo</a></li>
-    <li><a href="pylookyloo-commands.html">Commands</a></li>
+    <li><a href="contributing.html">Contributing to Lookyloo</a></li>
+    <li><a href="contributor-guide.html">Contributor Guide</a></li>
+    <li><a href="contributor-git.html">Using Git</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/joaedwar/docs/modules/ROOT/pages/pylookyloo-commands.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/joaedwar/docs/modules/ROOT/pages/contributor-git.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">PyLookyloo Commands</h1>
-<div id="preamble">
+<h1 class="page">Using Git</h1>
+<div class="sect1">
+<h2 id="_install_git"><a class="anchor" href="#_install_git"></a>Install Git</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>You can use the <code>lookyloo</code> command to enqueue a URL.</p>
+<p>link:https://git-scm.com/downloads(Download Git)</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_git"><a class="anchor" href="#_configuring_git"></a>Configuring Git</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you have Git installed, set up your Git account.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open <strong>Terminal</strong></p>
+</li>
+<li>
+<p>Set your name and email</p>
+</li>
+</ol>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">usage: lookyloo [-h] [--url URL] --query QUERY
-
-Enqueue a URL on Lookyloo.
-
-optional arguments:
-  -h, --help     show this help message and exit
-  --url URL      URL of the instance (defaults to https://lookyloo.circl.lu/,
-                 the public instance).
-  --query QUERY  URL to enqueue.
-  --listing      Should the report be publicly listed.
-  --redirects    Get redirects for a given capture.
-
-The response is the permanent URL where you can see the result of the capture.</code></pre>
+<pre class="highlightjs highlight"><code>$ git config --global user.name "&lt;your-name&gt;"
+$ git config --global user.email "&lt;your-email&gt;"</code></pre>
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The email you specify should be the same one found in your [email settings](<a href="https://help.github.com/articles/adding-an-email-address-to-your-github-account/" class="bare">https://help.github.com/articles/adding-an-email-address-to-your-github-account/</a>). To keep your email address hidden, see [Keeping your email address private](<a href="https://help.github.com/articles/keeping-your-email-address-private" class="bare">https://help.github.com/articles/keeping-your-email-address-private</a>).
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set your Git defaults</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ git config --global pull.rebase true
+$ git config --global push.default simple</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fork_the_upstream_github_repository"><a class="anchor" href="#_fork_the_upstream_github_repository"></a>Fork the upstream (GitHub) repository</h3>
+<div class="paragraph">
+<p>Fork the upstream repository to create a copy under your own GitHub ID. Clone your forked repository to bring your GitHub repository files to your local machine. Your forked repository is now the <code>origin</code> repository for your local files.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a browser and navigate to the upstream repository located at <a href="https://github.com/Lookyloo/docs" class="bare">https://github.com/Lookyloo/docs</a></p>
+</li>
+<li>
+<p>Click <strong>Fork</strong> located in the upper right under your profile icon.</p>
+</li>
+<li>
+<p>Select your user account for the location of the forked repository. This creates your own copy of the repository under your own GitHub ID.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For more information on <a href="https://help.github.com/articles/fork-a-repo/">forking</a> and <a href="https://help.github.com/articles/cloning-a-repository/">cloning</a>, consult the official <a href="https://help.github.com/">documentation</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_your_ssh_keys_to_github"><a class="anchor" href="#_add_your_ssh_keys_to_github"></a>Add your SSH keys to GitHub</h3>
+<div class="paragraph">
+<p>If you choose to use the SSH address for your clones, you will need to add an SSH Key to GitHub first.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <strong>Terminal</strong>.</p>
+</li>
+<li>
+<p>Check to see if you have a public SSH key:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code><code>`
+$ ls ~/.ssh/
+</code>`</code>
+3. If you do not have a key, generate one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ ssh-keygen -t rsa -C "&lt;your-email&gt;"</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your key in an editor:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ cd ~/.ssh/
+$ vi id_rsa.pub</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy the contents of the file to your clipboard.</p>
+</li>
+<li>
+<p>Visit <a href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
+</li>
+<li>
+<p>Click <strong>New SSH Key</strong>.</p>
+</li>
+<li>
+<p>Name your key and paste the contents of your key file.</p>
+</li>
+<li>
+<p>Click <strong>Add SSH Key</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_updating_repository_urls"><a class="anchor" href="#_updating_repository_urls"></a>Updating repository URLs</h3>
+<div class="paragraph">
+<p>If the upstream repository is moved, you can change the downstream URL by using the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ git remote set-url upstream https://github.com/&lt;new upstream&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the following command any time you need to fetch the latest source code locally:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ git fetch upstream</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_accessing_another_writers_unmerged_commits"><a class="anchor" href="#_accessing_another_writers_unmerged_commits"></a>Accessing another writer’s unmerged commits</h3>
+<div class="paragraph">
+<p>This is the process you can use if you need commits another writer has submitted that is not yet merged.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check out a new topic branch from upstream/master as you normally do.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ git fetch upstream
+$ git checkout -b &lt;new-topic-branch&gt; upstream/master</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you have not yet added that writer’s remote repository, add it now.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ git remote add -f &lt;user&gt; git@github.com:&lt;user&gt;/strimzi-kafka-operator.git</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Rebase to bring in the changes that are in that user’s outstanding
+<code>origin/&lt;merge-request-branch&gt;</code> branch.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>$ git rebase &lt;user&gt;/&lt;merge-request-branch&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_learn_more"><a class="anchor" href="#_learn_more"></a>Learn more</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Or as a library</p>
+<p><a href="https://git-scm.com">Official Git Site</a></p>
+</li>
+<li>
+<p><a href="http://help.github.com">GitHub Help</a></p>
 </li>
 </ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">from pylookyloo import Lookyloo
-
-lookyloo = Lookyloo('https://url.of.lookyloo.instance')
-if lookyloo.is_up:  # to make sure it is up and reachable
-	permaurl = lookyloo.enqueue('http://url.to.lookup')</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can add the following paramaters to the enqueue function:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>    quiet      Return only the uuid
-    listing    Should the report be publicly listed.
-    user_agent Set your own user agent
-    Depth      Set the analysis depth. Can not be more than in config</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_redirects"><a class="anchor" href="#_redirects"></a>Redirects</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To retrieve the redirects (json)</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    redirect = lookyloo.get_redirects(uuid)</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_cookies"><a class="anchor" href="#_cookies"></a>Cookies</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To retrieve the cookies (json)</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    cookies = lookyloo.get_cookies(uuid)</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_screenshot"><a class="anchor" href="#_screenshot"></a>Screenshot</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To retrieve the screenshot (raw)</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    screen = lookyloo.get_screenshot(uuid)</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_html"><a class="anchor" href="#_html"></a>HTML</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To retrieve the HTML (raw)</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    html = lookyloo.get_html(uuid)</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_complete_capture"><a class="anchor" href="#_complete_capture"></a>Complete Capture</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To retrieve the complete capture (raw)</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    capture = lookyloo.get_complete_capture(uuid)</code></pre>
-</div>
 </div>
 </div>
 </div>
