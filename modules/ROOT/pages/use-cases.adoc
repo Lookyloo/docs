@@ -3,15 +3,12 @@
 
 Using Lookyloo, you can extract data from a webpage so it can be assessed and visualized.
 
-Data obtained by web scraping can be used in a variety of ways.  For example, data is collected from various video sharing sites and then collated on one site so that you can compare, like, and comment on content.
-
-
-*Use Lookyloo to:*
+*Use Lookyloo to*:
 
 * Observe who has access to your information when you visit a site
 * Identify malicious activity
 * Recognize phishing activity
-* Pinpoint lapses in security and flag suspicious behavior 
+* Pinpoint lapses in security and flag suspicious behavior
 
 
 Lookyloo can be used by various professionals, including...
@@ -20,25 +17,41 @@ Lookyloo can be used by various professionals, including...
 
 As a *journalist*, I can uses Lookyloo to ...
 
-* Do this thing
-* Do that thing 
+* investigate privacy violations
+* investigate ad tech
+* take snapshots of websites at a specific time, from a specific source
 
-
-== Legal Professionals 
+== Legal Professionals
 
 As a *legal professional*, I can use Lookyloo to ...
+
+* investigate potential privacy violations in websites (GDPR)
+* investigate and validate 3rd party components
+* investigate ad tech
 
 
 == Site Administrators
 
 As a *site administrator*, I can use Lookyloo to ...
 
+* understand how the website developed by a 3rd party is working
+* figure out potential bottlenecks in websites
+* visualize 3rd party components and their interactions
 
 == Forensic Investigators
 
 As a *forensic investigator*, I can use Lookyloo to ...
 
+* understand how a malicious website is tricking users
+* understand techniques used by attackers to create phishing websites
+* gather indicators (IP addresses, domain names) in order to take down malicious content on websites
+* take a snapshot of a website for further investigations
+* detect potential privacy violations and security issues
 
 == Educators
 
 As an *educator*, I can use Lookyloo to ...
+
+* explain how websites work
+* show how different concepts (redirects, CNAMEs, iFrames, cookies) interact together on modern websites
+* introduce beginners to web development
