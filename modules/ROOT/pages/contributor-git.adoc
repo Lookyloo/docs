@@ -20,7 +20,7 @@ $ git config --global user.email "<your-email>"
 
 TIP: The email you specify should be the same one found in your [email settings](https://help.github.com/articles/adding-an-email-address-to-your-github-account/). To keep your email address hidden, see [Keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private).
 
-
++
 3. Set your Git defaults
 
 ```

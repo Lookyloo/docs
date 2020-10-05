@@ -4,8 +4,9 @@
 
 Before you install Lookyloo, you should be familiar with the following:
 
-*xref:concepts.adoc[Lookyloo Concepts]
-*xref:capture-cookies.adoc[Cookies settings]
+* xref:concepts.adoc[Lookyloo Concepts]
+
+* xref:capture-cookies.adoc[Cookies settings]
 
 
 == Dependencies
