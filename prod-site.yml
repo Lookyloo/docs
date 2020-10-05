@@ -14,7 +14,7 @@ output:
 
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: https://github.com/Lookyloo/docs/blob/main/ui-bundle.zip
     snapshot: true
   supplemental_files:
     # Okay, that's super weird, but basically, the build script creates files in memory with the content in "contents"
