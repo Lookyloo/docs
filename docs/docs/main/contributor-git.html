@@ -160,8 +160,8 @@
     <li><a href="contributor-git.html">Using Git</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/joaedwar/docs/modules/ROOT/pages/contributor-git.adoc">Edit this Page</a></div>
-</div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/contributor-git.adoc">Edit this Page</a></div>
+  </div>
   <div class="content">
 <article class="doc">
 <h1 class="page">Using Git</h1>
@@ -264,35 +264,35 @@ For more information on <a href="https://help.github.com/articles/fork-a-repo/">
 </li>
 <li>
 <p>Check to see if you have a public SSH key:</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><code><code>`
-$ ls ~/.ssh/
-</code>`</code>
-3. If you do not have a key, generate one:</p>
-</div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>$ ssh-keygen -t rsa -C "&lt;your-email&gt;"</code></pre>
+<pre>````
+$ ls ~/.ssh/
+````</pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
+<li>
+<p>If you do not have a key, generate one:</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ ssh-keygen -t rsa -C "&lt;your-email&gt;"
+```</pre>
+</div>
+</div>
+</li>
 <li>
 <p>Open your key in an editor:</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>$ cd ~/.ssh/
-$ vi id_rsa.pub</code></pre>
+<pre>```
+$ cd ~/.ssh/
+$ vi id_rsa.pub
+```</pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Copy the contents of the file to your clipboard.</p>
 </li>
@@ -339,39 +339,37 @@ $ vi id_rsa.pub</code></pre>
 <ol class="arabic">
 <li>
 <p>Check out a new topic branch from upstream/master as you normally do.</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>$ git fetch upstream
-$ git checkout -b &lt;new-topic-branch&gt; upstream/master</code></pre>
+<pre>```
+$ git fetch upstream
+$ git checkout -b &lt;new-topic-branch&gt; upstream/master
+```</pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>If you have not yet added that writer’s remote repository, add it now.</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>$ git remote add -f &lt;user&gt; git@github.com:&lt;user&gt;/strimzi-kafka-operator.git</code></pre>
+<pre>```
+$ git remote add -f &lt;user&gt; git@github.com:&lt;user&gt;/strimzi-kafka-operator.git
+```</pre>
 </div>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Rebase to bring in the changes that are in that user’s outstanding
 <code>origin/&lt;merge-request-branch&gt;</code> branch.</p>
+<div class="literalblock">
+<div class="content">
+<pre>```
+$ git rebase &lt;user&gt;/&lt;merge-request-branch&gt;
+```</pre>
+</div>
+</div>
 </li>
 </ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>$ git rebase &lt;user&gt;/&lt;merge-request-branch&gt;</code></pre>
-</div>
 </div>
 </div>
 </div>
