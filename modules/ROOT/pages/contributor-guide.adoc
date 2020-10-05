@@ -18,11 +18,15 @@ Examples of behavior that contributes to creating a positive environment include
 * Being respectful of differing viewpoints and experiences
 * Gracefully accepting constructive criticism
 
+Please read our xref:code-conduct.adoc[Code of Conduct].
+
+
 == Before You Begin
 
 * link:https:[Get started] by installing and getting familiar with link:https://git-scm.com/doc[Git].
 * Use link:https:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] to contribute to Lookyloo documentation.
 * Refer to our link:https:[style guide] for guidance on formatting your documentation contributions.
+
 
 == General Information
 
@@ -61,74 +65,6 @@ Make a pull request (PR) to add content to the repository. When making a PR, ens
 * Associated Issue # and Issue title (if applicable)
 * Operating system you are using
 
-See link:https:[here] for more information on using Git and making pull requests.
-
-
-== Updating Documentation
-
-The documentation is written in the Asciidoc markup language and uses Antora. 
-
-The source documentation files are located in the `modules/ROOT/pages/` directory in the link:https://github.com/Lookyloo/lookyloo/issues[Lookyloo documentation repository].
-
-
-=== Prerequisites
-
-The following are required:
-
-* Install link:https://docs.antora.org[Antora].
-* Install link:https://asciidoctor.org/[AsciiDoctor].
-* Use link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc].
-
-=== Procedure
-To update existing documentation:
-
-. Checkout the branch you want to update, for example:
-
-     ```
-     git checkout main
-     ```
-. Ensure that your forked repository is in sync with the selected upstream repository:
-
-      ```
-      git fetch <lookyloo/docs>
-      ```
-      ```
-      git reset --hard <lookyloo/docs> main
-      ```
-. Checkout a new feature branch with the <Issue #> as the name, for example:
-
-       ```
-       git checkout -b Issue#123
-       ```
-. Make changes to the documentation.
-
-[NOTE]
-====
-To add a new module to the repository, add the module to the `/modules/ROOT/nav.adoc` file in the following format:
-
-`* xref:<module_filename.adoc>[<module title>]`.
-
-The number of asterisks (*) denotes the heading level.
-====
-
-. Preview the documentation on the branch.
-. Push the changes to your fork's feature branch.
-. Submit a pull request against to the dsignated repository.
-
-=== Previewing Documentation Changes
-
-.   To build a preview of the doc, run the command:
-
-       ```
-       antora local-site.yml && <your_preferred_browser> build/site/index.html
-       ```
-
-=== Rendering Documentation
-
-. Run the `./docs_build.sh` script.
-. Run `$<browser> index.html` to review the generated content.
-. Submit a pull request against the desired Lookyloo repository.
-
-
+See the xref:contributor-git.adoc[using Git documentation] for more information on using Git and making pull requests.
 
 

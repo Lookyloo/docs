@@ -1,0 +1,10 @@
+= Additions
+// need help with naming and understanding what should be included in this. 
+
+Lookyloo also works with the following :
+
+* link:https://github.com/Lookyloo/har2tree[Har2Tree]
+* link:https://github.com/Lookyloo/ScrapySplashWrapper[ScrapySplashWrapper]
+* link:https://github.com/Lookyloo/PySaneJS[PySaneJS]
+* link:https://github.com/Lookyloo/sanejs[sanejs]
+* link:https://github.com/Lookyloo/aquarium[Aquarium]

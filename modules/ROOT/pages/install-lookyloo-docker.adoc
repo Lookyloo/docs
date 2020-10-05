@@ -16,7 +16,7 @@ Docker Compose and the included service definition in [docker-compose.yml](docke
 docker-compose up
 ```
 
-After building and startup is complete lookyloo should be available at [http://localhost:5000/](http://localhost:5000/)
+After building and startup is complete lookyloo should be available at link:
+http://localhost:5000/[http://localhost:5000/].
 
-If you want to persist the data between different runs uncomment  the "volumes" definition in the last two lines of
-[docker-compose.yml](docker-compose.yml) and define a data storage directory in your Docker host system there.
+If you want to persist the data between different runs uncomment  the "volumes" definition in the last two lines of [docker-compose.yml](docker-compose.yml) and define a data storage directory in your Docker host system there.

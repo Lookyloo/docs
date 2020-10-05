@@ -8,10 +8,4 @@ Lookyloo is a web interface that allows you to capture a website and then displa
 Use Lookyloo to map the journey a website page takes - from entering its intial URL address to the various redirects to third-party affiliations. You can parse the data from the web capture to get a better understanding of what and who has access to information you may be unwittingly sharing.
 
 
-== Lookyloo capture in Action
 
-Nodes -
-
-Connections -
-
-There will be an image here that explains the process

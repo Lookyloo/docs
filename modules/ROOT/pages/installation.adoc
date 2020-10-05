@@ -5,7 +5,6 @@
 Before you install Lookyloo, you should be familiar with the following:
 
 *xref:concepts.adoc[Lookyloo Concepts]
-*xref:install-dependencies.adoc[Components installation] 
 *xref:capture-cookies.adoc[Cookies settings]
 
 
@@ -18,7 +17,6 @@ Lookyloo requires the following to install:
 * link:https://redis.io/[Redis]: An open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 
 
-== Considerations
 
  
 

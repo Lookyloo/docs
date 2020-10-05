@@ -27,7 +27,7 @@ In L.A. usually the lookyloos cause more accidents by not paying full attention 
 
 == Learn More
 
-Read through our documentation for more infomation. Please also visit our link:https://github.com/Lookyloo/Lookyloo[GitHub repo] and join our link:https://github.com/Lookyloo[organization].
+Read through our documentation for more information. Please also visit our link:https://github.com/Lookyloo/Lookyloo[GitHub repo] and join our link:https://github.com/Lookyloo[organization].
 
 
 == Follow us

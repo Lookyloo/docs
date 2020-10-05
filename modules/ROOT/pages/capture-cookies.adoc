@@ -1,5 +1,5 @@
 [id="capture-cookies"]
-= Capture Cookies
+= Capture with Cookies
 
 If you want to capture a website as if you were logged in, you need to pass your sessions cookies.
 

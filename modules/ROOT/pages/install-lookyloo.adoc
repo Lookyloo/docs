@@ -3,8 +3,43 @@
 
 [IMPORTANT]
 ====
-Poetry, Redis, and Splash, must be installed before you begin installation of Lookyloo. For information on installing these components see the documentation on xref:install-dependencies.adoc[installing dependencies].
+Poetry, Redis, and Splash, must be installed before you begin installation of Lookyloo. To lean more about Lookyloo dependencies, please see the xref:installation[installation.adoc] page.
 ====
+
+
+== Install Lookyloo Dependencies
+
+=== Install Poetry
+
+Use link:https://github.com/python-poetry/poetry/#installation[Poetry]
+
+[IMPORTANT]
+====
+Requires Python 3.7 or higher.
+====
+
+=== Install Splash
+
+You will need a running Splash instance, preferably on link:https://splash.readthedocs.io/en/stable/install.html[Docker].
+
+```bash
+sudo apt install docker.io
+sudo docker pull scrapinghub/splash
+```
+
+=== Install Redis
+
+NOTE: Redis should be installed from the source, and the repository should be in the same directory as the one you will be cloning Lookyloo in to.
+
+```bash
+git clone https://github.com/antirez/redis.git
+cd redis
+git checkout 6.0
+make
+cd ..
+```
+
+
 
 == Prerequisites
 * Poetry is installed.
