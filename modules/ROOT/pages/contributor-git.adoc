@@ -48,20 +48,23 @@ If you choose to use the SSH address for your clones, you will need to add an SS
 1. Open the *Terminal*.
 2. Check to see if you have a public SSH key:
 
-````
-$ ls ~/.ssh/
-````
+  ````
+  $ ls ~/.ssh/
+  ````
+
 3. If you do not have a key, generate one:
 
-```
-$ ssh-keygen -t rsa -C "<your-email>"
-```
+  ```
+  $ ssh-keygen -t rsa -C "<your-email>"
+  ```
+
 4. Open your key in an editor:
 
-```
-$ cd ~/.ssh/
-$ vi id_rsa.pub
-```
+  ```
+  $ cd ~/.ssh/
+  $ vi id_rsa.pub
+  ```
+
 5. Copy the contents of the file to your clipboard.
 6. Visit link:https://github.com/settings/keys[https://github.com/settings/keys]
 7. Click **New SSH Key**.
@@ -91,23 +94,23 @@ This is the process you can use if you need commits another writer has submitted
 
 1. Check out a new topic branch from upstream/master as you normally do.
 
-```
-$ git fetch upstream
-$ git checkout -b <new-topic-branch> upstream/master
-```
+  ```
+  $ git fetch upstream
+  $ git checkout -b <new-topic-branch> upstream/master
+  ```
 
 2. If you have not yet added that writer’s remote repository, add it now.
 
-```
-$ git remote add -f <user> git@github.com:<user>/strimzi-kafka-operator.git
-```
+  ```
+  $ git remote add -f <user> git@github.com:<user>/strimzi-kafka-operator.git
+  ```
 
 3. Rebase to bring in the changes that are in that user’s outstanding
  `origin/<merge-request-branch>` branch.
 
-```
-$ git rebase <user>/<merge-request-branch>
-```
+  ```
+  $ git rebase <user>/<merge-request-branch>
+  ```
 
 
 == Learn more
