@@ -1,6 +1,6 @@
 site:
   title: Lookyloo
-  url: https://www.lookyloo.eu/docs/
+  url: https://www.lookyloo.eu/
   start_page: docs::index
   robots: allow
 
