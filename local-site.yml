@@ -14,7 +14,7 @@ output:
 
 ui:
   bundle:
-    url: https://github.com/lookyloo/docs/blob/master/ui-bundle.zip?raw=true
+    url: https://github.com/Lookyloo/docs/blob/main/ui-bundle.zip?raw=true
     snapshot: true
   supplemental_files:
     # Okay, that's super weird, but basically, the build script creates files in memory with the content in "contents"
