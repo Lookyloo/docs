@@ -2,17 +2,17 @@
 
 = Before You Begin
 
-Before you install Lookyloo, you should be familiar with the following:
 
-* xref:concepts.adoc[Lookyloo Concepts]
+The install guide assumes that you will be running Lookyloo on a unix based system,
+preferably Ubuntu 20.04 or more recent.
+It is also assumed that the user with whom you will proceed to the installation is a sudoer.
 
-* xref:capture-cookies.adoc[Cookies settings]
+There are a few different methods to install Lookyloo:
 
+* xref:install-lookyloo.adoc[Single-user], on your computer
+* xref:install-lookyloo-production.adoc[Multi-user], on a server
+* xref:install-lookyloo-docker.adoc[Fully dockerized]
 
-== Dependencies
-
-Lookyloo requires the following to install:
-
-* link:https://python-poetry.org/[Poetry]: A tool to handle dependency installation as well as building and packaging of Python packages.
-* link:https://splash.readthedocs.io/en/stable/[Splash]: A javascript rendering service with an HTTP API. It's a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.
-* link:https://redis.io/[Redis]: An open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+[NOTE]
+  There will be a usable docker based install guide soon, but the configuration
+  files aren't fully funtional yet.

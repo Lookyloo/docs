@@ -1,4 +1,26 @@
 = Usage
 
+== Before You Begin
+
+Before you start using lookyloo, you should be familiar with a few xref:concepts.adoc[concepts],
+otherwise it won't make much sense.
+
+== How to use Lookyloo
+
 To learn more about using Lookyloo read through our documentation.
-// Will definitely add more content to this page.
+
+[IMPORTANT]
+  Work in progress - you may have noticed.
+
+=== Capture a website
+
+* How to xref:capture-cookies.adoc[get a cookie] in order to initiate a new capture with it.
+
+=== View the capture of a website as a phylogenetic tree
+
+// describe the different parts of the tree view
+// explain the left menu
+
+=== Hostnode popup
+
+// expain what we see
