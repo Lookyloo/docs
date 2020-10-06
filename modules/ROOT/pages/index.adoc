@@ -10,9 +10,6 @@ With Lookyloo you can dissect a website while it is in motion.
 
 Lookyloo is a web interface that captures a webpage and then displays a tree of the domains, that call each other.
 
-
-
-
 == What is a Lookyloo?
 
 Per the definition on link:https://www.urbandictionary.com/define.php?term=lookyloo[Urban Dictionary]:
@@ -24,6 +21,9 @@ Per the definition on link:https://www.urbandictionary.com/define.php?term=looky
 Same as Looky Lou; often spelled as Looky-loo (hyphen) or lookylou.
 In L.A. usually the lookyloos cause more accidents by not paying full attention to what is ahead of them.
 
+== What is Lookyloo?
+
+More seriously, xref:lookyloo-explained.adoc[have a look] at what lookyloo is, and at some xref:use-cases.adoc[use cases].
 
 == Learn More
 
