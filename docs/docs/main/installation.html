@@ -163,43 +163,39 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">Before You Begin</h1>
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
-<p>Before you install Lookyloo, you should be familiar with the following:</p>
+<p>The install guide assumes that you will be running Lookyloo on a unix based system,
+preferably Ubuntu 20.04 or more recent.
+It is also assumed that the user with whom you will proceed to the installation is a sudoer.</p>
+</div>
+<div class="paragraph">
+<p>There are a few different methods to install Lookyloo:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="concepts.html" class="page">Lookyloo Concepts</a></p>
+<p><a href="install-lookyloo.html" class="page">Single-user</a>, on your computer</p>
 </li>
 <li>
-<p><a href="capture-cookies.html" class="page">Cookies settings</a></p>
+<p><a href="install-lookyloo-production.html" class="page">Multi-user</a>, on a server</p>
+</li>
+<li>
+<p><a href="install-lookyloo-docker.html" class="page">Fully dockerized</a></p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_dependencies"><a class="anchor" href="#_dependencies"></a>Dependencies</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Lookyloo requires the following to install:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://python-poetry.org/">Poetry</a>: A tool to handle dependency installation as well as building and packaging of Python packages.</p>
-</li>
-<li>
-<p><a href="https://splash.readthedocs.io/en/stable/">Splash</a>: A javascript rendering service with an HTTP API. It&#8217;s a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.</p>
-</li>
-<li>
-<p><a href="https://redis.io/">Redis</a>: An open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+  There will be a usable docker based install guide soon, but the configuration
+  files aren&#8217;t fully funtional yet.
+</td>
+</tr>
+</table>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
