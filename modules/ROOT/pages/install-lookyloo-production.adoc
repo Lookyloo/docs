@@ -5,51 +5,88 @@
 [IMPORTANT]
 Please follow the xref:install-lookyloo.adoc[default installation guide] first.
 
-== Reverse Proxy (Nginx)
+== Reverse proxy (nginx)
+
+The relevant sample configuration file is:
+
+  `etc/nginx/sites-available/lookyloo`
+
+Modify `server_name` to point to the domain or IP you want to use for Lookyloo.
+
+If you didn't modify `website_listen_ip` and `website_listen_port` in `config/generic.json`,
+the rest of this file will work out of the box. Otherwise, adapt the file accordingly.
+
+Copy the file to the expected directory for nginx:
 
 ```bash
-pip install uwsgi
+cp etc/nginx/sites-available/lookyloo /etc/nginx/sites-available/
 ```
 
-== Configuration Files
-
-You have to configure the two following files:
-
-* `etc/nginx/sites-available/lookyloo`
-* `etc/systemd/system/lookyloo.service`
-
-Copy them to the appropriate directories, and run the following command:
-```bash
-sudo ln -s /etc/nginx/sites-available/lookyloo /etc/nginx/sites-enabled
-```
-
-If needed, remove the default site
+Optionally, you can remove the default site:
 ```bash
 sudo rm /etc/nginx/sites-enabled/default
 ```
 
-Make sure everything is working:
+Enable the website, check and restart nginx:
 
 ```bash
-sudo systemctl start lookyloo
-sudo systemctl enable lookyloo
+sudo ln -s /etc/nginx/sites-available/lookyloo /etc/nginx/sites-enabled
 sudo nginx -t
 # If it is cool:
 sudo service nginx restart
 ```
 
-And you can open ```http://<IP-or-domain>/```
+== Systemd service
 
-Now, you should configure
-link:https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04[TLS (let's encrypt and so on)]
+The relevant sample configuration file is:
 
+  `etc/systemd/system/lookyloo.service.sample`
+
+In this one, you will need to edit the file accordingly to your configuration:
+
+* `User`: system user used to install lookyloo
+* `Group`: group of the user used to install lookyloo
+* `WorkingDirectory`: path to the directory where you cloned the repository
+* `Environment`: (Skip it if you installed poetry as root) path to the directory where the `poetry`
+  executable is. It should be: `PATH=<user home directory>/.local/bin`.
+
+Copy the file to the expected directory:
+
+```bash
+cp etc/systemd/system/lookyloo.service.sample /etc/systemd/system/lookyloo.service
+sudo systemctl daemon-reload
+```
+
+Start, and check the status of the systemd service:
+
+```bash
+sudo systemctl start lookyloo
+sudo systemctl status lookyloo
+
+```
+
+If everything is fine, enable the service so it automatically starts on reboot:
+
+```bash
+sudo systemctl enable lookyloo
+```
 
 == Multi-users App
 
-Use aquarium for a reliable multi-users app
+If you expect to have multiple users of Lookyloo at the same time, it is strongly recommended to use
+link:https://github.com/Lookyloo/aquarium[aquarium].
 
-Aquarium is a haproxy + splash bundle that will allows Lookyloo to be used by more than one user at a time.
+Aquarium is a haproxy + splash bundle that will allow to capture multiple websites at the same time with
+Lookyloo, making it more reliable for concurrent users.
 
-The initial version of the project was created by link:https://github.com/TeamHG-Memex/aquarium[TeamHG-Memex], but we have a link:https://github.com/Lookyloo/aquarium[dedicated repository] that fits our needs better.
+Follow the link:https://github.com/Lookyloo/aquarium#usage[documentation] if you want to use it.
 
-Follow the link:https://github.com/Lookyloo/aquarium/blob/master/README.rst[documentation] if you want to use it.
+The initial version of the project was created by link:https://github.com/TeamHG-Memex/aquarium[TeamHG-Memex],
+but our link:https://github.com/Lookyloo/aquarium[dedicated repository] fits our needs better.
+
+== Final remarks
+
+If everything above went fine, you can connect to lookyloo in your browser: ```http://<IP-or-domain-in-nginx-config>/```
+
+You probably want to enable TLS on the website. The easiest way is to use Let's Encrypt, and Digital Ocean has
+link:https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04[a great guide] for Ubuntu 20.04.
