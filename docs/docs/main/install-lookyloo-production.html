@@ -181,41 +181,33 @@ Please follow the <a href="install-lookyloo.html" class="page">default installat
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reverse_proxy_nginx"><a class="anchor" href="#_reverse_proxy_nginx"></a>Reverse Proxy (Nginx)</h2>
+<h2 id="_reverse_proxy_nginx"><a class="anchor" href="#_reverse_proxy_nginx"></a>Reverse proxy (nginx)</h2>
 <div class="sectionbody">
-<div class="listingblock">
+<div class="paragraph">
+<p>The relevant sample configuration file is:</p>
+</div>
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip install uwsgi</code></pre>
+<pre>`etc/nginx/sites-available/lookyloo`</pre>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_configuration_files"><a class="anchor" href="#_configuration_files"></a>Configuration Files</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You have to configure the two following files:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>etc/nginx/sites-available/lookyloo</code></p>
-</li>
-<li>
-<p><code>etc/systemd/system/lookyloo.service</code></p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
-<p>Copy them to the appropriate directories, and run the following command:</p>
+<p>Modify <code>server_name</code> to point to the domain or IP you want to use for Lookyloo.</p>
+</div>
+<div class="paragraph">
+<p>If you didn&#8217;t modify <code>website_listen_ip</code> and <code>website_listen_port</code> in <code>config/generic.json</code>,
+the rest of this file will work out of the box. Otherwise, adapt the file accordingly.</p>
+</div>
+<div class="paragraph">
+<p>Copy the file to the expected directory for nginx:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo ln -s /etc/nginx/sites-available/lookyloo /etc/nginx/sites-enabled</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp etc/nginx/sites-available/lookyloo /etc/nginx/sites-available/</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If needed, remove the default site</p>
+<p>Optionally, you can remove the default site:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -223,23 +215,74 @@ Please follow the <a href="install-lookyloo.html" class="page">default installat
 </div>
 </div>
 <div class="paragraph">
-<p>Make sure everything is working:</p>
+<p>Enable the website, check and restart nginx:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl start lookyloo
-sudo systemctl enable lookyloo
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo ln -s /etc/nginx/sites-available/lookyloo /etc/nginx/sites-enabled
 sudo nginx -t
 # If it is cool:
 sudo service nginx restart</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_systemd_service"><a class="anchor" href="#_systemd_service"></a>Systemd service</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>And you can open <code><code><a href="http://&lt;IP-or-domain&gt;/" class="bare">http://&lt;IP-or-domain&gt;/</a></code></code></p>
+<p>The relevant sample configuration file is:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>`etc/systemd/system/lookyloo.service.sample`</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Now, you should configure
-<a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04">TLS (let&#8217;s encrypt and so on)</a></p>
+<p>In this one, you will need to edit the file accordingly to your configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>User</code>: system user used to install lookyloo</p>
+</li>
+<li>
+<p><code>Group</code>: group of the user used to install lookyloo</p>
+</li>
+<li>
+<p><code>WorkingDirectory</code>: path to the directory where you cloned the repository</p>
+</li>
+<li>
+<p><code>Environment</code>: (Skip it if you installed poetry as root) path to the directory where the <code>poetry</code>
+executable is. It should be: <code>PATH=&lt;user home directory&gt;/.local/bin</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Copy the file to the expected directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp etc/systemd/system/lookyloo.service.sample /etc/systemd/system/lookyloo.service
+sudo systemctl daemon-reload</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Start, and check the status of the systemd service:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl start lookyloo
+sudo systemctl status lookyloo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If everything is fine, enable the service so it automatically starts on reboot:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable lookyloo</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -247,16 +290,31 @@ sudo service nginx restart</code></pre>
 <h2 id="_multi_users_app"><a class="anchor" href="#_multi_users_app"></a>Multi-users App</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use aquarium for a reliable multi-users app</p>
+<p>If you expect to have multiple users of Lookyloo at the same time, it is strongly recommended to use
+<a href="https://github.com/Lookyloo/aquarium">aquarium</a>.</p>
 </div>
 <div class="paragraph">
-<p>Aquarium is a haproxy + splash bundle that will allows Lookyloo to be used by more than one user at a time.</p>
+<p>Aquarium is a haproxy + splash bundle that will allow to capture multiple websites at the same time with
+Lookyloo, making it more reliable for concurrent users.</p>
 </div>
 <div class="paragraph">
-<p>The initial version of the project was created by <a href="https://github.com/TeamHG-Memex/aquarium">TeamHG-Memex</a>, but we have a <a href="https://github.com/Lookyloo/aquarium">dedicated repository</a> that fits our needs better.</p>
+<p>Follow the <a href="https://github.com/Lookyloo/aquarium#usage">documentation</a> if you want to use it.</p>
 </div>
 <div class="paragraph">
-<p>Follow the <a href="https://github.com/Lookyloo/aquarium/blob/master/README.rst">documentation</a> if you want to use it.</p>
+<p>The initial version of the project was created by <a href="https://github.com/TeamHG-Memex/aquarium">TeamHG-Memex</a>,
+but our <a href="https://github.com/Lookyloo/aquarium">dedicated repository</a> fits our needs better.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_final_remarks"><a class="anchor" href="#_final_remarks"></a>Final remarks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If everything above went fine, you can connect to lookyloo in your browser: <code><code><a href="http://&lt;IP-or-domain-in-nginx-config&gt;/" class="bare">http://&lt;IP-or-domain-in-nginx-config&gt;/</a></code></code></p>
+</div>
+<div class="paragraph">
+<p>You probably want to enable TLS on the website. The easiest way is to use Let&#8217;s Encrypt, and Digital Ocean has
+<a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04">a great guide</a> for Ubuntu 20.04.</p>
 </div>
 </div>
 </div>
