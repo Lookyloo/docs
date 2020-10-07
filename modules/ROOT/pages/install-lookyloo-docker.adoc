@@ -1,5 +1,9 @@
 = Run Lookyloo with a Simple Docker Setup
 
+[IMPORTANT]
+This documentation is currently non-functional, and the docker files need to be updated.
+See link:https://github.com/Lookyloo/lookyloo/issues/94[this issue] for more details.
+
 == Dockerfile
 
 The repository includes a [Dockerfile](Dockerfile) for building a containerized instance of the app.
