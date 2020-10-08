@@ -9,7 +9,7 @@ Please follow the xref:install-lookyloo.adoc[default installation guide] first.
 
 The relevant sample configuration file is:
 
-  `etc/nginx/sites-available/lookyloo`
+  etc/nginx/sites-available/lookyloo
 
 Modify `server_name` to point to the domain or IP you want to use for Lookyloo.
 
@@ -18,58 +18,101 @@ the rest of this file will work out of the box. Otherwise, adapt the file accord
 
 Copy the file to the expected directory for nginx:
 
-```bash
+[source, bash]
+----
 cp etc/nginx/sites-available/lookyloo /etc/nginx/sites-available/
-```
+----
 
 Optionally, you can remove the default site:
-```bash
+[source, bash]
+----
 sudo rm /etc/nginx/sites-enabled/default
-```
+----
 
 Enable the website, check and restart nginx:
 
-```bash
+[source, bash]
+----
 sudo ln -s /etc/nginx/sites-available/lookyloo /etc/nginx/sites-enabled
 sudo nginx -t
 # If it is cool:
 sudo service nginx restart
-```
+----
 
 == Systemd service
 
+=== Adapt the confirguration file to your system
+
 The relevant sample configuration file is:
 
-  `etc/systemd/system/lookyloo.service.sample`
+  etc/systemd/system/lookyloo.service.sample
 
 In this one, you will need to edit the file accordingly to your configuration:
 
 * `User`: system user used to install lookyloo
 * `Group`: group of the user used to install lookyloo
 * `WorkingDirectory`: path to the directory where you cloned the repository
-* `Environment`: (Skip it if you installed poetry as root) path to the directory where the `poetry`
-  executable is. It should be: `PATH=<user home directory>/.local/bin`.
+* `Environment`: Path to the directory where the `poetry` executable is.
+  You can find it by using `whereis`:
++
+[source, bash]
+----
+$ whereis poetry
+poetry: /home/lookyloo/.local/bin/poetry
+----
++
+In this case, you will use: `/home/lookyloo/.local/bin`.
+If you installed poetry as root, it might be `/usr/local/bin` or even `/usr/bin`
++
+[IMPORTANT]
+Always make sure you have `:/usr/bin` at the end. Otherwise, the service may not be able to find the `python3` executable.
+
+In the end, the service file should look something like that:
+
+[source, ini]
+----
+[Unit]
+Description=uWSGI instance to serve lookyloo
+After=network.target
+
+[Service]
+User=lookyloo
+Group=lookyloo
+Type=forking
+WorkingDirectory=/home/lookyloo/gits/lookyloo
+Environment="PATH=/home/lookyloo/.local/bin:/usr/bin"
+ExecStart=/bin/bash -c "exec poetry run start"
+ExecStop=/bin/bash -c "exec poetry run stop"
+
+
+[Install]
+WantedBy=multi-user.target
+----
+
+=== Set it up
 
 Copy the file to the expected directory:
 
-```bash
+[source, bash]
+----
 cp etc/systemd/system/lookyloo.service.sample /etc/systemd/system/lookyloo.service
 sudo systemctl daemon-reload
-```
+----
 
 Start, and check the status of the systemd service:
 
-```bash
+[source, bash]
+----
 sudo systemctl start lookyloo
 sudo systemctl status lookyloo
-
-```
+----
 
 If everything is fine, enable the service so it automatically starts on reboot:
 
-```bash
+[source, bash]
+----
 sudo systemctl enable lookyloo
-```
+----
 
 == Multi-users App
 
