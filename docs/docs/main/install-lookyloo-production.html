@@ -188,7 +188,7 @@ Please follow the <a href="install-lookyloo.html" class="page">default installat
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>`etc/nginx/sites-available/lookyloo`</pre>
+<pre>etc/nginx/sites-available/lookyloo</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -230,12 +230,14 @@ sudo service nginx restart</code></pre>
 <div class="sect1">
 <h2 id="_systemd_service"><a class="anchor" href="#_systemd_service"></a>Systemd service</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_adapt_the_confirguration_file_to_your_system"><a class="anchor" href="#_adapt_the_confirguration_file_to_your_system"></a>Adapt the confirguration file to your system</h3>
 <div class="paragraph">
 <p>The relevant sample configuration file is:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>`etc/systemd/system/lookyloo.service.sample`</pre>
+<pre>etc/systemd/system/lookyloo.service.sample</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -253,11 +255,59 @@ sudo service nginx restart</code></pre>
 <p><code>WorkingDirectory</code>: path to the directory where you cloned the repository</p>
 </li>
 <li>
-<p><code>Environment</code>: (Skip it if you installed poetry as root) path to the directory where the <code>poetry</code>
-executable is. It should be: <code>PATH=&lt;user home directory&gt;/.local/bin</code>.</p>
+<p><code>Environment</code>: Path to the directory where the <code>poetry</code> executable is.
+You can find it by using <code>whereis</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ whereis poetry
+poetry: /home/lookyloo/.local/bin/poetry</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, you will use: <code>/home/lookyloo/.local/bin</code>.
+If you installed poetry as root, it might be <code>/usr/local/bin</code> or even <code>/usr/bin</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Always make sure you have <code>:/usr/bin</code> at the end. Otherwise, the service may not be able to find the <code>python3</code> executable.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>In the end, the service file should look something like that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Unit]
+Description=uWSGI instance to serve lookyloo
+After=network.target
+
+[Service]
+User=lookyloo
+Group=lookyloo
+Type=forking
+WorkingDirectory=/home/lookyloo/gits/lookyloo
+Environment="PATH=/home/lookyloo/.local/bin:/usr/bin"
+ExecStart=/bin/bash -c "exec poetry run start"
+ExecStop=/bin/bash -c "exec poetry run stop"
+
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_it_up"><a class="anchor" href="#_set_it_up"></a>Set it up</h3>
 <div class="paragraph">
 <p>Copy the file to the expected directory:</p>
 </div>
@@ -282,6 +332,7 @@ sudo systemctl status lookyloo</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable lookyloo</code></pre>
+</div>
 </div>
 </div>
 </div>
