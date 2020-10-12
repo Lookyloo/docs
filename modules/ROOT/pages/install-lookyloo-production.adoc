@@ -127,6 +127,66 @@ Follow the link:https://github.com/Lookyloo/aquarium#usage[documentation] if you
 The initial version of the project was created by link:https://github.com/TeamHG-Memex/aquarium[TeamHG-Memex],
 but our link:https://github.com/Lookyloo/aquarium[dedicated repository] fits our needs better.
 
+=== Adapt the service file to your system
+
+The relevant sample configuration file is:
+
+  etc/systemd/system/aquarium.service.sample
+
+In this one, you will need to edit the file accordingly to your configuration:
+
+* `WorkingDirectory`: path to the directory where you installed aquarium
++
+In this case, you will use: `/home/lookyloo/aquarium`.
++
+
+In the end, the service file should look something like that:
+
+[source, ini]
+----
+[Unit]
+Description=aquarium service with docker compose
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=forking
+RemainAfterExit=true
+WorkingDirectory=/home/lookyloo/aquarium
+ExecStart=/usr/bin/docker-compose up -d --remove-orphans
+ExecStop=/usr/bin/docker-compose down
+
+[Install]
+WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
+----
+
+=== Set it up
+
+Copy the file to the expected directory:
+
+[source, bash]
+----
+cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
+sudo systemctl daemon-reload
+----
+
+Start, and check the status of the systemd service:
+
+[source, bash]
+----
+sudo systemctl start aquarium
+sudo systemctl status aquarium
+----
+
+If everything is fine, enable the service so it automatically starts on reboot:
+
+[source, bash]
+----
+sudo systemctl enable aquarium
+----
+
 == Final remarks
 
 If everything above went fine, you can connect to lookyloo in your browser: ```http://<IP-or-domain-in-nginx-config>/```
