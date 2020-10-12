@@ -135,6 +135,8 @@ The relevant sample configuration file is:
 
 In this one, you will need to edit the file accordingly to your configuration:
 
+* `User`: system user used to install lookyloo
+* `Group`: group of the user used to install lookyloo
 * `WorkingDirectory`: path to the directory where you installed aquarium
 +
 In this case, you will use: `/home/lookyloo/aquarium`.
@@ -150,6 +152,8 @@ Requires=docker.service
 After=docker.service
 
 [Service]
+User=lookyloo
+Group=lookyloo
 Type=forking
 RemainAfterExit=true
 WorkingDirectory=/home/lookyloo/aquarium
@@ -163,6 +167,12 @@ WantedBy=multi-user.target
 ----
 
 === Set it up
+
+Add the user to docker group
+[source, bash]
+----
+sudo usermod -aG docker $USER
+----
 
 Copy the file to the expected directory:
 
