@@ -5,17 +5,17 @@ Using Lookyloo, you can extract data from a webpage so it can be assessed and vi
 
 *Use Lookyloo to*:
 
-* Observe who has access to your information when you visit a site
-* Identify malicious activity
-* Recognize phishing activity
-* Pinpoint lapses in security and flag suspicious behavior
+* observe who has access to your information when you visit a site
+* identify malicious activity
+* recognize phishing activity
+* pinpoint lapses in security and flag suspicious behavior
 
 
 Lookyloo can be used by various professionals, including...
 
 == Journalists
 
-As a *journalist*, I can uses Lookyloo to ...
+As a *journalist*, I can uses Lookyloo to:
 
 * investigate privacy violations
 * investigate ad tech
@@ -23,26 +23,26 @@ As a *journalist*, I can uses Lookyloo to ...
 
 == Legal Professionals
 
-As a *legal professional*, I can use Lookyloo to ...
+As a *legal professional*, I can use Lookyloo to:
 
 * investigate potential privacy violations in websites (GDPR)
-* investigate and validate 3rd party components
+* investigate and validate third party components
 * investigate ad tech
 
 
 == Site Administrators
 
-As a *site administrator*, I can use Lookyloo to ...
+As a *site administrator*, I can use Lookyloo to:
 
-* understand how the website developed by a 3rd party is working
+* understand how the website developed by a third party works
 * figure out potential bottlenecks in websites
-* visualize 3rd party components and their interactions
+* visualize third party components and their interactions
 
 == Forensic Investigators
 
-As a *forensic investigator*, I can use Lookyloo to ...
+As a *forensic investigator*, I can use Lookyloo to:
 
-* understand how a malicious website is tricking users
+* understand how a malicious website tricks users
 * understand techniques used by attackers to create phishing websites
 * gather indicators (IP addresses, domain names) in order to take down malicious content on websites
 * take a snapshot of a website for further investigations
@@ -50,7 +50,7 @@ As a *forensic investigator*, I can use Lookyloo to ...
 
 == Educators
 
-As an *educator*, I can use Lookyloo to ...
+As an *educator*, I can use Lookyloo to:
 
 * explain how websites work
 * show how different concepts (redirects, CNAMEs, iFrames, cookies) interact together on modern websites

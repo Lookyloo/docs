@@ -65,24 +65,24 @@ To update existing documentation:
 
 . Checkout the branch you want to update, for example:
 
-     ```
+     
      git checkout main
-     ```
+     
 . Ensure that your forked repository is in sync with the selected upstream repository:
 
-      ```
+     
       git fetch <lookyloo/docs>
-      ```
-      ```
+     
+     
       git reset --hard <lookyloo/docs> main
-      ```
+     
 . Checkout a new feature branch with the <Issue #> as the name, for example:
 
-       ```
+       
        git checkout -b Issue#123
-       ```
+      
 . Make changes to the documentation.
-
++
 [NOTE]
 ====
 To add a new module to the repository, add the module to the `/modules/ROOT/nav.adoc` file in the following format:
@@ -91,7 +91,7 @@ To add a new module to the repository, add the module to the `/modules/ROOT/nav.
 
 The number of asterisks (*) denotes the heading level.
 ====
-
++
 . Preview the documentation on the branch.
 . Push the changes to your fork's feature branch.
 . Submit a pull request against to the dsignated repository.
@@ -101,9 +101,9 @@ The number of asterisks (*) denotes the heading level.
 
 .   To build a preview of the doc, run the command:
 
-       ```
+       
        antora local-site.yml && <your_preferred_browser> build/site/index.html
-       ```
+       
 
 
 === Rendering Documentation

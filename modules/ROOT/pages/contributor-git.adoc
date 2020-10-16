@@ -3,7 +3,7 @@
 
 == Install Git
 
-* link:https://git-scm.com/downloads(Download Git)
+* link:https://git-scm.com/downloads[Download Git]
 
 
 == Configuring Git
@@ -12,17 +12,17 @@ Once you have Git installed, set up your Git account.
 
 1. Open **Terminal**
 2. Set your name and email
-
++
 ```
 $ git config --global user.name "<your-name>"
 $ git config --global user.email "<your-email>"
 ```
-
-TIP: The email you specify should be the same one found in your [email settings](https://help.github.com/articles/adding-an-email-address-to-your-github-account/). To keep your email address hidden, see [Keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private).
-
 +
-3. Set your Git defaults
+TIP: The email you specify should be the same one found in your link:https://help.github.com/articles/adding-an-email-address-to-your-github-account/[email settings]. To keep your email address hidden, see link:https://help.github.com/articles/keeping-your-email-address-private[Keeping your email address private].
++
 
+3. Set your Git defaults
++
 ```
 $ git config --global pull.rebase true
 $ git config --global push.default simple
@@ -33,9 +33,11 @@ $ git config --global push.default simple
 Fork the upstream repository to create a copy under your own GitHub ID. Clone your forked repository to bring your GitHub repository files to your local machine. Your forked repository is now the `origin` repository for your local files.
 
 
-1. Open a browser and navigate to the upstream repository located at https://github.com/Lookyloo/docs
-2. Click **Fork** located in the upper right under your profile icon.
-3. Select your user account for the location of the forked repository. This creates your own copy of the repository under your own GitHub ID.
+. Open a browser and navigate to the upstream repository located at https://github.com/Lookyloo/docs
+
+. Click **Fork** located in the upper right under your profile icon.
+
+. Select your user account for the location of the forked repository. This creates your own copy of the repository under your own GitHub ID.
 
 NOTE: For more information on link:https://help.github.com/articles/fork-a-repo/[forking] and link:https://help.github.com/articles/cloning-a-repository/[cloning], consult the official link:https://help.github.com/[documentation].
 
@@ -45,31 +47,31 @@ NOTE: For more information on link:https://help.github.com/articles/fork-a-repo/
 If you choose to use the SSH address for your clones, you will need to add an SSH Key to GitHub first.
 
 
-1. Open the *Terminal*.
-2. Check to see if you have a public SSH key:
-
+. Open the *Terminal*.
+. Check to see if you have a public SSH key:
++
   ````
   $ ls ~/.ssh/
   ````
-
-3. If you do not have a key, generate one:
-
++
+. If you do not have a key, generate one:
++
   ```
   $ ssh-keygen -t rsa -C "<your-email>"
-  ```
-
-4. Open your key in an editor:
-
+ ```
++
+. Open your key in an editor:
++
   ```
   $ cd ~/.ssh/
   $ vi id_rsa.pub
   ```
-
-5. Copy the contents of the file to your clipboard.
-6. Visit link:https://github.com/settings/keys[https://github.com/settings/keys]
-7. Click **New SSH Key**.
-8. Name your key and paste the contents of your key file.
-9. Click **Add SSH Key**.
++
+. Copy the contents of the file to your clipboard.
+. Visit link:https://github.com/settings/keys[https://github.com/settings/keys]
+. Click **New SSH Key**.
+. Name your key and paste the contents of your key file.
+. Click **Add SSH Key**.
 
 
 
@@ -77,40 +79,34 @@ If you choose to use the SSH address for your clones, you will need to add an SS
 
 If the upstream repository is moved, you can change the downstream URL by using the following command:
 
-```
-$ git remote set-url upstream https://github.com/<new upstream>
-```
+  $ git remote set-url upstream https://github.com/<new upstream>
+
 
 Use the following command any time you need to fetch the latest source code locally:
 
-```
-$ git fetch upstream
-```
+  $ git fetch upstream
+
 
 
 === Accessing another writer’s unmerged commits
 
 This is the process you can use if you need commits another writer has submitted that is not yet merged.
 
-1. Check out a new topic branch from upstream/master as you normally do.
-
-  ```
+. Check out a new topic branch from upstream/master as you normally do.
+  
   $ git fetch upstream
   $ git checkout -b <new-topic-branch> upstream/master
-  ```
 
-2. If you have not yet added that writer’s remote repository, add it now.
 
-  ```
+. If you have not yet added that writer’s remote repository, add it now.
+
   $ git remote add -f <user> git@github.com:<user>/strimzi-kafka-operator.git
-  ```
+  
 
-3. Rebase to bring in the changes that are in that user’s outstanding
- `origin/<merge-request-branch>` branch.
+. Rebase to bring in the changes that are in that user’s outstanding `origin/<merge-request-branch>` branch.
 
-  ```
-  $ git rebase <user>/<merge-request-branch>
-  ```
+    $ git rebase <user>/<merge-request-branch>
+  
 
 
 == Learn more
