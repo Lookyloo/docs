@@ -2,11 +2,11 @@
 Welcome to the source file repository for the documentation on Lookyloo.
 
 * [Website](#website)
-* [View Docs](##view-published-documentation)
-* [Source Files](##website-source-files)
+>* [View Docs](#view-published-documentation)
+>* [Source Files](#website-source-files)
 * [Contributing](#contributing)
-* [Getting Started](##getting-started)
-* [Community Support](##community-support)
+>* [Getting Started](#getting-started)
+>* [Community Support](#community-support)
 
 ***
 
