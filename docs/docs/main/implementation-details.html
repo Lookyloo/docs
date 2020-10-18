@@ -62,9 +62,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="install-lookyloo-docker.html">Run Lookyloo with Docker</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -73,15 +70,6 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="additions.html">Additions</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="rename-pending.html">Har2Tree</a>
   </li>
 </ul>
   </li>
@@ -168,7 +156,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Lookyloo is the glue that puts together and sometimes repurpose a bunch of tools
+<p>Lookyloo is the glue that puts together and sometimes repurposes a bunch of tools
 developed by others.</p>
 </div>
 </div>
@@ -183,35 +171,44 @@ developed by others.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_splash_and_scrapy"><a class="anchor" href="#_splash_and_scrapy"></a>Splash and scrapy</h3>
+<h3 id="_splash_and_scrapy"><a class="anchor" href="#_splash_and_scrapy"></a>Splash and Scrapy</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Splash is a javascript rendering service. It’s a lightweight web browser
-with an HTTP API, implemented in Python 3 using Twisted and QT5. The (twisted)
-QT reactor is used to make the service fully asynchronous allowing to take
+<p>Splash is a JavaScript rendering service. It is a lightweight web browser with an HTTP API, implemented in Python 3 using Twisted and QT5. The (twisted) QT reactor is used to make the service fully asynchronous allowing users to take
 advantage of webkit concurrency via QT main loop.</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>More on the <a href="https://splash.readthedocs.io/en/stable">official website</a></p>
+<p>To learn more about Splash, see the on the <a href="https://splash.readthedocs.io/en/stable">official website</a>.</p>
 </div>
 <div class="paragraph">
-<p>In Lookyloo, splash loads a web page in a similar fashion a web browser does. When the
-page is done loading, it scrolls down and wait a little bit longer.
-When itś done, it returns an <a href="http://www.softwareishard.com/blog/har-12-spec/">HTTP Archive (HAR)</a>,
-the <strong>page rendered at the end of the capture</strong> (that would be the same as what you would see when
-viewing the source of the page in your browser), a <strong>screenshot of the whole page</strong>,
-<strong>all the cookies</strong> what were received and created during the capture, and the
-<strong>URL in the address bar</strong> of the browser.</p>
+<p>In Lookyloo, Splash loads a web page in a similar fashion to a web browser. When the
+page is done loading, it scrolls down and waits a little bit longer. When it is done, it returns an <a href="http://www.softwareishard.com/blog/har-12-spec/">HTTP Archive (HAR)</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <strong>page rendered at the end of the capture</strong> (that would be the same as what you would see when
+viewing the source of the page in your browser)</p>
+</li>
+<li>
+<p>a <strong>screenshot of the whole page</strong></p>
+</li>
+<li>
+<p><strong>all the cookies</strong> what were received and created during the capture</p>
+</li>
+<li>
+<p>the <strong>URL in the address bar</strong> of the browser</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>The capture is controled by a <a href="https://github.com/Lookyloo/ScrapySplashWrapper/blob/main/scrapysplashwrapper/crawl.lua">LUA script</a></p>
+<p>The capture is controled by a <a href="https://github.com/Lookyloo/ScrapySplashWrapper/blob/main/scrapysplashwrapper/crawl.lua">LUA script</a>.</p>
 </div>
 <div class="paragraph">
-<p>In order to extract information from the page and instrument the capture
-itself, we use <a href="https://scrapy.org/">scrapy</a>:</p>
+<p>In order to extract information from the page and instrument the capture itself, we use <a href="https://scrapy.org/">Scrapy</a>:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -223,7 +220,7 @@ range of purposes, from data mining to monitoring and automated testing.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>With a lightweight connector called <a href="https://github.com/scrapy-plugins/scrapy-splash">scrapy-splash</a>.</p>
+<p>We use Scrapy along with a lightweight connector called <a href="https://github.com/scrapy-plugins/scrapy-splash">scrapy-splash</a>.</p>
 </div>
 <div class="paragraph">
 <p>The whole system is bundled in an home-made standalone wrapper called <a href="https://github.com/Lookyloo/ScrapySplashWrapper">ScrapySplashWrapper</a>.</p>
@@ -249,12 +246,11 @@ Clustering trees or any other tree-like data structure are also supported.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>And in order to create that tree, we use the HAR output generated by Splash, and pass
-it to an other standalone library, <a href="https://github.com/Lookyloo/har2tree">har2tree</a>.</p>
+<p>To create that tree, we use the HAR output generated by Splash, and pass it to another standalone library, <a href="https://github.com/Lookyloo/har2tree">har2tree</a>.</p>
 </div>
 <div class="paragraph">
 <p>We won&#8217;t go in too many details regarding the process of building a tree out of a HAR file,
-but you can read many comments <a href="https://github.com/Lookyloo/har2tree/blob/main/har2tree/parser.py">directly in the code</a>.</p>
+but you can read the comments <a href="https://github.com/Lookyloo/har2tree/blob/main/har2tree/parser.py">directly in the code</a>.</p>
 </div>
 </div>
 </div>
@@ -265,9 +261,8 @@ but you can read many comments <a href="https://github.com/Lookyloo/har2tree/blo
 <div class="sect2">
 <h3 id="_d3js"><a class="anchor" href="#_d3js"></a>D3JS</h3>
 <div class="paragraph">
-<p>Initially, we used the <a href="https://github.com/etetoolkit/webplugin">webplugin</a> developed by ETE Toolkit,
-but it turned out to be too limited for what we wanted to do, so instead of that,
-we decided to use <a href="https://d3js.org/">d3js</a>:</p>
+<p>Initially, we used the <a href="https://github.com/etetoolkit/webplugin">webplugin</a> developed by ETE Toolkit, but it turned out to be too limited for what we wanted to do, so instead of that,
+we decided to use <a href="https://d3js.org/">D3.js</a>:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -280,29 +275,27 @@ framework, combining powerful visualization components and a data-driven approac
 </div>
 </div>
 <div class="paragraph">
-<p>And implemented a compatible json output into <a href="https://github.com/Lookyloo/har2tree/blob/cf0147ff1e1171870e2a62e3b5ec66c9b1c684c5/har2tree/parser.py#L392">har2tree</a>.</p>
+<p>We use D3.js and implemented a compatible JSON output into <a href="https://github.com/Lookyloo/har2tree/blob/cf0147ff1e1171870e2a62e3b5ec66c9b1c684c5/har2tree/parser.py#L392">har2tree</a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_flask_bootstrap"><a class="anchor" href="#_flask_bootstrap"></a>Flask &amp; Bootstrap</h3>
 <div class="paragraph">
-<p>For the web interface, we used <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>
+<p>For the web interface, we use <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>
 and <a href="https://getbootstrap.com/docs/4.5/getting-started/introduction/">bootstrap 4</a>.</p>
 </div>
 <div class="paragraph">
-<p>Everything related to the website is <a href="https://github.com/Lookyloo/lookyloo/tree/main/website">in a subdirectory</a>
-in the <a href="https://github.com/Lookyloo/lookyloo">lookyloo repository</a>.</p>
+<p>Everything related to the website is <a href="https://github.com/Lookyloo/lookyloo/tree/main/website">in a subdirectory</a> in the <a href="https://github.com/Lookyloo/lookyloo">Lookyloo repository</a>.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_modules_and_3rd_party_components"><a class="anchor" href="#_modules_and_3rd_party_components"></a>Modules and 3rd party components</h2>
+<h2 id="_modules_and_third_party_components"><a class="anchor" href="#_modules_and_third_party_components"></a>Modules and Third Party components</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to give more context about the URLs given by the users, we use some 3rd party services.
-Some will be used to match received content with known ressources (JavaScript libraries, CSS, images), while
-other will alow us to match requests with known malicious content.</p>
+<p>In order to give more context about the URLs given by the users, we use some third party services.
+Some are used to match received content with known ressources (JavaScript libraries, CSS, images), while others allow us to match requests with known malicious content.</p>
 </div>
 <div class="sect2">
 <h3 id="_sanejs"><a class="anchor" href="#_sanejs"></a>SaneJS</h3>
@@ -312,7 +305,7 @@ to build a hash database of a vast amount of resources used all over the interne
 </div>
 <div class="paragraph">
 <p>The project is <a href="https://github.com/Lookyloo/sanejs">standalone</a> and can be used
-outside of lookyloo (even if it was promarily developped for it) with a python client called
+outside of Lookyloo (even if it was primarily developed for it) with a python client called
 <a href="https://github.com/Lookyloo/pysanejs">pysanejs</a>.</p>
 </div>
 <div class="admonitionblock note">
@@ -323,8 +316,7 @@ outside of lookyloo (even if it was promarily developped for it) with a python c
 </td>
 <td class="content">
 We&#8217;re not re-using the <a href="https://github.com/cdnjs/SRIs/blob/master/README.md">SRIs</a> for a pretty silly reason:
-many resources used on websites are the same as the ones in CDNJS, but with an extra new line at the end of the file.
-SaneJS computes hashes for every file with and without a newline, allowing us to match more resources.
+Many resources used on websites are the same as the ones in CDNJS, but with an extra new line at the end of the file. SaneJS computes hashes for every file with and without a newline, allowing us to match more resources.
 </td>
 </tr>
 </table>
@@ -333,18 +325,13 @@ SaneJS computes hashes for every file with and without a newline, allowing us to
 <div class="sect2">
 <h3 id="_virus_total"><a class="anchor" href="#_virus_total"></a>Virus Total</h3>
 <div class="paragraph">
-<p><a href="https://www.virustotal.com">Virus Total</a> allows to submit and query URLs in their huge dataset.
-Lookyloo will query do exactly that and inform the user if the know it is malicious.</p>
+<p><a href="https://www.virustotal.com">Virus Total</a> allows users to submit and query URLs in their huge dataset. Lookyloo queries do exactly that and inform the user if the content is malicious.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_phishing_initiative"><a class="anchor" href="#_phishing_initiative"></a>Phishing Initiative</h3>
 <div class="paragraph">
-<p><a href="https://phishing-initiative.lu">Phishing Initiative</a> allows to submit and query URLs.
-Lookyloo will query do exactly that and inform the user if the know it is malicious.</p>
-</div>
-<div class="paragraph">
-<p>As it requires an API key, the feature isn enabled by default.</p>
+<p><a href="https://phishing-initiative.lu">Phishing Initiative</a> allows users to submit and query URLs to identify malicious content. As it requires an API key, the feature is enabled by default.</p>
 </div>
 </div>
 </div>
@@ -355,12 +342,12 @@ Lookyloo will query do exactly that and inform the user if the know it is malici
 <div class="sect2">
 <h3 id="_poetry"><a class="anchor" href="#_poetry"></a>Poetry</h3>
 <div class="paragraph">
-<p>In order to ease the de plyment of lookyloo, we use <a href="https://python-poetry.org/">poetry</a>:</p>
+<p>To facillitate the deployment of Lookyloo, we use <a href="https://python-poetry.org/">Poetry</a>:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Poetry helps you declare, manage and install dependencies of Python projects, ensuring you have the right stack everywhere.</p>
+<p>Poetry helps you declare, manage, and install dependencies of Python projects, ensuring you have the right stack everywhere.</p>
 </div>
 </div>
 </div>

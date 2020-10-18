@@ -62,9 +62,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="install-lookyloo-docker.html">Run Lookyloo with Docker</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -73,15 +70,6 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
-  </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="additions.html">Additions</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="rename-pending.html">Har2Tree</a>
   </li>
 </ul>
   </li>
@@ -300,34 +288,33 @@
 <p>Checkout the branch you want to update, for example:</p>
 <div class="literalblock">
 <div class="content">
-<pre>     ```
-     git checkout main
-     ```
-. Ensure that your forked repository is in sync with the selected upstream repository:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>      ```
-      git fetch &lt;lookyloo/docs&gt;
-      ```
-      ```
-      git reset --hard &lt;lookyloo/docs&gt; main
-      ```
-. Checkout a new feature branch with the &lt;Issue #&gt; as the name, for example:</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>       ```
-       git checkout -b Issue#123
-       ```
-. Make changes to the documentation.</pre>
+<pre>git checkout main</pre>
 </div>
 </div>
 </li>
-</ol>
+<li>
+<p>Ensure that your forked repository is in sync with the selected upstream repository:</p>
+<div class="literalblock">
+<div class="content">
+<pre>git fetch &lt;lookyloo/docs&gt;</pre>
 </div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git reset --hard &lt;lookyloo/docs&gt; main</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Checkout a new feature branch with the &lt;Issue #&gt; as the name, for example:</p>
+<div class="literalblock">
+<div class="content">
+<pre>git checkout -b Issue#123</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make changes to the documentation.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -348,8 +335,7 @@
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Preview the documentation on the branch.</p>
 </li>
@@ -370,9 +356,7 @@
 <p>To build a preview of the doc, run the command:</p>
 <div class="literalblock">
 <div class="content">
-<pre>```
-antora local-site.yml &amp;&amp; &lt;your_preferred_browser&gt; build/site/index.html
-```</pre>
+<pre>antora local-site.yml &amp;&amp; &lt;your_preferred_browser&gt; build/site/index.html</pre>
 </div>
 </div>
 </li>
