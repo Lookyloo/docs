@@ -93,7 +93,7 @@ Use the following command any time you need to fetch the latest source code loca
 This is the process you can use if you need commits another writer has submitted that is not yet merged.
 
 . Check out a new topic branch from upstream/master as you normally do.
-  
+
   $ git fetch upstream
   $ git checkout -b <new-topic-branch> upstream/master
 
@@ -101,12 +101,12 @@ This is the process you can use if you need commits another writer has submitted
 . If you have not yet added that writer’s remote repository, add it now.
 
   $ git remote add -f <user> git@github.com:<user>/strimzi-kafka-operator.git
-  
+
 
 . Rebase to bring in the changes that are in that user’s outstanding `origin/<merge-request-branch>` branch.
 
     $ git rebase <user>/<merge-request-branch>
-  
+
 
 
 == Learn more

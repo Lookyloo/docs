@@ -9,13 +9,13 @@ You should be familiar with the terms we use in our documentation and our public
 == C
 
 * Cookie -
-* CSS - 
+* CSS -
 
 == D
 
 == E
 
-* Empty Response - 
+* Empty Response -
 
 == F
 
@@ -23,16 +23,16 @@ You should be familiar with the terms we use in our documentation and our public
 
 == H
 
-* HTML - 
+* HTML -
 
 == I
 
-* iframe - 
+* iframe -
 
 == J
-* Javascript - 
+* Javascript -
 
-* JSON - 
+* JSON -
 
 == K
 
@@ -56,7 +56,10 @@ You should be familiar with the terms we use in our documentation and our public
 
 == R
 
-* Redirect -  
+* Redirect -
+* Request - link:https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_message[HTTP Request]
+* Response - link:https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_message[HTTP Response]
+* Resource - data contained in the response message after an HTTP request. It will often be an HTML document, a Javascript, or a CSS.
 
 == S
 
@@ -74,8 +77,8 @@ You should be familiar with the terms we use in our documentation and our public
 
 == Z
 
- 
- 
+
+
 
 
 

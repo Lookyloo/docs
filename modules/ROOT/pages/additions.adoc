@@ -1,5 +1,5 @@
 = Additions
-// need help with naming and understanding what should be included in this. 
+// need help with naming and understanding what should be included in this.
 
 Lookyloo also works with the following :
 

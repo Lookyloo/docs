@@ -5,7 +5,7 @@
 
 * Raising an issue you find in the documentation
 * Fixing issues by opening a pull request
-* Improving documentation 
+* Improving documentation
 
 
 == Contributor Behavior
@@ -42,12 +42,12 @@ Thank you for your contributions. To start contributing to Lookyloo:
 
 GitHub issues can be used to report bugs or submit feature requests.
 
-When reporting an issue, you can use the link:https://github.com/Lookyloo/lookyloo/issues[issues template]. 
+When reporting an issue, you can use the link:https://github.com/Lookyloo/lookyloo/issues[issues template].
 
 
 == Updating Documentation
 
-The documentation is written in the Asciidoc markup language and uses Antora. 
+The documentation is written in the Asciidoc markup language and uses Antora.
 
 The source documentation files are located in the `modules/ROOT/pages/` directory in the link:https://github.com/Lookyloo/lookyloo/issues[Lookyloo documentation repository].
 
@@ -65,22 +65,22 @@ To update existing documentation:
 
 . Checkout the branch you want to update, for example:
 
-     
+
      git checkout main
-     
+
 . Ensure that your forked repository is in sync with the selected upstream repository:
 
-     
+
       git fetch <lookyloo/docs>
-     
-     
+
+
       git reset --hard <lookyloo/docs> main
-     
+
 . Checkout a new feature branch with the <Issue #> as the name, for example:
 
-       
+
        git checkout -b Issue#123
-      
+
 . Make changes to the documentation.
 +
 [NOTE]
@@ -101,9 +101,9 @@ The number of asterisks (*) denotes the heading level.
 
 .   To build a preview of the doc, run the command:
 
-       
+
        antora local-site.yml && <your_preferred_browser> build/site/index.html
-       
+
 
 
 === Rendering Documentation

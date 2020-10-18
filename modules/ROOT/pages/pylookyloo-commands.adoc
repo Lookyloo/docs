@@ -54,7 +54,7 @@ To retrieve the cookies (json)
     cookies = lookyloo.get_cookies(uuid)
 ```
 
-== Screenshot 
+== Screenshot
 
 To retrieve the screenshot (raw)
 
