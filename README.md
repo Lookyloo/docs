@@ -36,3 +36,6 @@ We're excited that you're interested in contributing to Lookyloo documentation! 
 
 - Let us know by opening an [issue](https://github.com/Lookyloo/docs/issues/new/choose). 
 
+- Message us on [Gitter](https://gitter.im/lookyloo-app/community)
+
+- Follow us on [Twitter](https://twitter.com/lookyloo_app).
