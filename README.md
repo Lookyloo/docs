@@ -27,15 +27,15 @@ View the Lookyloo documentation [website](https://www.lookyloo.eu/).
 We're excited that you're interested in contributing to Lookyloo documentation! Check out the resources below to get started.
 
 ### Getting Started
-- [How to contribute](https://www.lookyloo.eu/docs/main/contributing.htmll): Information about how to contribute and outlines the roles for contributors.
+- [How to contribute](https://www.lookyloo.eu/docs/main/contributing.html): Information about how to contribute and outlines the roles for contributors.
 
 - Style Guide (coming soon...)
 
 ### Community Support
 - Your help and feedback is always welcome!
 
-- Let us know by opening an [issue](https://github.com/Lookyloo/docs/issues/new/choose). 
+- Let us know by opening an [issue](https://github.com/Lookyloo/docs/issues/new/choose) 
 
 - Message us on [Gitter](https://gitter.im/lookyloo-app/community)
 
-- Follow us on [Twitter](https://twitter.com/lookyloo_app).
+- Follow us on [Twitter](https://twitter.com/lookyloo_app)
