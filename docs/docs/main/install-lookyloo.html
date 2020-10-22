@@ -224,12 +224,22 @@ the same directory as the one you will be cloning Lookyloo in to.
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>In order to compile and test redis, you will need a few packages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install build-essential tcl</code></pre>
+</div>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/antirez/redis.git
 cd redis
 git checkout 6.0
 make
+# Optionally, you can run the tests:
+make test
 cd ..</code></pre>
 </div>
 </div>
@@ -286,6 +296,32 @@ echo LOOKYLOO_HOME="'`pwd`'" &gt; .env</code></pre>
 </div>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you have error messages about python 2.7, it is an issue with poetry,
+and the quick and dirty fix is to edit <code>~/.poetry/bin/poetry</code> and add a <code>3</code> at the end of the line:
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>#!/usr/bin/env python3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>instead of</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>#!/usr/bin/env python</pre>
+</div>
 </div>
 </div>
 </div>
