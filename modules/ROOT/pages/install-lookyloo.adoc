@@ -40,11 +40,19 @@ store, used as a database, cache and message broker.
 NOTE: Redis should be installed from the source, and the repository must be in
 the same directory as the one you will be cloning Lookyloo in to.
 
+In order to compile and test redis, you will need a few packages:
+
+```bash
+sudo apt install build-essential tcl
+```
+
 ```bash
 git clone https://github.com/antirez/redis.git
 cd redis
 git checkout 6.0
 make
+# Optionally, you can run the tests:
+make test
 cd ..
 ```
 
@@ -76,6 +84,15 @@ cd lookyloo
 poetry install
 echo LOOKYLOO_HOME="'`pwd`'" > .env
 ```
+
+NOTE: If you have error messages about python 2.7, it is an issue with poetry,
+and the quick and dirty fix is to edit `~/.poetry/bin/poetry` and add a `3` at the end of the line:
+
+  #!/usr/bin/env python3
+
+instead of
+
+  #!/usr/bin/env python
 
 == Configuration
 
