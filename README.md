@@ -11,7 +11,7 @@ Welcome to the source file repository for the documentation on Lookyloo.
 ***
 
 ## Website
-The Lookyloo documentation website is built using [Antora](https://antora.org/)
+The Lookyloo documentation website is built using [Antora](https://antora.org/).
 
 ### View published documentation
 View Lookyloo documentation [website](https://www.lookyloo.eu/).
