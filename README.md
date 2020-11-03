@@ -11,12 +11,12 @@ Welcome to the source file repository for the documentation on Lookyloo.
 ***
 
 ## Website
-The Lookyloo documentation website is built using [Antora](https://antora.org/).
+The Lookyloo documentation website is built using [Antora](https://antora.org/). 
 
-### View published documentation
-View Lookyloo documentation [website](https://www.lookyloo.eu/).
+### View Published Documentation
+Check out Lookyloo documentation on our [website](https://www.lookyloo.eu/).
 
-### Website source files
+### Documentation Website Source Files
 - Source files for the documentation on the [website](https://www.lookyloo.eu) are located in the [`modules/ROOT`](https://github.com/Lookyloo/docs/tree/main/modules/ROOT) directory of this repository. If you want to contribute a fix or add new content to the documentation, you can navigate through this repository. 
 
 - To start contributing, please read the [contributor guidelines](https://www.lookyloo.eu/docs/main/contributing.html). Also, please read our [code of conduct](https://www.lookyloo.eu/docs/main/code-conduct.html).
