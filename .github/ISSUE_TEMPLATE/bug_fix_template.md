@@ -1,7 +1,7 @@
 ---
 name: Bug
 about: Report a documentation bug
-labels: Bug
+labels: bug
 
 ---
 
