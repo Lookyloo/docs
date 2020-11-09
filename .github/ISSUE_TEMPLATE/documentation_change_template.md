@@ -1,9 +1,7 @@
 ---
 name: Documentation
 about: Suggest an improvement/change to the docs
-title: ''
-labels: ''
-assignees: ''
+labels: Documentation
 
 ---
 
@@ -15,10 +13,6 @@ assignees: ''
 ## How will this impact users?
 
 
-## To which release does this apply?
-
-- [ ] Current release
-- [ ] Future release 
 
 
 ## Additional context
