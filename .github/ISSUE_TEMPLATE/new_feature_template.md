@@ -1,7 +1,7 @@
 ---
 name: New/changing feature for documentation
 about: For new features in Lookyloo, documentation
-labels: New Features
+labels: enhancement
 
 ---
 
