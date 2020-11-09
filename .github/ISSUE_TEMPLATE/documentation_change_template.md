@@ -1,7 +1,7 @@
 ---
 name: Documentation
 about: Suggest an improvement/change to the docs
-labels: Documentation
+labels: documentation
 
 ---
 
