@@ -1,9 +1,7 @@
 ---
 name: Bug
 about: Report a documentation bug
-title: ''
-labels: kind/bug
-assignees: ''
+labels: Bug
 
 ---
 
@@ -22,5 +20,5 @@ assignees: ''
 
 
 ## Additional information
-*(Add any other context about the problem here.)*
+<-- Add any other context about the problem here. -->
 
