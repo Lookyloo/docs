@@ -1,9 +1,8 @@
 ---
 name: New/changing feature for documentation
 about: For new features in Lookyloo, documentation
-title: ''
-labels: ''
-assignees: ''
+labels: New Features
+
 
 ---
 
