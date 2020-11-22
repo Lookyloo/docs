@@ -2,16 +2,15 @@
 
 = Before You Begin
 
-The install guide assumes that you will be running Lookyloo on a unix based system,
-preferably Ubuntu 20.04 or more recent.
-It is also assumed that the user with whom you will proceed to the installation is a sudoer.
+The install guide assumes that you will be running Lookyloo on a Unix based system,
+preferably link:https://releases.ubuntu.com/20.04/[Ubuntu 20.04] or a more recent version.
+It is also assumed that the user proceeding with the installation is a sudoer.
 
-There are a few different methods to install Lookyloo:
+You can install Lookyloo using a method that best suits your goals :
 
 * xref:install-lookyloo.adoc[Single-user], on your computer
 * xref:install-lookyloo-production.adoc[Multi-user], on a server
 * xref:install-lookyloo-docker.adoc[Fully dockerized]
 
 [NOTE]
-  There will be a usable Docker based install guide soon, but currently the configuration
-  files are not fully funtional.
+  Currently, the configuration files for Lookyloo on Docker are not fully functional. A usable Docker-based           install guide will be available soon.
