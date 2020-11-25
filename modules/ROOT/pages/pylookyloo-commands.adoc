@@ -83,5 +83,5 @@ To retrieve the complete capture (raw)
 To retrieve the statistics (json)
 
 ```python
-    capture = lookyloo.get_stats()
+    stats = lookyloo.get_stats()
 ```
