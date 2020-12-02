@@ -23,7 +23,7 @@ In L.A. usually the lookyloos cause more accidents by not paying full attention 
 
 == What is Lookyloo?
 
-More seriously, xref:lookyloo-explained.adoc[have a look] at what lookyloo is, and at some xref:use-cases.adoc[use cases].
+More seriously, xref:lookyloo-explained.adoc[have a look] at what lookyloo is, and at some of our xref:use-cases.adoc[use cases].
 
 == Learn More
 

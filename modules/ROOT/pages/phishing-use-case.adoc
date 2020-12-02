@@ -1,0 +1,35 @@
+= Phishing Use Case 
+
+You can use Lookyloo to identify phishing attacks.
+
+Phishing describes the attempt to obtain sensitive information often for malicious reasons, by masquerading as a trustworthy entity. A phishing website requests that users divulge sensitive information. Such attacks can incure substantial financial losses, in addition to inconveniencing and exposing users.
+
+Phishing attacks are more common than one might think and are of critical concern to users, particularly in online businesses, and financial institutions.
+
+
+== Capture Phishing 
+
+=== Example 1
+
+The following is an example of the capture that is displayed when a user visits the site `getidsenvoieidss.com`. You can access the capture at this link:https://lookyloo.circl.lu/tree/7835845f-69ed-49d3-bfde-e97402e02275[link].
+
+image::polish_site_screenshot_phishing.png[]
+
+As presenetd by the lock icon, the site contains insecure requests (HTTP).
+
+image::polish_site_screenshot_phishing_select.png[]
+
+As indicated in the tree of domains, a user is redirected to a series of insecure sites, before a request is sent to `pay.ecard.pi`.
+
+image::polish_site_virus_total.png[]
+
+The capture can display any malicious activity as dectued from the vendor. When a user clicks *SHow third party reports* in the menu, a *Virus Totals* report is rendered and available, which highlights *Sophos* as malware.
+
+
+=== Example 2 
+
+On this site the user is redirected. To access the redirect please see the following link:https://lookyloo.circl.lu/tree/ba2f5a6b-0075-46c8-b520-60d93494623f[page].
+
+image::lux_site_capture_screenshot.png[]
+
+The terminus reaches a node with empty content.

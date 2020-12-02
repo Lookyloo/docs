@@ -1,0 +1,77 @@
+= Lookyloo Interface
+
+== Start a New Capture
+
+You can start a Lookyloo capture navigating to our website instace. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.  
+
+image::lookyloo_start_new_capture.png[]
+
+Enter the the requried fields to start a capture.
+
+
+== Capture Visualization
+
+The Lookyloo interface is comprised of the following:
+* Tree of Domains
+* Lookyloo Menu
+* Tree Details
+* Legend
+
+image::sample_github.png[GitHub Capture]
+
+
+== Tree of Domains
+
+Lookyloo displays a tree of the domains tha call one another. 
+
+== Lookyloo Menu
+
+* *Go back to index*:
+
+* *Show third party reports*:
+
+* *Show statistics*:
+
+* *Download redirects*:
+
+* *Download screenshot*:
+
+* *Show screenshot*:
+
+* *Notify by mail*:
+
+
+== Tree Details
+
+* *Root URL*: 
+
+* *Start time*:
+
+* *User Agent*:
+
+* *OS*:
+
+* *Browser*:
+
+
+== Legend
+
+image::sample_github_legend.png[]
+
+* *Known node*:
+* *Malicious node*:
+* *Insecure requests (HTTP)*:
+* *Empty responses*:
+* *Javascript*: 
+* *Cookie received*:
+* *Cookie read*:
+* *Redirect*:
+* *Font*:
+* *HTML*:
+* *JSON*:
+* *CSS*:
+* *EXE*:
+* *Image*:
+* *Video*:
+* *iFrame*:
+* *Content type not set/unknown*:

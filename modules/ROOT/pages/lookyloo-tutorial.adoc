@@ -1,0 +1,7 @@
+= Lookyloo Tutorial 
+
+
+The Lookyloo tutorial explains the benefits, pitfalls, and limitations of scraping, and why Lookyloo is an important tool.
+
+A Lookyloo tutorial can be accessed in our link:https://github.com/Lookyloo/scraping-tutorial[GitHub repository]. 
+

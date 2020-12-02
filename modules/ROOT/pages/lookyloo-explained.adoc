@@ -5,8 +5,10 @@ With Lookyloo you can view the anatomy of connections within a webpage.
 
 Lookyloo is a web interface that allows you to capture a website and then display a tree of domains that call each other (as related to a particular website page).
 
-Use Lookyloo to map the journey a website page takes - from entering its intial URL address to the various redirects to third-party affiliations. You can parse the data from the web capture to get a better understanding of what and who has access to information you may be unwittingly sharing.
+Use Lookyloo to map the journey a website page takes - from entering the intial URL address to the various redirects to third-party affiliations. You can parse the data from the web capture to get a better understanding of what and who has access to information you may be unwittingly sharing.
 
-Here is an example of what happen if you type `github.com` in your address bar:
+== Lookyloo in Action
+
+Here is an example of what happens if you enter the URL `github.com` in an address bar:
 
 image::sample_github.png[Lookyloo Github capture]

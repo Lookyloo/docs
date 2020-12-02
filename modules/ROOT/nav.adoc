@@ -1,5 +1,6 @@
 * xref:lookyloo-explained.adoc[What is Lookyloo?]
 ** xref:use-cases.adoc[Use Cases]
+*** xref:phishing-use-case.adoc [Phishing Use Case]
 ** xref:concepts.adoc[Concepts]
 *** xref:implementation-details.adoc[Implementation Details]
 *** xref:glossary.adoc[Glossary]
@@ -9,7 +10,10 @@
 ** xref:install-lookyloo-production.adoc[Installing Lookyloo for Production]
 
 * xref:usage.adoc[Using Lookyloo]
+** xref:lookyloo-interface.adoc[Lookyloo Interface]
 ** xref:capture-cookies.adoc[Capture with Pre-defined Cookies]
+** xref:lookyloo-tutorial.adoc[Lookyloo Tutorial]
+
 
 * xref:pylookyloo-overview.adoc[PyLookyloo]
 ** xref:pylookyloo-install.adoc[Install PyLookyloo]
