@@ -1,6 +1,6 @@
 * xref:lookyloo-explained.adoc[What is Lookyloo?]
 ** xref:use-cases.adoc[Use Cases]
-*** xref:phishing-use-case.adoc [Phishing Use Case]
+*** xref:phishing-use-case.adoc[Phishing Use Case]
 ** xref:concepts.adoc[Concepts]
 *** xref:implementation-details.adoc[Implementation Details]
 *** xref:glossary.adoc[Glossary]
