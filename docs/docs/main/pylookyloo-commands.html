@@ -36,7 +36,13 @@
     <a class="nav-link" href="lookyloo-explained.html">What is Lookyloo?</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="use-cases.html">Use Cases</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="phishing-use-case.html">Phishing Use Case</a>
+  </li>
+</ul>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -69,7 +75,13 @@
     <a class="nav-link" href="usage.html">Using Lookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-interface.html">Lookyloo Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-tutorial.html">Lookyloo Tutorial</a>
   </li>
 </ul>
   </li>
@@ -268,6 +280,19 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    capture = lookyloo.get_complete_capture(uuid)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_statistics_about_the_instance"><a class="anchor" href="#_get_statistics_about_the_instance"></a>Get statistics about the instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To retrieve the statistics (json)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    stats = lookyloo.get_stats()</code></pre>
 </div>
 </div>
 </div>

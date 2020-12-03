@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Contributing to Lookyloo :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/contributor-guide.html">
+    <title>Phishing Use Case :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/phishing-use-case.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -39,7 +39,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="use-cases.html">Use Cases</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="phishing-use-case.html">Phishing Use Case</a>
   </li>
 </ul>
@@ -101,7 +101,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributing.html">Contributing to Lookyloo</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributor-guide.html">Contributor Guide</a>
 <ul class="nav-list">
@@ -155,165 +155,75 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="contributing.html">Contributing to Lookyloo</a></li>
-    <li><a href="contributor-guide.html">Contributor Guide</a></li>
+    <li><a href="lookyloo-explained.html">What is Lookyloo?</a></li>
+    <li><a href="use-cases.html">Use Cases</a></li>
+    <li><a href="phishing-use-case.html">Phishing Use Case</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/contributor-guide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/phishing-use-case.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Contributing to Lookyloo</h1>
+<h1 class="page">Phishing Use Case</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>You can contribute by:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Raising an issue you find in the code or documentation</p>
-</li>
-<li>
-<p>Fixing issues by opening a pull request</p>
-</li>
-<li>
-<p>Improving documentation or code samples</p>
-</li>
-</ul>
+<p>You can use Lookyloo to identify phishing attacks.</p>
 </div>
 <div class="paragraph">
-<p>All bugs, tasks or enhancements are tracked as <a href="https://https://github.com/Lookyloo/lookyloo/issues/new/choose">GitHub issues</a>. Use labels to indicate requirements and information related to the reported issue.</p>
+<p>Phishing describes the attempt to obtain sensitive information often for malicious reasons, by masquerading as a trustworthy entity. A phishing website requests that users divulge sensitive information. Such attacks can incure substantial financial losses, in addition to inconveniencing and exposing users.</p>
+</div>
+<div class="paragraph">
+<p>Phishing attacks are more common than one might think and are of critical concern to users, particularly in online businesses, and financial institutions.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_contributor_behavior"><a class="anchor" href="#_contributor_behavior"></a>Contributor Behavior</h2>
+<h2 id="_capture_phishing"><a class="anchor" href="#_capture_phishing"></a>Capture Phishing</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_example_1"><a class="anchor" href="#_example_1"></a>Example 1</h3>
 <div class="paragraph">
-<p>Examples of behavior that contributes to creating a positive environment include:</p>
+<p>The following is an example of the capture that is displayed when a user visits the site <code>getidsenvoieidss.com</code>. You can access the capture at this <a href="https://lookyloo.circl.lu/tree/7835845f-69ed-49d3-bfde-e97402e02275">link</a>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Using welcoming and inclusive language</p>
-</li>
-<li>
-<p>Focusing on what is best for the community</p>
-</li>
-<li>
-<p>Being respectful of differing viewpoints and experiences</p>
-</li>
-<li>
-<p>Gracefully accepting constructive criticism</p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="_images/polish_site_screenshot_phishing.png" alt="polish site screenshot phishing">
+</div>
 </div>
 <div class="paragraph">
-<p>Please read our <a href="code-conduct.html" class="page">Code of Conduct</a>.</p>
+<p>As presenetd by the lock icon, the site contains insecure requests (HTTP).</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/polish_site_screenshot_phishing_select.png" alt="polish site screenshot phishing select">
 </div>
-</div>
-<div class="sect1">
-<h2 id="_before_you_begin"><a class="anchor" href="#_before_you_begin"></a>Before You Begin</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https:">Get started</a> by installing and getting familiar with <a href="https://git-scm.com/doc">Git</a>.</p>
-</li>
-<li>
-<p>Use <a href="https:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/">AsciiDoc</a> to contribute to Lookyloo documentation.</p>
-</li>
-<li>
-<p>Refer to our <a href="https:">style guide</a> for guidance on formatting your documentation contributions.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_general_information"><a class="anchor" href="#_general_information"></a>General Information</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Thank you for your contributions. To start contributing to Lookyloo:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Create an issue describing your proposed change to the repository.</p>
-</li>
-<li>
-<p>The repository owners will triage and respond to your issue promptly.</p>
-</li>
-<li>
-<p>Fork the repository.</p>
-</li>
-<li>
-<p>Submit a pull request with the proposed changes. The required format for the Git commit message is "Issue # &lt;Issue ID&gt; - &lt;issue_message&gt;".</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_raising_an_issue"><a class="anchor" href="#_raising_an_issue"></a>Raising an Issue</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>GitHub issues can be used to report bugs or submit feature requests.</p>
 </div>
 <div class="paragraph">
-<p>When reporting an issue, you can use the <a href="https://github.com/Lookyloo/lookyloo/issues/new/choose">applicable issue reporting template</a>. Issues should be raised in the corresponding repository.</p>
+<p>As indicated in the tree of domains, a user is redirected to a series of insecure sites, before a request is sent to <code>pay.ecard.pi</code>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/Lookyloo/docs/issues">Changes to code</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Lookyloo/lookyloo/issues">Changes to documentation for website</a></p>
-</li>
-<li>
-<p><a href="https://github.com/Lookyloo/PyLookyloo/issues">Changes to PyLooklyloo (CLI)</a></p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="_images/polish_site_virus_total.png" alt="polish site virus total">
+</div>
 </div>
 <div class="paragraph">
-<p>Please include the following information when creating an issue:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Operating system you are using</p>
-</li>
-<li>
-<p>The steps needed to reproduce the issue.</p>
-</li>
-</ul>
+<p>The capture can display any malicious activity as dectued from the vendor. When a user clicks <strong>SHow third party reports</strong> in the menu, a <strong>Virus Totals</strong> report is rendered and available, which highlights <strong>Sophos</strong> as malware.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_submit_a_pull_request"><a class="anchor" href="#_submit_a_pull_request"></a>Submit a Pull Request</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example 2</h3>
 <div class="paragraph">
-<p>Make a pull request (PR) to add content to the repository. When making a PR, ensure you include:</p>
+<p>On this site the user is redirected. To access the redirect please see the following <a href="https://lookyloo.circl.lu/tree/ba2f5a6b-0075-46c8-b520-60d93494623f">page</a>.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>A description of what the PR fixes</p>
-</li>
-<li>
-<p>Associated Issue # and Issue title (if applicable)</p>
-</li>
-<li>
-<p>Operating system you are using</p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="_images/lux_site_capture_screenshot.png" alt="lux site capture screenshot">
+</div>
 </div>
 <div class="paragraph">
-<p>See the <a href="contributor-git.html" class="page">using Git documentation</a> for more information on using Git and making pull requests.</p>
+<p>The terminus reaches a node with empty content.</p>
+</div>
 </div>
 </div>
 </div>
