@@ -2,7 +2,7 @@
 
 == Start a New Capture
 
-You can start a Lookyloo capture navigating to our website instace. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.  
+You can start a Lookyloo capture navigating to our website instace. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.
 
 image::lookyloo_start_new_capture.png[]
 
@@ -22,36 +22,38 @@ image::sample_github.png[GitHub Capture]
 
 == Tree of Domains
 
-Lookyloo displays a tree of the domains tha call one another. 
+Lookyloo displays a tree of the domains that call one another.
 
 == Lookyloo Menu
 
-* *Go back to index*:
+* *Go back to index*: Return to the index page (list of all the captures)
 
-* *Show third party reports*:
+* *Show third party reports*: (Optional) Query 3rd party services and display the result
 
-* *Show statistics*:
+* *Manage categories*: (Optional) Manage the categories attached to this capture
 
-* *Download redirects*:
+* *Show statistics*: Overview of the number of unique URLs/Hostnames, and cookies present in the capture
 
-* *Download screenshot*:
+* *Download redirects*: Download the redirects up to the final URL as displayed in the browser (text file)
 
-* *Show screenshot*:
+* *Download screenshot*: Download the screenshot of the page as it yould be displayed in the browser
 
-* *Notify by mail*:
+* *Show screenshot*: Show the screenshot of the page as it yould be displayed in the browser
+
+* *Notify by mail*: (Optional) Send a notification to the entity managing the platform
 
 
 == Tree Details
 
-* *Root URL*: 
+* *Root URL*: Initial URL of the capture, before any processing
 
-* *Start time*:
+* *Start time*: Start time of the capture
 
-* *User Agent*:
+* *User Agent*: User Agent passed to the capture
 
-* *OS*:
+* *OS*: Full text name of the Operating system (extracted from the User Agent)
 
-* *Browser*:
+* *Browser*: Full text name of the browser (extracted from the User Agent)
 
 
 == Legend
@@ -62,7 +64,7 @@ image::sample_github_legend.png[]
 * *Malicious node*:
 * *Insecure requests (HTTP)*:
 * *Empty responses*:
-* *Javascript*: 
+* *Javascript*:
 * *Cookie received*:
 * *Cookie read*:
 * *Redirect*:
