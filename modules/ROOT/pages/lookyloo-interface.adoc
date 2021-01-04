@@ -12,6 +12,7 @@ Enter the the requried fields to start a capture.
 == Capture Visualization
 
 The Lookyloo interface is comprised of the following:
+
 * Tree of Domains
 * Lookyloo Menu
 * Tree Details
@@ -60,20 +61,21 @@ Lookyloo displays a tree of the domains that call one another.
 
 image::sample_github_legend.png[]
 
-* *Known node*:
-* *Malicious node*:
-* *Insecure requests (HTTP)*:
-* *Empty responses*:
-* *Javascript*:
-* *Cookie received*:
-* *Cookie read*:
-* *Redirect*:
-* *Font*:
-* *HTML*:
-* *JSON*:
-* *CSS*:
-* *EXE*:
-* *Image*:
-* *Video*:
-* *iFrame*:
-* *Content type not set/unknown*:
+* *Known node*: The node only contains ressources that are either part of link:https://cdnjs.com/[CDNJS], or marked as known in lookyloo.
+  Click on the hostname for details.
+* *Malicious node*: The node only contains ressources that are marked as malicious in lookyloo. Click on the hostname for details.
+* *Insecure requests*: At least one for the requests in the node is unencrypted (HTTP).
+* *Empty responses*: All the responses in the node are empty.
+* *Javascript*: The responses contain javascript.
+* *Cookie received*: The responses contain cookies.
+* *Cookie read*: The requests contain cookies (cookies are sent to the server).
+* *Redirect*: The requests contain redirects.
+* *Font*: The responses contain fonts.
+* *HTML*: The responses contain HTML.
+* *JSON*: The responses contain Json.
+* *CSS*: The responses contain CSS.
+* *EXE*: The responses contain executables.
+* *Image*: The responses contain images
+* *Video*: The responses contain videos
+* *iFrame*: The responses are loaded from iFrames.
+* *Content type not set/unknown*: The content of hte responses is unknown.
