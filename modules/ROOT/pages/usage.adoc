@@ -9,18 +9,104 @@ otherwise it won't make much sense.
 
 To learn more about using Lookyloo read through our documentation.
 
-[IMPORTANT]
-  Work in progress - you may have noticed.
+== Capture a website
 
-=== Capture a website
+This is the entry point when you want to investigate a website.
 
-* How to xref:capture-cookies.adoc[get a cookie] in order to initiate a new capture with it.
+image::capture.png[Capture form]
 
-=== View the capture of a website as a phylogenetic tree
+=== URL
 
-// describe the different parts of the tree view
-// explain the left menu
+The only required field is the **URL**, which is the URL you want to capture. It might be the
+index page of the domain to capture:
+
+* link:example.com[example.com])
+
+Or a more complete URL:
+
+* link:https://www.iana.org/domains/reserved[https://www.iana.org/domains/reserved]
+
+=== Referer
+
+The link:https://en.wikipedia.org/wiki/HTTP_referer[referer] is optional but it must be a full URL if you want to use it.
+
+Usecase: some websites block requests if they're not initiated by an internal URL. If that's the case, pass the required URL in the referer field.
+
+Note: It may not be enough and the wensite may also require a cookie. If it is the case, see below.
+
+=== Cookies
+
+It will be empty by default, but please refer to the related documentaiton in order to
+initiate a new capture with xref:capture-cookies.adoc[a pre-refined cookie].
+
+=== Browser configuration
+
+By default, lookyloo passes a relatively comon user-agent when it captures a page.
+You can change it by picking the type of operating system and the browser type in the dropdown boxes.
+The user-agent used in the one in the last dropdown menu (this one will be used by default).
+
+You can also pass the user-agent of your own browser by ticking the box.
+
+Note: If your browser has a very special user-agent, it may leak information about you.
+
+Note: If you want to pass a very specific user-agent for the capture, you can change your
+      user-agent in the parameters of your browser and reload the page.
+
+=== Depth
+
+It is not enabled by default because it will most of the time take too long on most websites. The default depth is 1 (capture only the given URL).
+
+If you enable the feature, a value of 2 will capture the given URL, extract all the links in the page, pick all the ones with the same hostname as the
+initial URL, and capture them. As you can imagine, it may get huge very fast.
+
+== Investigate a capture
+
+As a general statement, if something in unclear, you should **move your mouse over** the part of the section that doesn't make sense,
+and it should display a text giving some explanations. If it doesn't, please link:https://github.com/Lookyloo/lookyloo#support[get in touch with us],
+or keep reading this page.
+
+=== Nodes
+
+Simple example with the initial URL `github.com`.
+
+image:node1.png[landing page github]
+
+* The node with a thumbnail of the screenshot is the page as it would be displayed in your browser (after all the redirects).
+  Click on the image to see the screenshot fullscreen.
+* This node contians one single URL, the content of the response is an HTML page
+* The response from the server has 3 cookies
+
+image:node2.png[redirect]
+
+* In order to get to the landing page, we went from a unencrypted URL (http) to an encrypted one (https)
+* The initial response was empty, it generally means that the redirect was made by the server directly (3XX HTTP code)
+
+image:node3.png[ressources on the page]
+
+* The landing page loads ressources from two differnt hostnames (`github.githubassets.com` and `avatars.githubusercontent.com`)
+* 113 resources are loaded from `github.githubassets.com` (9 javascript, 4 CSS, 80 images, 6 videos)
+* 24 ressources are loaded from `avatars.githubusercontent.com` (all images)
+
+image:node4.png[ressources in ressources]
+
+* some of the URLs in the node `github.githubassets.com` are themselves loading content from URLs on `github.githubassets.com` (8 fonts).
+  It will most probably come from the CSS in the parent node.
+
+In order to investigate it further, we can click on each of the hostnames and open an investigation popup, more on that below.
 
 === Hostnode popup
 
-// expain what we see
+Clicking on the first node `github.githubassets.com` opens the following pop-up:
+
+image:investigation1.png[investigation popup]
+
+* You will see every URL aggregated in that node
+* You can do a lot of things from there:
+  - Get every ressource loaded from the server
+  - See if they are present in other captures (correlation by hash)
+  - See the HTTP status code of the response
+  - Download all the URLs and hashes
+  - Get the cookies received of sent for each HTTP request
+  - Copy individual URLs
+  - If you put pur mouse over the image icon, it will display the image
+
