@@ -1,11 +1,6 @@
 [id="Lookyloo-main"]
 = Lookyloo
 
-[IMPORTANT]
-====
-This site is a work in progress
-====
-
 With Lookyloo you can dissect a website while it is in motion.
 
 Lookyloo is a web interface that captures a webpage and then displays a tree of the domains, that call each other.
