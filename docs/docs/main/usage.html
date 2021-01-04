@@ -178,35 +178,209 @@ otherwise it won&#8217;t make much sense.</p>
 <div class="paragraph">
 <p>To learn more about using Lookyloo read through our documentation.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-  Work in progress - you may have noticed.
-</td>
-</tr>
-</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capture_a_website"><a class="anchor" href="#_capture_a_website"></a>Capture a website</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the entry point when you want to investigate a website.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/capture.png" alt="Capture form">
+</div>
 </div>
 <div class="sect2">
-<h3 id="_capture_a_website"><a class="anchor" href="#_capture_a_website"></a>Capture a website</h3>
+<h3 id="_url"><a class="anchor" href="#_url"></a>URL</h3>
+<div class="paragraph">
+<p>The only required field is the <strong>URL</strong>, which is the URL you want to capture. It might be the
+index page of the domain to capture:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>How to <a href="capture-cookies.html" class="page">get a cookie</a> in order to initiate a new capture with it.</p>
+<p><a href="example.com">example.com</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Or a more complete URL:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.iana.org/domains/reserved">https://www.iana.org/domains/reserved</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_view_the_capture_of_a_website_as_a_phylogenetic_tree"><a class="anchor" href="#_view_the_capture_of_a_website_as_a_phylogenetic_tree"></a>View the capture of a website as a phylogenetic tree</h3>
-
+<h3 id="_referer"><a class="anchor" href="#_referer"></a>Referer</h3>
+<div class="paragraph">
+<p>The <a href="https://en.wikipedia.org/wiki/HTTP_referer">referer</a> is optional but it must be a full URL if you want to use it.</p>
+</div>
+<div class="paragraph">
+<p>Usecase: some websites block requests if they&#8217;re not initiated by an internal URL. If that&#8217;s the case, pass the required URL in the referer field.</p>
+</div>
+<div class="paragraph">
+<p>Note: It may not be enough and the wensite may also require a cookie. If it is the case, see below.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cookies"><a class="anchor" href="#_cookies"></a>Cookies</h3>
+<div class="paragraph">
+<p>It will be empty by default, but please refer to the related documentaiton in order to
+initiate a new capture with <a href="capture-cookies.html" class="page">a pre-refined cookie</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_browser_configuration"><a class="anchor" href="#_browser_configuration"></a>Browser configuration</h3>
+<div class="paragraph">
+<p>By default, lookyloo passes a relatively comon user-agent when it captures a page.
+You can change it by picking the type of operating system and the browser type in the dropdown boxes.
+The user-agent used in the one in the last dropdown menu (this one will be used by default).</p>
+</div>
+<div class="paragraph">
+<p>You can also pass the user-agent of your own browser by ticking the box.</p>
+</div>
+<div class="paragraph">
+<p>Note: If your browser has a very special user-agent, it may leak information about you.</p>
+</div>
+<div class="paragraph">
+<p>Note: If you want to pass a very specific user-agent for the capture, you can change your
+      user-agent in the parameters of your browser and reload the page.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_depth"><a class="anchor" href="#_depth"></a>Depth</h3>
+<div class="paragraph">
+<p>It is not enabled by default because it will most of the time take too long on most websites. The default depth is 1 (capture only the given URL).</p>
+</div>
+<div class="paragraph">
+<p>If you enable the feature, a value of 2 will capture the given URL, extract all the links in the page, pick all the ones with the same hostname as the
+initial URL, and capture them. As you can imagine, it may get huge very fast.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_investigate_a_capture"><a class="anchor" href="#_investigate_a_capture"></a>Investigate a capture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As a general statement, if something in unclear, you should <strong>move your mouse over</strong> the part of the section that doesn&#8217;t make sense,
+and it should display a text giving some explanations. If it doesn&#8217;t, please <a href="https://github.com/Lookyloo/lookyloo#support">get in touch with us</a>,
+or keep reading this page.</p>
+</div>
+<div class="sect2">
+<h3 id="_nodes"><a class="anchor" href="#_nodes"></a>Nodes</h3>
+<div class="paragraph">
+<p>Simple example with the initial URL <code>github.com</code>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/node1.png" alt="landing page github"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The node with a thumbnail of the screenshot is the page as it would be displayed in your browser (after all the redirects).
+Click on the image to see the screenshot fullscreen.</p>
+</li>
+<li>
+<p>This node contians one single URL, the content of the response is an HTML page</p>
+</li>
+<li>
+<p>The response from the server has 3 cookies</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/node2.png" alt="redirect"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In order to get to the landing page, we went from a unencrypted URL (http) to an encrypted one (https)</p>
+</li>
+<li>
+<p>The initial response was empty, it generally means that the redirect was made by the server directly (3XX HTTP code)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/node3.png" alt="ressources on the page"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The landing page loads ressources from two differnt hostnames (<code>github.githubassets.com</code> and <code>avatars.githubusercontent.com</code>)</p>
+</li>
+<li>
+<p>113 resources are loaded from <code>github.githubassets.com</code> (9 javascript, 4 CSS, 80 images, 6 videos)</p>
+</li>
+<li>
+<p>24 ressources are loaded from <code>avatars.githubusercontent.com</code> (all images)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/node4.png" alt="ressources in ressources"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>some of the URLs in the node <code>github.githubassets.com</code> are themselves loading content from URLs on <code>github.githubassets.com</code> (8 fonts).
+It will most probably come from the CSS in the parent node.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In order to investigate it further, we can click on each of the hostnames and open an investigation popup, more on that below.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_hostnode_popup"><a class="anchor" href="#_hostnode_popup"></a>Hostnode popup</h3>
-
+<div class="paragraph">
+<p>Clicking on the first node <code>github.githubassets.com</code> opens the following pop-up:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/investigation1.png" alt="investigation popup"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You will see every URL aggregated in that node</p>
+</li>
+<li>
+<p>You can do a lot of things from there:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Get every ressource loaded from the server</p>
+</li>
+<li>
+<p>See if they are present in other captures (correlation by hash)</p>
+</li>
+<li>
+<p>See the HTTP status code of the response</p>
+</li>
+<li>
+<p>Download all the URLs and hashes</p>
+</li>
+<li>
+<p>Get the cookies received of sent for each HTTP request</p>
+</li>
+<li>
+<p>Copy individual URLs</p>
+</li>
+<li>
+<p>If you put pur mouse over the image icon, it will display the image</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
