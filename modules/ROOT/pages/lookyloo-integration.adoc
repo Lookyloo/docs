@@ -1,0 +1,76 @@
+[id="integrations"]
+= Integration with 3rd party tools
+
+All the 3rd party modules are configured in `config/modules.json` and the sample file is `config/modules.json.sample`.
+
+This document will explain the different capabilities of the modules and how to configure them.
+
+== SaneJS
+
+This module will search the hash (sha512) of every content received for a capture,
+and give contextual information in the investigation popup.
+
+link:https://github.com/Lookyloo/sanejs[SaneJS] uses link:https://cdnjs.com/[CDNJS] as a datasource.
+If the hash matches, you will see the library name, version and exact file matching in CDNJS.
+
+The module is enabled by default, as SaneJS is publicly available, but you can change that by
+setting the `enabled` to `false` in `config/modules.json`, section `SaneJS`.
+
+== Virus Total
+
+link:https://www.virustotal.com/[VirusTotal] is well known for having a huge database of
+malicious binaries, but it can also analyze URLs, and will give you information about them.
+
+By default the module will only submit the URL for analysis to Virus Total is you set
+`autosubmit` to `true` in `config/modules.json`, section `VirusTotal`.
+
+The only URLs passed to the module are the ones up to the rendered page,
+the content loaded after we reach this page aren't queried to limit the number of request.
+
+The module is not enabled by default because you need to create an account, and use
+an API key.
+
+**Important**: the query limit for a standard API key is 4/minute so you will hit
+it very fast if you do not have a paid plan with them.
+
+== MISP
+
+**Note**: For now, this module only supports submitting a capture to a MISP instance.
+Lookup of indicators against a MISP instance will be implemented soon.
+
+Connecting Lookyloo to link:https://www.misp-project.org/[MISP - Open Source Threat Intelligence Platform]
+will make it possible to share captures within your sharing community.
+
+The module is disabled by default. To enable the module, you need to set at least an
+`url`, an `apikey`, and set `enable_push` to `true` in `config/modules.json`, section `MISP`.
+
+You may want to set `verify_tls_cert` to `false` if you're using a self-signed certificate,
+and modify the `timeout` if the MISP instance is very slow.
+
+You can also add a list of default tags that will be attached to every event created by Lookyloo
+in `default_tags`, and automatically publish the MISP events by setting `auto_publish` to `true`
+(in that case, the user must have the publisher permission in MISP).
+
+**Important**: the MISP publish feature is only available for xref:lookyloo-auth.adoc[authenticated users].
+
+=== Recommended setup on MISP side
+
+The recommended way to use it is to create a **dedicated user** on your MISP instance,
+**with access to an API key**. If you want to allow your Lookyloo users to set tags to the captures
+before they submit it, you need to:
+
+1. Create the tags on MISP side
+2. Mark them as favorite **for the dedicated user**
+
+== Phishing initiative
+
+link:https://phishing-initiative.lu[Phishing Initiative] is a database of known phihsing websites.
+
+By default the module will only submit the URL for analysis to Phishing Initiative is you set
+`autosubmit` to `true` in `config/modules.json`, section `PhishingInitiative`.
+
+The only URLs passed to the module are the ones up to the rendered page,
+the content loaded after we reach this page aren't queried to limit the number of request.
+
+The module is not enabled by default because you need to create an account, and use
+an API key.

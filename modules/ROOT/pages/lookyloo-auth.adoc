@@ -1,0 +1,41 @@
+[id="auth"]
+= Authentication
+
+**Note**: The authentication system is very limited and currently only used for
+processing-heavy requests and pushing captures to a MISP instance.
+
+== Configure auth
+
+In order to add a user, you need to edit the configuration file (`config/generic.json`), and add a
+user in the `users` key, with the following format:
+
+  {"username" : "password"}
+
+or
+
+  {"username" : ["password", "apikey"] }
+
+In the first case, an API key will be automatically generated when you start the app.
+
+**Note**: The API key is what you will need to use for the queries requiring an
+authenticated user when you're using the API (PyLookyloo).
+
+**Note**: You can have multiple users, they will all have the same admin rights.
+
+== Usage
+
+To authenticate your session, open `http://your.lookyloo.instance/login`.
+
+When logged in, you have access to the following URLs:
+
+* `/hidden`: show the tree hidden on the index
+* `/rebuild_cache`: rebuild only the redis cache. Can take a while, but not as much as `/rebuild_all`
+* `/rebuild_all`: rebuild all the tree (drop all the pickles of all the trees). **warning**: it can take a very, very long time.
+* `/logout`: drop the session
+* `/tree/<string:tree_uuid>/rebuild`: rebuild the tree
+* `/tree/<string:tree_uuid>/hide`: hide the tree from the index
+* `/tree/<string:tree_uuid>/mark_as_legitimate`:  [if enabled] mark every URL/content as known
+* `/tree/<string:tree_uuid>/misp_push`: [if enabled] push a capture to the MISP instance
+* `/tree/<string:tree_uuid>/url/<string:node_uuid>/add_context`: [if enabled] add a specific ressource in a category
+* `/json/<string:tree_uuid>/misp_push`: [if enabled] [API only] push a capture to the MISP instance
+
