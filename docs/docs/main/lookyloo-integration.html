@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>What is Lookyloo? :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-explained.html">
+    <title>Integration with 3rd party tools :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-integration.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -31,7 +31,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="lookyloo-explained.html">What is Lookyloo?</a>
 <ul class="nav-list">
@@ -77,7 +77,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="lookyloo-interface.html">Lookyloo Interface</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="lookyloo-integration.html">Integration with 3rd party tools</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -161,37 +161,131 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="lookyloo-explained.html">What is Lookyloo?</a></li>
+    <li><a href="usage.html">Using Lookyloo</a></li>
+    <li><a href="lookyloo-integration.html">Integration with 3rd party tools</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/lookyloo-explained.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/lookyloo-integration.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">What is Lookyloo?</h1>
+<h1 class="page">Integration with 3rd party tools</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>With Lookyloo you can view the anatomy of connections within a webpage.</p>
+<p>All the 3rd party modules are configured in <code>config/modules.json</code> and the sample file is <code>config/modules.json.sample</code>.</p>
 </div>
 <div class="paragraph">
-<p>Lookyloo is a web interface that allows you to capture a website and then display a tree of domains that call each other (as related to a particular website page).</p>
-</div>
-<div class="paragraph">
-<p>Use Lookyloo to map the journey a website page takes - from entering the intial URL address to the various redirects to third-party affiliations. You can parse the data from the web capture to get a better understanding of what and who has access to information you may be unwittingly sharing.</p>
+<p>This document will explain the different capabilities of the modules and how to configure them.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lookyloo_in_action"><a class="anchor" href="#_lookyloo_in_action"></a>Lookyloo in Action</h2>
+<h2 id="_sanejs"><a class="anchor" href="#_sanejs"></a>SaneJS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here is an example of what happens if you enter the URL <code>github.com</code> in an address bar:</p>
+<p>This module will search the hash (sha512) of every content received for a capture,
+and give contextual information in the investigation popup.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/sample_github.png" alt="Lookyloo Github capture">
+<div class="paragraph">
+<p><a href="https://github.com/Lookyloo/sanejs">SaneJS</a> uses <a href="https://cdnjs.com/">CDNJS</a> as a datasource.
+If the hash matches, you will see the library name, version and exact file matching in CDNJS.</p>
 </div>
+<div class="paragraph">
+<p>The module is enabled by default, as SaneJS is publicly available, but you can change that by
+setting the <code>enabled</code> to <code>false</code> in <code>config/modules.json</code>, section <code>SaneJS</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_virus_total"><a class="anchor" href="#_virus_total"></a>Virus Total</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.virustotal.com/">VirusTotal</a> is well known for having a huge database of
+malicious binaries, but it can also analyze URLs, and will give you information about them.</p>
+</div>
+<div class="paragraph">
+<p>By default the module will only submit the URL for analysis to Virus Total is you set
+<code>autosubmit</code> to <code>true</code> in <code>config/modules.json</code>, section <code>VirusTotal</code>.</p>
+</div>
+<div class="paragraph">
+<p>The only URLs passed to the module are the ones up to the rendered page,
+the content loaded after we reach this page aren&#8217;t queried to limit the number of request.</p>
+</div>
+<div class="paragraph">
+<p>The module is not enabled by default because you need to create an account, and use
+an API key.</p>
+</div>
+<div class="paragraph">
+<p><strong>Important</strong>: the query limit for a standard API key is 4/minute so you will hit
+it very fast if you do not have a paid plan with them.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_misp"><a class="anchor" href="#_misp"></a>MISP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Note</strong>: For now, this module only supports submitting a capture to a MISP instance.
+Lookup of indicators against a MISP instance will be implemented soon.</p>
+</div>
+<div class="paragraph">
+<p>Connecting Lookyloo to <a href="https://www.misp-project.org/">MISP - Open Source Threat Intelligence Platform</a>
+will make it possible to share captures within your sharing community.</p>
+</div>
+<div class="paragraph">
+<p>The module is disabled by default. To enable the module, you need to set at least an
+<code>url</code>, an <code>apikey</code>, and set <code>enable_push</code> to <code>true</code> in <code>config/modules.json</code>, section <code>MISP</code>.</p>
+</div>
+<div class="paragraph">
+<p>You may want to set <code>verify_tls_cert</code> to <code>false</code> if you&#8217;re using a self-signed certificate,
+and modify the <code>timeout</code> if the MISP instance is very slow.</p>
+</div>
+<div class="paragraph">
+<p>You can also add a list of default tags that will be attached to every event created by Lookyloo
+in <code>default_tags</code>, and automatically publish the MISP events by setting <code>auto_publish</code> to <code>true</code>
+(in that case, the user must have the publisher permission in MISP).</p>
+</div>
+<div class="paragraph">
+<p><strong>Important</strong>: the MISP publish feature is only available for <a href="lookyloo-auth.html" class="page">authenticated users</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_recommended_setup_on_misp_side"><a class="anchor" href="#_recommended_setup_on_misp_side"></a>Recommended setup on MISP side</h3>
+<div class="paragraph">
+<p>The recommended way to use it is to create a <strong>dedicated user</strong> on your MISP instance,
+<strong>with access to an API key</strong>. If you want to allow your Lookyloo users to set tags to the captures
+before they submit it, you need to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create the tags on MISP side</p>
+</li>
+<li>
+<p>Mark them as favorite <strong>for the dedicated user</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_phishing_initiative"><a class="anchor" href="#_phishing_initiative"></a>Phishing initiative</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://phishing-initiative.lu">Phishing Initiative</a> is a database of known phihsing websites.</p>
+</div>
+<div class="paragraph">
+<p>By default the module will only submit the URL for analysis to Phishing Initiative is you set
+<code>autosubmit</code> to <code>true</code> in <code>config/modules.json</code>, section <code>PhishingInitiative</code>.</p>
+</div>
+<div class="paragraph">
+<p>The only URLs passed to the module are the ones up to the rendered page,
+the content loaded after we reach this page aren&#8217;t queried to limit the number of request.</p>
+</div>
+<div class="paragraph">
+<p>The module is not enabled by default because you need to create an account, and use
+an API key.</p>
 </div>
 </div>
 </div>

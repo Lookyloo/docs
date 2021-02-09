@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Har2Tree :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/rename-pending.html">
+    <title>Authentication :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-auth.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -76,6 +76,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="lookyloo-interface.html">Lookyloo Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-integration.html">Integration with 3rd party tools</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="lookyloo-auth.html">Authentification</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
@@ -155,55 +161,97 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="rename-pending.html">Har2Tree</a></li>
+    <li><a href="usage.html">Using Lookyloo</a></li>
+    <li><a href="lookyloo-auth.html">Authentification</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/rename-pending.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/lookyloo-auth.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Har2Tree</h1>
+<h1 class="page">Authentication</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This package generate a tree out of a HAR dump.</p>
+<p><strong>Note</strong>: The authentication system is very limited and currently only used for
+processing-heavy requests and pushing captures to a MISP instance.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<h2 id="_configure_auth"><a class="anchor" href="#_configure_auth"></a>Configure auth</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The core dependency is ETE Toolkit, which you can install following the guide
-on the official website: <a href="http://etetoolkit.org/download/" class="bare">http://etetoolkit.org/download/</a></p>
+<p>In order to add a user, you need to edit the configuration file (<code>config/generic.json</code>), and add a
+user in the <code>users</code> key, with the following format:</p>
 </div>
-<div class="paragraph">
-<p>Note: if you don&#8217;t want to export the tree to an image using PyQt4, no need to do the
-virtualenv magic.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_protip"><a class="anchor" href="#_protip"></a>Protip</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you like using virtualenv and have <code>pew</code> installed you can also do it this way:</p>
-</div>
-<div class="listingblock">
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>sudo apt-get install python-qt4
-pip install -r requirements.txt
-pew toggleglobalsitepackages  # PyQt4 is not easily installable in a virtualenv
-pip install -e .</code></pre>
+<pre>{"username" : "password"}</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{"username" : ["password", "apikey"] }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the first case, an API key will be automatically generated when you start the app.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The API key is what you will need to use for the queries requiring an
+authenticated user when you&#8217;re using the API (PyLookyloo).</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: You can have multiple users, they will all have the same admin rights.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_for_more_information"><a class="anchor" href="#_for_more_information"></a>For more information</h2>
+<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For more information on Har2Tree, please see our github repohttps://github.com/Lookyloo/har2tree</p>
+<p>To authenticate your session, open <code><a href="http://your.lookyloo.instance/login" class="bare">http://your.lookyloo.instance/login</a></code>.</p>
+</div>
+<div class="paragraph">
+<p>When logged in, you have access to the following URLs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/hidden</code>: show the tree hidden on the index</p>
+</li>
+<li>
+<p><code>/rebuild_cache</code>: rebuild only the redis cache. Can take a while, but not as much as <code>/rebuild_all</code></p>
+</li>
+<li>
+<p><code>/rebuild_all</code>: rebuild all the tree (drop all the pickles of all the trees). <strong>warning</strong>: it can take a very, very long time.</p>
+</li>
+<li>
+<p><code>/logout</code>: drop the session</p>
+</li>
+<li>
+<p><code>/tree/&lt;string:tree_uuid&gt;/rebuild</code>: rebuild the tree</p>
+</li>
+<li>
+<p><code>/tree/&lt;string:tree_uuid&gt;/hide</code>: hide the tree from the index</p>
+</li>
+<li>
+<p><code>/tree/&lt;string:tree_uuid&gt;/mark_as_legitimate</code>:  [if enabled] mark every URL/content as known</p>
+</li>
+<li>
+<p><code>/tree/&lt;string:tree_uuid&gt;/misp_push</code>: [if enabled] push a capture to the MISP instance</p>
+</li>
+<li>
+<p><code>/tree/&lt;string:tree_uuid&gt;/url/&lt;string:node_uuid&gt;/add_context</code>: [if enabled] add a specific ressource in a category</p>
+</li>
+<li>
+<p><code>/json/&lt;string:tree_uuid&gt;/misp_push</code>: [if enabled] [API only] push a capture to the MISP instance</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
