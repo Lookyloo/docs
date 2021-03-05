@@ -20,7 +20,7 @@ image::capture.png[Capture form]
 The only required field is the **URL**, which is the URL you want to capture. It might be the
 index page of the domain to capture:
 
-* link:example.com[example.com])
+* link:example.com[example.com]
 
 Or a more complete URL:
 
