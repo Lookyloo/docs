@@ -1,0 +1,78 @@
+[id="update-lookyloo"]
+= Update Lookyloo
+
+[IMPORTANT]
+====
+It assumes you installed lookyloo with the procedure describe on this website.
+====
+
+== Update lookyloo
+
+The recommended way to update Lookyloo is to run the following command, from the directory you cloned lookyloo into:
+
+```bash
+poetry run update
+```
+
+It will do the following (you can stop at any point if you hit `n`):
+
+1. Pull the lookyloo repository.
+
+   **Note**: if the update script is modified by the pull, the script will stop
+             and you will be asked to re-run it.
+
+2. Make sure the version of poetry you're using is recent enough.
+3. Install the right version of the dependencies.
+4. Validate the current status of the configuration files.
+5. Update the configuration files with the default values from the sample file (if missing).
+6. Pull the expected version of the 3rd party javascript dependencies.
+7. Restart the website and the other scripts.
+
+
+[IMPORTANT]
+====
+The sections below are only required if the tools have been updated, or if upgrading lookyloo suggests you to do so.
+====
+
+== Update poetry
+
+```bash
+poetry self update
+```
+
+== Update Splash
+
+```bash
+sudo docker pull scrapinghub/splash
+```
+
+Then, kill the splash instances you have running and restart it. If you use aquarium, please refer to the aquarium install guide.
+Otherwise, you can simply run the following command:
+
+```bash
+sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-caches
+```
+
+=== Update Redis
+
+It requires to shutdown lookyloo completely.
+
+From the lookyloo repository:
+
+```bash
+poetry run stop
+```
+
+From the directory you cloned redis into:
+
+```bash
+# Optional: git checkout <version>
+git pull
+make
+```
+
+Then, back in the lookyloo repository:
+
+```bash
+poetry run start
+```

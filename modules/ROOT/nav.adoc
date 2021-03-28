@@ -8,6 +8,7 @@
 * xref:installation.adoc[Installing Lookyloo]
 ** xref:install-lookyloo.adoc[Install Lookyloo]
 ** xref:install-lookyloo-production.adoc[Installing Lookyloo for Production]
+** xref:update-lookyloo.adoc[Update Lookyloo]
 
 * xref:usage.adoc[Using Lookyloo]
 ** xref:lookyloo-interface.adoc[Lookyloo Interface]
