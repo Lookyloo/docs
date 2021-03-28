@@ -94,6 +94,13 @@ instead of
 
   #!/usr/bin/env python
 
+=== Install pymisp dependencies 
+If you want to install the pymisp dependencies, please install libfuzzy-dev and the run poetry with -E option
+```bash
+sudo apt-get install libfuzzy-dev
+poetry install -E misp
+```
+
 == Configuration
 
 . Initialize the user configuration
@@ -110,7 +117,6 @@ cp config/modules.json.sample config/modules.json
 ```bash
 poetry run update --yes
 ```
-
 
 == Run Splash
 
