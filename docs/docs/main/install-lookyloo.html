@@ -68,6 +68,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -339,6 +342,18 @@ and the quick and dirty fix is to edit <code>~/.poetry/bin/poetry</code> and add
 <div class="literalblock">
 <div class="content">
 <pre>#!/usr/bin/env python</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_install_pymisp_dependencies"><a class="anchor" href="#_install_pymisp_dependencies"></a>Install pymisp dependencies</h3>
+<div class="paragraph">
+<p>If you want to install the pymisp dependencies, please install libfuzzy-dev and the run poetry with -E option</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get install libfuzzy-dev
+poetry install -E misp</code></pre>
 </div>
 </div>
 </div>
