@@ -32,7 +32,7 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 
 ```
 
-You can add the following paramaters to the enqueue function:
+You can add the following parameters to the enqueue function:
 ```
     quiet      Return only the uuid
     listing    Should the report be publicly listed.

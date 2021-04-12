@@ -2,11 +2,11 @@
 
 == Start a New Capture
 
-You can start a Lookyloo capture navigating to our website instace. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.
+You can start a Lookyloo capture navigating to our website instance. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.
 
 image::lookyloo_start_new_capture.png[]
 
-Enter the the requried fields to start a capture.
+Enter the the required fields to start a capture.
 
 
 == Capture Visualization
@@ -61,9 +61,9 @@ Lookyloo displays a tree of the domains that call one another.
 
 image::sample_github_legend.png[]
 
-* *Known node*: The node only contains ressources that are either part of link:https://cdnjs.com/[CDNJS], or marked as known in lookyloo.
+* *Known node*: The node only contains resources that are either part of link:https://cdnjs.com/[CDNJS], or marked as known in lookyloo.
   Click on the hostname for details.
-* *Malicious node*: The node only contains ressources that are marked as malicious in lookyloo. Click on the hostname for details.
+* *Malicious node*: The node only contains resources that are marked as malicious in lookyloo. Click on the hostname for details.
 * *Insecure requests*: At least one for the requests in the node is unencrypted (HTTP).
 * *Empty responses*: All the responses in the node are empty.
 * *Javascript*: The responses contain javascript.
@@ -78,4 +78,4 @@ image::sample_github_legend.png[]
 * *Image*: The responses contain images
 * *Video*: The responses contain videos
 * *iFrame*: The responses are loaded from iFrames.
-* *Content type not set/unknown*: The content of hte responses is unknown.
+* *Content type not set/unknown*: The content of the responses is unknown.

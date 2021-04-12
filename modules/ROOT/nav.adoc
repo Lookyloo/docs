@@ -13,7 +13,7 @@
 * xref:usage.adoc[Using Lookyloo]
 ** xref:lookyloo-interface.adoc[Lookyloo Interface]
 ** xref:lookyloo-integration.adoc[Integration with 3rd party tools]
-** xref:lookyloo-auth.adoc[Authentification]
+** xref:lookyloo-auth.adoc[Authentication]
 ** xref:capture-cookies.adoc[Capture with Pre-defined Cookies]
 ** xref:lookyloo-tutorial.adoc[Lookyloo Tutorial]
 

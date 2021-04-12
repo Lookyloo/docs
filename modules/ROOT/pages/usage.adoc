@@ -36,12 +36,12 @@ Note: It may not be enough and the wensite may also require a cookie. If it is t
 
 === Cookies
 
-It will be empty by default, but please refer to the related documentaiton in order to
+It will be empty by default, but please refer to the related documentation in order to
 initiate a new capture with xref:capture-cookies.adoc[a pre-refined cookie].
 
 === Browser configuration
 
-By default, lookyloo passes a relatively comon user-agent when it captures a page.
+By default, lookyloo passes a relatively common user-agent when it captures a page.
 You can change it by picking the type of operating system and the browser type in the dropdown boxes.
 The user-agent used in the one in the last dropdown menu (this one will be used by default).
 
@@ -73,7 +73,7 @@ image:node1.png[landing page github]
 
 * The node with a thumbnail of the screenshot is the page as it would be displayed in your browser (after all the redirects).
   Click on the image to see the screenshot fullscreen.
-* This node contians one single URL, the content of the response is an HTML page
+* This node contains one single URL, the content of the response is an HTML page
 * The response from the server has 3 cookies
 
 image:node2.png[redirect]
@@ -81,13 +81,13 @@ image:node2.png[redirect]
 * In order to get to the landing page, we went from a unencrypted URL (http) to an encrypted one (https)
 * The initial response was empty, it generally means that the redirect was made by the server directly (3XX HTTP code)
 
-image:node3.png[ressources on the page]
+image:node3.png[resources on the page]
 
-* The landing page loads ressources from two differnt hostnames (`github.githubassets.com` and `avatars.githubusercontent.com`)
+* The landing page loads resources from two different hostnames (`github.githubassets.com` and `avatars.githubusercontent.com`)
 * 113 resources are loaded from `github.githubassets.com` (9 javascript, 4 CSS, 80 images, 6 videos)
-* 24 ressources are loaded from `avatars.githubusercontent.com` (all images)
+* 24 resources are loaded from `avatars.githubusercontent.com` (all images)
 
-image:node4.png[ressources in ressources]
+image:node4.png[resources in resources]
 
 * some of the URLs in the node `github.githubassets.com` are themselves loading content from URLs on `github.githubassets.com` (8 fonts).
   It will most probably come from the CSS in the parent node.
@@ -102,7 +102,7 @@ image:investigation1.png[investigation popup]
 
 * You will see every URL aggregated in that node
 * You can do a lot of things from there:
-  - Get every ressource loaded from the server
+  - Get every resource loaded from the server
   - See if they are present in other captures (correlation by hash)
   - See the HTTP status code of the response
   - Download all the URLs and hashes
