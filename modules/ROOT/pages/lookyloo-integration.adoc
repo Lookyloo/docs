@@ -74,3 +74,12 @@ the content loaded after we reach this page aren't queried to limit the number o
 
 The module is not enabled by default because you need to create an account, and use
 an API key.
+
+== IntelMQ
+
+link:https://intelmq.readthedocs.io/[IntelMQ] is an Open-Source OSINT processing tool.
+
+Starting with IntelMQ 3.0, the
+link:https://intelmq.readthedocs.io/en/latest/user/bots.html#lookyloo[LookyLoo expert bot]
+enqueues a screenshotting task at the configured LookyLoo instance and saves the
+(public) LookyLoo link in the event data.
