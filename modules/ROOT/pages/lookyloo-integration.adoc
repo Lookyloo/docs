@@ -64,7 +64,7 @@ before they submit it, you need to:
 
 == Phishing initiative
 
-link:https://phishing-initiative.lu[Phishing Initiative] is a database of known phihsing websites.
+link:https://phishing-initiative.fr[Phishing Initiative] is a database of known phihsing websites.
 
 By default the module will only submit the URL for analysis to Phishing Initiative is you set
 `autosubmit` to `true` in `config/modules.json`, section `PhishingInitiative`.
