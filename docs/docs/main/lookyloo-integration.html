@@ -84,7 +84,7 @@
     <a class="nav-link" href="lookyloo-integration.html">Integration with 3rd party tools</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="lookyloo-auth.html">Authentification</a>
+    <a class="nav-link" href="lookyloo-auth.html">Authentication</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
@@ -276,10 +276,10 @@ before they submit it, you need to:</p>
 <h2 id="_phishing_initiative"><a class="anchor" href="#_phishing_initiative"></a>Phishing initiative</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://phishing-initiative.fr">Phishing Initiative</a> is a database of known phihsing websites.</p>
+<p><a href="https://phishing-initiative.fr">Phishing Initiative</a> is a database of known phishing websites.</p>
 </div>
 <div class="paragraph">
-<p>By default the module will only submit the URL for analysis to Phishing Initiative is you set
+<p>By default the module will only submit the URL for analysis to Phishing Initiative if you set
 <code>autosubmit</code> to <code>true</code> in <code>config/modules.json</code>, section <code>PhishingInitiative</code>.</p>
 </div>
 <div class="paragraph">
@@ -289,6 +289,20 @@ the content loaded after we reach this page aren&#8217;t queried to limit the nu
 <div class="paragraph">
 <p>The module is not enabled by default because you need to create an account, and use
 an API key.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_intelmq"><a class="anchor" href="#_intelmq"></a>IntelMQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://intelmq.readthedocs.io/">IntelMQ</a> is an Open-Source OSINT processing tool.</p>
+</div>
+<div class="paragraph">
+<p>Starting with IntelMQ 3.0, the
+<a href="https://intelmq.readthedocs.io/en/latest/user/bots.html#lookyloo">LookyLoo expert bot</a>
+enqueues a screenshotting task at the configured LookyLoo instance and saves the
+(public) LookyLoo link in the event data.</p>
 </div>
 </div>
 </div>
