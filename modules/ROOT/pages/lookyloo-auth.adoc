@@ -36,6 +36,6 @@ When logged in, you have access to the following URLs:
 * `/tree/<string:tree_uuid>/hide`: hide the tree from the index
 * `/tree/<string:tree_uuid>/mark_as_legitimate`:  [if enabled] mark every URL/content as known
 * `/tree/<string:tree_uuid>/misp_push`: [if enabled] push a capture to the MISP instance
-* `/tree/<string:tree_uuid>/url/<string:node_uuid>/add_context`: [if enabled] add a specific ressource in a category
+* `/tree/<string:tree_uuid>/url/<string:node_uuid>/add_context`: [if enabled] add a specific resource in a category
 * `/json/<string:tree_uuid>/misp_push`: [if enabled] [API only] push a capture to the MISP instance
 

@@ -24,7 +24,7 @@ More details in the the link:https://github.com/python-poetry/poetry/#installati
 link:https://splash.readthedocs.io/en/stable/[Splash] is a javascript rendering service with an HTTP API.
 It's a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.
 
-You will need a running instance, and the prefered way is via
+You will need a running instance, and the preferred way is via
 link:https://splash.readthedocs.io/en/stable/install.html[Docker].
 
 ```bash

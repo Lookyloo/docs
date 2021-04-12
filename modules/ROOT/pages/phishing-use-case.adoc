@@ -4,7 +4,7 @@ You can use Lookyloo to identify phishing attacks.
 
 Phishing describes the attempt to obtain sensitive information often for malicious reasons,
 by masquerading as a trustworthy entity. A phishing website requests that users divulge sensitive information.
-Such attacks can incure substantial financial losses, in addition to inconveniencing and exposing users.
+Such attacks can incur substantial financial losses, in addition to inconveniencing and exposing users.
 
 Phishing attacks are more common than one might think and are of critical concern to users,
 particularly in online businesses, and financial institutions.

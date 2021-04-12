@@ -28,7 +28,7 @@ viewing the source of the page in your browser)
 * **all the cookies** what were received and created during the capture
 * the **URL in the address bar** of the browser
 
-The capture is controled by a link:https://github.com/Lookyloo/ScrapySplashWrapper/blob/main/scrapysplashwrapper/crawl.lua[LUA script].
+The capture is controlled by a link:https://github.com/Lookyloo/ScrapySplashWrapper/blob/main/scrapysplashwrapper/crawl.lua[LUA script].
 
 In order to extract information from the page and instrument the capture itself, we use link:https://scrapy.org/[Scrapy]:
 
@@ -88,7 +88,7 @@ Everything related to the website is link:https://github.com/Lookyloo/lookyloo/t
 == Modules and Third Party components
 
 In order to give more context about the URLs given by the users, we use some third party services.
-Some are used to match received content with known ressources (JavaScript libraries, CSS, images), while others allow us to match requests with known malicious content.
+Some are used to match received content with known resources (JavaScript libraries, CSS, images), while others allow us to match requests with known malicious content.
 
 === SaneJS
 
@@ -117,7 +117,7 @@ link:https://phishing-initiative.lu[Phishing Initiative] allows users to submit 
 
 === Poetry
 
-To facillitate the deployment of Lookyloo, we use link:https://python-poetry.org/[Poetry]:
+To facilitate the deployment of Lookyloo, we use link:https://python-poetry.org/[Poetry]:
 
 ====
 Poetry helps you declare, manage, and install dependencies of Python projects, ensuring you have the right stack everywhere.
