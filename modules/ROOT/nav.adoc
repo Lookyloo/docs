@@ -6,6 +6,7 @@
 *** xref:glossary.adoc[Glossary]
 
 * xref:installation.adoc[Installing Lookyloo]
+** xref:prerequisites-for-windows[Prerequisites for windows]
 ** xref:install-lookyloo.adoc[Install Lookyloo]
 ** xref:install-lookyloo-production.adoc[Installing Lookyloo for Production]
 ** xref:update-lookyloo.adoc[Update Lookyloo]
