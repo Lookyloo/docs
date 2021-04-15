@@ -210,6 +210,9 @@
 <li>
 <p>Press next at every step and do <strong>not change anything</strong> (this will enable Virtualization)</p>
 </li>
+<li>
+<p>Docker may ask you to restart your computer; after rebooting, Docker may tell you that <em>WSL2 installation is incomplete</em>: <strong>simply follow the steps indicated by Docker</strong></p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -276,7 +279,13 @@
 <p>As Lookyloo is not natively working on Windows, it is preferable to install <a href="https://www.microsoft.com/store/productId/9NBLGGH4MSV6">Ubuntu from the Microsoft store</a>.</p>
 </div>
 <div class="paragraph">
-<p>You can now launch Ubuntu from the Start menu. Follow the steps indicated in the shell. Once that&#8217;s done, run the command <code>wsl.exe --set-version Ubuntu 2</code> and then run &#8594; <code>wsl -l -v</code>. <strong>You should see VERSION 2 on the Ubuntu line</strong>.</p>
+<p>You can now launch Ubuntu from the Start menu; this will finish the installation. Follow the steps indicated in the shell.</p>
+</div>
+<div class="paragraph">
+<p>Once that&#8217;s done, close the Ubuntu shell and open PowerShell as administrator.</p>
+</div>
+<div class="paragraph">
+<p>Run the command <code>wsl.exe --set-version Ubuntu 2</code> and then run &#8594; <code>wsl -l -v</code>. <strong>You should see VERSION 2 on the Ubuntu line</strong>.</p>
 </div>
 </div>
 <div class="sect2">
