@@ -27,8 +27,10 @@ It's a lightweight browser with an HTTP API, implemented in Python 3 using Twist
 You will need a running instance, and the preferred way is via
 link:https://splash.readthedocs.io/en/stable/install.html[Docker].
 
+NOTE: If you xref:prerequisites-for-windows.adoc[installed Lookyloo on Windows], you already installed docker. You only have to execute the second line of the following snippet
+
 ```bash
-sudo apt install docker.io
+sudo apt install docker.io #not for Windows users
 sudo docker pull scrapinghub/splash
 ```
 
@@ -43,6 +45,7 @@ the same directory as the one you will be cloning Lookyloo in to.
 In order to compile and test redis, you will need a few packages:
 
 ```bash
+sudo apt-get update
 sudo apt install build-essential tcl
 ```
 
