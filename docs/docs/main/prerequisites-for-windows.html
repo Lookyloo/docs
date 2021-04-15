@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Prerequisites for Windows Installation :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/prerequisites-for-windows.html">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.lookyloo.eu">Lookyloo</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="docs" data-version="main">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">Lookyloo</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="lookyloo-explained.html">What is Lookyloo?</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="use-cases.html">Use Cases</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="phishing-use-case.html">Phishing Use Case</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="concepts.html">Concepts</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="implementation-details.html">Implementation Details</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="glossary.html">Glossary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="installation.html">Installing Lookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#prerequisites-for-windows">Prerequisites for windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-lookyloo.html">Install Lookyloo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="usage.html">Using Lookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-interface.html">Lookyloo Interface</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-integration.html">Integration with 3rd party tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-auth.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="capture-cookies.html">Capture with Pre-defined Cookies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-tutorial.html">Lookyloo Tutorial</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pylookyloo-overview.html">PyLookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pylookyloo-install.html">Install PyLookyloo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pylookyloo-commands.html">Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contributing.html">Contributing to Lookyloo</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contributor-guide.html">Contributor Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-git.html">Using Git</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="contributor-guide-docs.html"> Contributing to Docs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="contributor-style-guide.html">Style Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code-conduct.html">Code of Conduct</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Lookyloo</span>
+    <span class="version">main</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Lookyloo</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">main</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Lookyloo</a></li>
+    <li><a href="prerequisites-for-windows.html">Prerequisites for Windows Installation</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/prerequisites-for-windows.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Prerequisites for Windows Installation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Requires Windows 10 or more recent</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installing_necessary_windows_softwares"><a class="anchor" href="#_installing_necessary_windows_softwares"></a>Installing necessary Windows softwares</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_install_docker_desktop"><a class="anchor" href="#_install_docker_desktop"></a>Install Docker Desktop</h3>
+<div class="paragraph">
+<p>In order to use Splash you will need Docker to create containers. However Docker only works in Desktop mode on Windows, but don&#8217;t worry: it&#8217;s really easy to set-up and will work perfectly with WSL2.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://hub.docker.com/editions/community/docker-ce-desktop-windows/">Download and execute Docker Desktop setup</a></p>
+</li>
+<li>
+<p>Press next at every step and do <strong>not change anything</strong> (this will enable Virtualization)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Docker Desktop is now installed; we will change some of its settings later.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configure_wsl2"><a class="anchor" href="#_configure_wsl2"></a>Configure WSL2</h3>
+<div class="paragraph">
+<p>We must then enable certain properties in order for our Windows Linux Subsystem to work.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Launch <strong>Windows Powershell</strong> as administrator</p>
+</li>
+<li>
+<p>Type in the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will enable WSL on your system</p>
+</div>
+</li>
+<li>
+<p>We will now enable <em>Virtual Machine Platform</em>. You first need to <strong>check your Windows version</strong>.<br></p>
+<div class="paragraph">
+<p>Type in <code>winver</code> in the Start menu.<br></p>
+</div>
+<div class="paragraph">
+<p>For version <strong>2004</strong> type in this command;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For versions <strong>1903 &amp; 1909</strong> enter this one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Finally, set <strong>WSL2</strong> as your default version:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>wsl --set-default-version 2</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_install_ubuntu_for_windows"><a class="anchor" href="#_install_ubuntu_for_windows"></a>Install Ubuntu for Windows</h3>
+<div class="paragraph">
+<p>As Lookyloo is not natively working on Windows, it is preferable to install <a href="https://www.microsoft.com/store/productId/9NBLGGH4MSV6">Ubuntu from the Microsoft store</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can now launch Ubuntu from the Start menu. Follow the steps indicated in the shell. Once that&#8217;s done, run the command <code>wsl.exe --set-version Ubuntu 2</code> and then run &#8594; <code>wsl -l -v</code>. <strong>You should see VERSION 2 on the Ubuntu line</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_settings"><a class="anchor" href="#_docker_settings"></a>Docker Settings</h3>
+<div class="paragraph">
+<p>You might need to change these settings before continuing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open <strong>Docker Desktop</strong> and click the Settings icon</p>
+</li>
+<li>
+<p>In the General tab, tick Use the WSL 2 based engine</p>
+</li>
+<li>
+<p>Go to the tab Resources &gt; WSL Integration and tick <code>Enable integration with my default WSL distro</code> and activate the <strong>slider</strong> next to <code>Ubuntu</code> (<em>you may need to refresh first</em>).</p>
+</li>
+<li>
+<p>Click Apply and restart at the bottom right</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using your Ubuntu shell, do not install Lookyloo in a Windows path. This will cause communication problems between Redis and your Lookyloo instance. Do everything as if you were on a regular Linux OS. <strong>tl;dr</strong>: don&#8217;t go in /mnt/ to install things</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_you_are_now_ready_for_the_installation_of_lookyloo"><a class="anchor" href="#_you_are_now_ready_for_the_installation_of_lookyloo"></a>You are now ready for the <a href="https://www.lookyloo.eu/docs/main/install-lookyloo.html">installation of Lookyloo</a>!</h4>
+<div class="paragraph">
+<p>If something didn&#8217;t work, you can check the Troubleshooting section down below.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_enable_hypervirtualization"><a class="anchor" href="#_enable_hypervirtualization"></a>Enable Hypervirtualization</h3>
+<div class="paragraph">
+<p>To allow Windows to virtualize a Linux environment and to run Docker properly, you will need to enable <strong>Hyper-V</strong> in your <strong>UEFI/BIOS and in Windows itself</strong>. It can happen that Docker did not enable it automatically, so here is some help.</p>
+</div>
+<div class="sect3">
+<h4 id="_biosuefi_steps"><a class="anchor" href="#_biosuefi_steps"></a><strong>BIOS/UEFI Steps</strong></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reboot your machine</p>
+</li>
+<li>
+<p>Before the Windows logo displays, press the specified key on the screen to enter your system&#8217;s BIOS (sometimes referred to as setup).<br>
+If you can&#8217;t find it, try pressing F1/F2/F10/Delete/Escape or <a href="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v">restart your computer directly to UEFI</a></p>
+</li>
+<li>
+<p>Once you&#8217;re in, look for something like Intel Virtual Technology or SVM for AMD CPUs. Enable this option.</p>
+</li>
+<li>
+<p>You can now Save and Exit your BIOS (this will restart your computer automatically).</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you have trouble with any of the steps above, press the Windows key and type in <code>dxdiag</code>. The <code>System Model</code> line gives you the model of your motherboard which helps you getting information about how to enter your BIOS and also where the Virtualization setting is located.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enabling_hyper_v_in_windows"><a class="anchor" href="#_enabling_hyper_v_in_windows"></a>Enabling <strong>Hyper-V</strong> in Windows</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Press the Windows key and type in Turn Windows Features on or off</p>
+</li>
+<li>
+<p>Look for the setting called "Hyper-V" and tick it if it&#8217;s not enable yet. Click "OK"</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Good job! You have now enabled virtualization on your system.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
