@@ -1,0 +1,101 @@
+[id="prerequisites-for-windows"]
+= Prerequisites for Windows Installation
+
+[IMPORTANT]
+====
+Requires Windows 10 or more recent
+====
+
+== Installing necessary Windows softwares
+
+=== Install Docker Desktop
+
+In order to use Splash you will need Docker to create containers. However Docker only works in Desktop mode on Windows, but don't worry: it's really easy to set-up and will work perfectly with WSL2.
+
+. link:https://hub.docker.com/editions/community/docker-ce-desktop-windows/[Download and execute Docker Desktop setup]
+. Press next at every step and do *not change anything* (this will enable Virtualization)
+
+Docker Desktop is now installed; we will change some of its settings later.
+
+=== Configure WSL2
+
+We must then enable certain properties in order for our Windows Linux Subsystem to work. 
+
+. Launch *Windows Powershell* as administrator
+
+. Type in the following command:
++
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+This will enable WSL on your system
+
+. We will now enable _Virtual Machine Platform_. You first need to *check your Windows version*. + 
++
+Type in `winver` in the Start menu. +
++
+For version *2004* type in this command;  
++
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
++
+For versions *1903 & 1909* enter this one:
++
+```
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -NoRestart
+```
+. Finally, set *WSL2* as your default version: 
++
+```
+wsl --set-default-version 2
+```
+
+
+=== Install Ubuntu for Windows
+
+As Lookyloo is not natively working on Windows, it is preferable to install link:https://www.microsoft.com/store/productId/9NBLGGH4MSV6[Ubuntu from the Microsoft store].
+
+You can now launch Ubuntu from the Start menu. Follow the steps indicated in the shell. Once that's done, run the command `wsl.exe --set-version Ubuntu 2` and then run -> `wsl -l -v`. *You should see VERSION 2 on the Ubuntu line*.
+
+
+=== Docker Settings
+
+You might need to change these settings before continuing:
+
+. Open *Docker Desktop* and click the Settings icon
+. In the General tab, tick Use the WSL 2 based engine
+. Go to the tab Resources > WSL Integration and tick `Enable integration with my default WSL distro` and activate the *slider* next to `Ubuntu` (_you may need to refresh first_).
+. Click Apply and restart at the bottom right
+
+[IMPORTANT]
+====
+When using your Ubuntu shell, do not install Lookyloo in a Windows path. This will cause communication problems between Redis and your Lookyloo instance. Do everything as if you were on a regular Linux OS. *tl;dr*: don't go in /mnt/ to install things
+====
+
+==== You are now ready for the link:https://www.lookyloo.eu/docs/main/install-lookyloo.html[installation of Lookyloo]!
+
+If something didn't work, you can check the Troubleshooting section down below.
+
+== Troubleshooting
+
+=== Enable Hypervirtualization
+
+To allow Windows to virtualize a Linux environment and to run Docker properly, you will need to enable *Hyper-V* in your *UEFI/BIOS and in Windows itself*. It can happen that Docker did not enable it automatically, so here is some help.
+
+==== *BIOS/UEFI Steps*
+
+. Reboot your machine
+. Before the Windows logo displays, press the specified key on the screen to enter your system's BIOS (sometimes referred to as setup). +
+If you can't find it, try pressing F1/F2/F10/Delete/Escape or link:https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v[restart your computer directly to UEFI]
+. Once you're in, look for something like Intel Virtual Technology or SVM for AMD CPUs. Enable this option.
+. You can now Save and Exit your BIOS (this will restart your computer automatically).
+
+NOTE: If you have trouble with any of the steps above, press the Windows key and type in `dxdiag`. The `System Model` line gives you the model of your motherboard which helps you getting information about how to enter your BIOS and also where the Virtualization setting is located.
+
+==== Enabling *Hyper-V* in Windows
+
+. Press the Windows key and type in Turn Windows Features on or off
+. Look for the setting called "Hyper-V" and tick it if it's not enable yet. Click "OK"
+
+Good job! You have now enabled virtualization on your system.
