@@ -59,6 +59,39 @@ make test
 cd ..
 ```
 
+=== Install uwhoisd
+
+In order to use the Universal Whois you have to install uwhoisd from Lookyloo repository and the whois package:
+
+```bash
+sudo apt-get update
+sudo apt-get install whois
+```
+
+```bash
+git clone https://github.com/Lookyloo/uwhoisd
+cd uwhoisd
+poetry install
+```
+
+Then configure the service file
+```bash
+nano etc/systemd/system/uwhoisd.service.sample
+```
+
+```bash
+sudo cp etc/systemd/system/uwhoisd.service.sample /etc/systemd/system/uwhoisd.service
+cd ..
+sudo systemctl daemon-reload
+sudo systemctl start uwhoisd
+sudo systemctl status uwhoisd
+```
+
+If everything is ok, activate the service for reboot
+```bash
+sudo systemctl enable uwhoisd
+```
+
 == Install Lookyloo
 
 === Prerequisites
