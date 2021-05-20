@@ -130,7 +130,7 @@ instead of
 
   #!/usr/bin/env python
 
-=== Install pymisp dependencies 
+=== Install pymisp dependencies
 If you want to install the pymisp dependencies, please install libfuzzy-dev and the run poetry with -E option
 ```bash
 sudo apt-get install libfuzzy-dev
@@ -146,7 +146,9 @@ cp config/generic.json.sample config/generic.json
 cp config/modules.json.sample config/modules.json
 ```
 
-. Edit the config files accordingly: see the `_notes` key in the JSON file.
+. Edit the config files accordingly to your needs: see the `_notes` key in the JSON file.
+  You can also look at the xref:lookyloo-integration.adoc[integration page] for more information regarding the modules,
+  and the xref:lookyloo-configuration.adoc[configuration page] for the generic configuration options.
 
 . Make sure the configuration files are valid, and pull the 3rd party dependencies for the website
 +

@@ -9,6 +9,7 @@
 ** xref:prerequisites-for-windows.adoc[Prerequisites for windows]
 ** xref:install-lookyloo.adoc[Install Lookyloo]
 ** xref:install-lookyloo-production.adoc[Installing Lookyloo for Production]
+** xref:lookyloo-configuration.adoc[Main configuration options]
 ** xref:update-lookyloo.adoc[Update Lookyloo]
 
 * xref:usage.adoc[Using Lookyloo]
@@ -20,8 +21,7 @@
 
 
 * xref:pylookyloo-overview.adoc[PyLookyloo]
-** xref:pylookyloo-install.adoc[Install PyLookyloo]
-** xref:pylookyloo-commands.adoc[Commands]
+** xref:pylookyloo-commands.adoc[Usage]
 
 * xref:contributing.adoc[Contributing to Lookyloo]
 ** xref:contributor-guide.adoc[Contributor Guide]

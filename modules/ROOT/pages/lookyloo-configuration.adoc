@@ -1,0 +1,48 @@
+[id="configuration"]
+= Main configuration options
+
+You can find the configuration options in `config/generic.json` and the sample file is `config/generic.json.sample`.
+The default options will work out of the box on a xref:install-lookyloo.adoc[default installation].
+
+This document will explain them in more details.
+
+== Core config
+
+* `website_listen_ip`: IP where the webserver (flask) will be listening for requests. Defaults to 0.0.0.0, meaning all interfaces.
+* `website_listen_port`: Port where the webserver (flask) will be listening for requests.
+* `public_domain`: Domain where the instance can be reached. Used for permalinks (e-mail, MISP export).
+* `splash_url`: URL to connect to the splash instance, probably dockerized.
+* `default_user_agent`: Ultimate fallback if the capture form, or the asynchronous submission, doesn't provide a user agent.
+* `max_depth`: Maximum depth for scraping. Anything > 1 will be exponentially bigger.
+* `async_capture_processes`: Number of async_capture processes to start. This should not be
+                             higher than the number of splash instances you have running.
+                             A very high number will use *a lot* of ram.
+
+* `public_instance`: true means disabling features deemed unsafe on a public instance (such as indexing private captures)
+* `only_global_lookups`: Set it to true if your instance is publicly available so users aren't able to scan your internal network
+* `time_delta_on_index`: Time interval of the capture displayed on the index.
+                         It expects a dictionary in this format: `{"weeks": 1, "days": 0, "hours": 0}`
+* `users`: It is some kind of an admin accounts. See xref:lookyloo-auth.adoc[authentication] for more details.
+* `priority`: Define the priority of a new capture. A capture from the web interface has priority
+              over a capture from the API, same for authenticated user vs. anonymous.
+              The two sources are `web` and `api`. If you have xref:lookyloo-auth.adoc[authenticated] users,
+              you can set a specific priority for each of them individually in the `users` key.
+              Example, is you have an user called `admin`, you can add `admin: 10`.
+
+== Optional features
+
+* `use_user_agents_users`: Only usable for medium/high use instances: use the user agents of the users of the platform
+* `enable_default_blur_screenshot`: If true, blur the screenshot by default (especially useful on public instances)
+* `enable_context_by_users`: Allow the users to add context to a response body
+* `enable_categorization`: Allow the users to add contextualization to a capture
+* `enable_bookmark`: Allow to bookmark nodes on tree
+* `auto_trigger_modules`: Automatically trigger the modules when the tree is loaded and when the capture is cached
+* `enable_mail_notification`: Allow users to notify a pre-configured email address about a specific capture
+* `email`: Configuration for sending email notifications
+
+== Logging
+
+* `loglevel`: General log level for Lookyloo itself. It can be one of the level described
+              link:https://docs.python.org/3/library/logging.html#levels[there].
+* `splash_loglevel`: Loglevel for link:https://splash.readthedocs.io/en/stable/index.html[splash].
+                     It expects the same values as above, but be careful: `INFO` will be pretty verbose.

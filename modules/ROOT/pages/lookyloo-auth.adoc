@@ -2,7 +2,8 @@
 = Authentication
 
 **Note**: The authentication system is very limited and currently only used for
-processing-heavy requests and pushing captures to a MISP instance.
+processing-heavy requests, pushing captures to a MISP instance, and can be used to
+prioritize users in a high-use lookyloo instance.
 
 == Configure auth
 
@@ -18,7 +19,7 @@ or
 In the first case, an API key will be automatically generated when you start the app.
 
 **Note**: The API key is what you will need to use for the queries requiring an
-authenticated user when you're using the API (PyLookyloo).
+authenticated user when you're using the API (link:https://pylookyloo.readthedocs.io/en/latest/[PyLookyloo]).
 
 **Note**: You can have multiple users, they will all have the same admin rights.
 

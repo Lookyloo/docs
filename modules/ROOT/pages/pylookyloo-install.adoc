@@ -1,9 +1,0 @@
-[id="pylookyloo-install"]
-
-= Install PyLookyloo
-
-To install the command-line interface for Lookyloo you can run the following command:
-
-```bash
-pip install pylookyloo
-```

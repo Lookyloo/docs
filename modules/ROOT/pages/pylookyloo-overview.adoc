@@ -2,4 +2,19 @@
 
 = What is PyLookyloo?
 
-PyLookyloo is the client API for Lookyloo.
+PyLookyloo is the client API for link:https://www.lookyloo.eu[Lookyloo].
+
+== Installation
+
+To install the command-line interface for Lookyloo you can run the following command:
+
+```bash
+pip install pylookyloo
+```
+
+Or clone the link:https://github.com/Lookyloo/pylookyloo[repository], and run `poetry install`.
+
+== Usage
+
+PyLookyloo comes with a CLI you can xref:pylookyloo-commands.adoc[use directly]
+but you can also use it link:https://pylookyloo.readthedocs.io/en/latest/api_reference.html[as a library]
