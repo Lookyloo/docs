@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>PyLookyloo Commands :: Lookyloo</title>
+    <title>PyLookyloo Usage :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/pylookyloo-commands.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
@@ -72,6 +72,9 @@
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-configuration.html">Main configuration options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
   </li>
 </ul>
@@ -101,11 +104,8 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="pylookyloo-overview.html">PyLookyloo</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-install.html">Install PyLookyloo</a>
-  </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="pylookyloo-commands.html">Commands</a>
+    <a class="nav-link" href="pylookyloo-commands.html">Usage</a>
   </li>
 </ul>
   </li>
@@ -168,22 +168,19 @@
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
     <li><a href="pylookyloo-overview.html">PyLookyloo</a></li>
-    <li><a href="pylookyloo-commands.html">Commands</a></li>
+    <li><a href="pylookyloo-commands.html">Usage</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/pylookyloo-commands.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">PyLookyloo Commands</h1>
-<div id="preamble">
+<h1 class="page">PyLookyloo Usage</h1>
+<div class="sect1">
+<h2 id="_command_line_interface"><a class="anchor" href="#_command_line_interface"></a>Command line interface</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>You can use the <code>lookyloo</code> command to enqueue a URL.</p>
-</li>
-</ul>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -202,12 +199,14 @@ optional arguments:
 The response is the permanent URL where you can see the result of the capture.</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Or as a library</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_library"><a class="anchor" href="#_library"></a>Library</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pylookyloo is also a library (<a href="https://pylookyloo.readthedocs.io/en/latest/api_reference.html">API reference</a>),
+see examples below.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -229,11 +228,8 @@ if lookyloo.is_up:  # to make sure it is up and reachable
     Depth      Set the analysis depth. Can not be more than in config</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_redirects"><a class="anchor" href="#_redirects"></a>Redirects</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_redirects"><a class="anchor" href="#_redirects"></a>Redirects</h3>
 <div class="paragraph">
 <p>To retrieve the redirects (json)</p>
 </div>
@@ -243,10 +239,8 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_cookies"><a class="anchor" href="#_cookies"></a>Cookies</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cookies"><a class="anchor" href="#_cookies"></a>Cookies</h3>
 <div class="paragraph">
 <p>To retrieve the cookies (json)</p>
 </div>
@@ -256,10 +250,8 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_screenshot"><a class="anchor" href="#_screenshot"></a>Screenshot</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_screenshot"><a class="anchor" href="#_screenshot"></a>Screenshot</h3>
 <div class="paragraph">
 <p>To retrieve the screenshot (raw)</p>
 </div>
@@ -269,10 +261,8 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_html"><a class="anchor" href="#_html"></a>HTML</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_html"><a class="anchor" href="#_html"></a>HTML</h3>
 <div class="paragraph">
 <p>To retrieve the HTML (raw)</p>
 </div>
@@ -282,10 +272,8 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_complete_capture"><a class="anchor" href="#_complete_capture"></a>Complete Capture</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_complete_capture"><a class="anchor" href="#_complete_capture"></a>Complete Capture</h3>
 <div class="paragraph">
 <p>To retrieve the complete capture (raw)</p>
 </div>
@@ -295,16 +283,15 @@ if lookyloo.is_up:  # to make sure it is up and reachable
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_get_statistics_about_the_instance"><a class="anchor" href="#_get_statistics_about_the_instance"></a>Get statistics about the instance</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_get_statistics_about_the_instance"><a class="anchor" href="#_get_statistics_about_the_instance"></a>Get statistics about the instance</h3>
 <div class="paragraph">
 <p>To retrieve the statistics (json)</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">    stats = lookyloo.get_stats()</code></pre>
+</div>
 </div>
 </div>
 </div>

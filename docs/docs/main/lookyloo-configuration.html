@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Install PyLookyloo :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/pylookyloo-install.html">
+    <title>Main configuration options :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-configuration.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -71,6 +71,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="lookyloo-configuration.html">Main configuration options</a>
+  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
   </li>
@@ -101,11 +104,8 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="pylookyloo-overview.html">PyLookyloo</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="pylookyloo-install.html">Install PyLookyloo</a>
-  </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-commands.html">Commands</a>
+    <a class="nav-link" href="pylookyloo-commands.html">Usage</a>
   </li>
 </ul>
   </li>
@@ -167,21 +167,126 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="pylookyloo-overview.html">PyLookyloo</a></li>
-    <li><a href="pylookyloo-install.html">Install PyLookyloo</a></li>
+    <li><a href="installation.html">Installing Lookyloo</a></li>
+    <li><a href="lookyloo-configuration.html">Main configuration options</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/pylookyloo-install.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/lookyloo-configuration.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Install PyLookyloo</h1>
+<h1 class="page">Main configuration options</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>To install the command-line interface for Lookyloo you can run the following command:</p>
+<p>You can find the configuration options in <code>config/generic.json</code> and the sample file is <code>config/generic.json.sample</code>.
+The default options will work out of the box on a <a href="install-lookyloo.html" class="page">default installation</a>.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip install pylookyloo</code></pre>
+<div class="paragraph">
+<p>This document will explain them in more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_core_config"><a class="anchor" href="#_core_config"></a>Core config</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><code>website_listen_ip</code>: IP where the webserver (flask) will be listening for requests. Defaults to 0.0.0.0, meaning all interfaces.</p>
+</li>
+<li>
+<p><code>website_listen_port</code>: Port where the webserver (flask) will be listening for requests.</p>
+</li>
+<li>
+<p><code>public_domain</code>: Domain where the instance can be reached. Used for permalinks (e-mail, MISP export).</p>
+</li>
+<li>
+<p><code>splash_url</code>: URL to connect to the splash instance, probably dockerized.</p>
+</li>
+<li>
+<p><code>default_user_agent</code>: Ultimate fallback if the capture form, or the asynchronous submission, doesn&#8217;t provide a user agent.</p>
+</li>
+<li>
+<p><code>max_depth</code>: Maximum depth for scraping. Anything &gt; 1 will be exponentially bigger.</p>
+</li>
+<li>
+<p><code>async_capture_processes</code>: Number of async_capture processes to start. This should not be
+higher than the number of splash instances you have running.
+A very high number will use <strong>a lot</strong> of ram.</p>
+</li>
+<li>
+<p><code>public_instance</code>: true means disabling features deemed unsafe on a public instance (such as indexing private captures)</p>
+</li>
+<li>
+<p><code>only_global_lookups</code>: Set it to true if your instance is publicly available so users aren&#8217;t able to scan your internal network</p>
+</li>
+<li>
+<p><code>time_delta_on_index</code>: Time interval of the capture displayed on the index.
+It expects a dictionary in this format: <code>{"weeks": 1, "days": 0, "hours": 0}</code></p>
+</li>
+<li>
+<p><code>users</code>: It is some kind of an admin accounts. See <a href="lookyloo-auth.html" class="page">authentication</a> for more details.</p>
+</li>
+<li>
+<p><code>priority</code>: Define the priority of a new capture. A capture from the web interface has priority
+over a capture from the API, same for authenticated user vs. anonymous.
+The two sources are <code>web</code> and <code>api</code>. If you have <a href="lookyloo-auth.html" class="page">authenticated</a> users,
+you can set a specific priority for each of them individually in the <code>users</code> key.
+Example, is you have an user called <code>admin</code>, you can add <code>admin: 10</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optional_features"><a class="anchor" href="#_optional_features"></a>Optional features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><code>use_user_agents_users</code>: Only usable for medium/high use instances: use the user agents of the users of the platform</p>
+</li>
+<li>
+<p><code>enable_default_blur_screenshot</code>: If true, blur the screenshot by default (especially useful on public instances)</p>
+</li>
+<li>
+<p><code>enable_context_by_users</code>: Allow the users to add context to a response body</p>
+</li>
+<li>
+<p><code>enable_categorization</code>: Allow the users to add contextualization to a capture</p>
+</li>
+<li>
+<p><code>enable_bookmark</code>: Allow to bookmark nodes on tree</p>
+</li>
+<li>
+<p><code>auto_trigger_modules</code>: Automatically trigger the modules when the tree is loaded and when the capture is cached</p>
+</li>
+<li>
+<p><code>enable_mail_notification</code>: Allow users to notify a pre-configured email address about a specific capture</p>
+</li>
+<li>
+<p><code>email</code>: Configuration for sending email notifications</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logging"><a class="anchor" href="#_logging"></a>Logging</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><code>loglevel</code>: General log level for Lookyloo itself. It can be one of the level described
+<a href="https://docs.python.org/3/library/logging.html#levels">there</a>.</p>
+</li>
+<li>
+<p><code>splash_loglevel</code>: Loglevel for <a href="https://splash.readthedocs.io/en/stable/index.html">splash</a>.
+It expects the same values as above, but be careful: <code>INFO</code> will be pretty verbose.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </article>

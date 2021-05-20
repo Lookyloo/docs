@@ -72,6 +72,9 @@
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-configuration.html">Main configuration options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
   </li>
 </ul>
@@ -102,10 +105,7 @@
     <a class="nav-link" href="pylookyloo-overview.html">PyLookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-install.html">Install PyLookyloo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-commands.html">Commands</a>
+    <a class="nav-link" href="pylookyloo-commands.html">Usage</a>
   </li>
 </ul>
   </li>
@@ -175,8 +175,37 @@
   <div class="content">
 <article class="doc">
 <h1 class="page">What is PyLookyloo?</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>PyLookyloo is the client API for Lookyloo.</p>
+<p>PyLookyloo is the client API for <a href="https://www.lookyloo.eu">Lookyloo</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To install the command-line interface for Lookyloo you can run the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip install pylookyloo</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or clone the <a href="https://github.com/Lookyloo/pylookyloo">repository</a>, and run <code>poetry install</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>PyLookyloo comes with a CLI you can <a href="pylookyloo-commands.html" class="page">use directly</a>
+but you can also use it <a href="https://pylookyloo.readthedocs.io/en/latest/api_reference.html">as a library</a></p>
+</div>
+</div>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">

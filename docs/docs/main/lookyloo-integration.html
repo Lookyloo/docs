@@ -72,6 +72,9 @@
     <a class="nav-link" href="install-lookyloo-production.html">Installing Lookyloo for Production</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-configuration.html">Main configuration options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
   </li>
 </ul>
@@ -102,10 +105,7 @@
     <a class="nav-link" href="pylookyloo-overview.html">PyLookyloo</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-install.html">Install PyLookyloo</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-commands.html">Commands</a>
+    <a class="nav-link" href="pylookyloo-commands.html">Usage</a>
   </li>
 </ul>
   </li>
@@ -201,6 +201,33 @@ If the hash matches, you will see the library name, version and exact file match
 <p>The module is enabled by default, as SaneJS is publicly available, but you can change that by
 setting the <code>enabled</code> to <code>false</code> in <code>config/modules.json</code>, section <code>SaneJS</code>.</p>
 </div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> is currently not used.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_uwhoisd"><a class="anchor" href="#_uwhoisd"></a>uWhoisd</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This module will do a <a href="https://en.wikipedia.org/wiki/WHOIS">whois lookup</a>
+for the domains (including CNAMEs) and IPs listed in the investigation pop-up.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/Lookyloo/uwhoisd">uWhoisd</a> queries the whois servers using the command line whois command.</p>
+</div>
+<div class="paragraph">
+<p>The module is not enabled by default. In order to use it, you need to run your own instance
+of <a href="https://github.com/Lookyloo/uwhoisd">uWhoisd</a> and configure the <code>ipaddress</code>
+and <code>port</code> accordingly in <code>config/modules.json</code>, and set <code>enabled</code> to <code>true</code> in section <code>UniversalWhois</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> will automatically trigger a whois lookup for each domains, CNAMEs, and IPs
+for all the redirected nodes up to the one containing the rendered page.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -225,6 +252,13 @@ an API key.</p>
 <div class="paragraph">
 <p><strong>Important</strong>: the query limit for a standard API key is 4/minute so you will hit
 it very fast if you do not have a paid plan with them.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> will automatically trigger a query (and submit if enabled) for each URLs
+in the redirected nodes up to the one containing the rendered page.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
 </div>
 </div>
 </div>
@@ -254,6 +288,9 @@ in <code>default_tags</code>, and automatically publish the MISP events by setti
 </div>
 <div class="paragraph">
 <p><strong>Important</strong>: the MISP publish feature is only available for <a href="lookyloo-auth.html" class="page">authenticated users</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> is currently not used.</p>
 </div>
 <div class="sect2">
 <h3 id="_recommended_setup_on_misp_side"><a class="anchor" href="#_recommended_setup_on_misp_side"></a>Recommended setup on MISP side</h3>
@@ -292,6 +329,13 @@ the content loaded after we reach this page aren&#8217;t queried to limit the nu
 <div class="paragraph">
 <p>The module is not enabled by default because you need to create an account, and use
 an API key.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> will automatically trigger a query (and submit if enabled) for each URLs
+in the redirected nodes up to the one containing the rendered page.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
 </div>
 </div>
 </div>
