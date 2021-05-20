@@ -16,6 +16,24 @@ If the hash matches, you will see the library name, version and exact file match
 The module is enabled by default, as SaneJS is publicly available, but you can change that by
 setting the `enabled` to `false` in `config/modules.json`, section `SaneJS`.
 
+`allow_auto_trigger` is currently not used.
+
+== uWhoisd
+
+This module will do a link:https://en.wikipedia.org/wiki/WHOIS[whois lookup]
+for the domains (including CNAMEs) and IPs listed in the investigation pop-up.
+
+link:https://github.com/Lookyloo/uwhoisd[uWhoisd] queries the whois servers using the command line whois command.
+
+The module is not enabled by default. In order to use it, you need to run your own instance
+of link:https://github.com/Lookyloo/uwhoisd[uWhoisd] and configure the `ipaddress`
+and `port` accordingly in `config/modules.json`, and set `enabled` to `true` in section `UniversalWhois`.
+
+`allow_auto_trigger` will automatically trigger a whois lookup for each domains, CNAMEs, and IPs
+for all the redirected nodes up to the one containing the rendered page.
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
+
 == Virus Total
 
 link:https://www.virustotal.com/[VirusTotal] is well known for having a huge database of
@@ -32,6 +50,11 @@ an API key.
 
 **Important**: the query limit for a standard API key is 4/minute so you will hit
 it very fast if you do not have a paid plan with them.
+
+`allow_auto_trigger` will automatically trigger a query (and submit if enabled) for each URLs
+in the redirected nodes up to the one containing the rendered page.
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
 == MISP
 
@@ -52,6 +75,8 @@ in `default_tags`, and automatically publish the MISP events by setting `auto_pu
 (in that case, the user must have the publisher permission in MISP).
 
 **Important**: the MISP publish feature is only available for xref:lookyloo-auth.adoc[authenticated users].
+
+`allow_auto_trigger` is currently not used.
 
 === Recommended setup on MISP side
 
@@ -74,6 +99,11 @@ the content loaded after we reach this page aren't queried to limit the number o
 
 The module is not enabled by default because you need to create an account, and use
 an API key.
+
+`allow_auto_trigger` will automatically trigger a query (and submit if enabled) for each URLs
+in the redirected nodes up to the one containing the rendered page.
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
 == IntelMQ
 
