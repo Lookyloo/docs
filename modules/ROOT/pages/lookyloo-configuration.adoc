@@ -31,6 +31,9 @@ This document will explain them in more details.
 
 == Optional features
 
+* `hide_captures_with_error`: Capturing an URL may result in an error (domain non-existent, HTTP error, ...).
+                              They may be useful to see, but if you have a public instance, they will clutter the index.
+                              If this feature is enabled, add `?show_error=1` to the URL in the index page.
 * `use_user_agents_users`: Only usable for medium/high use instances: use the user agents of the users of the platform
 * `enable_default_blur_screenshot`: If true, blur the screenshot by default (especially useful on public instances)
 * `enable_context_by_users`: Allow the users to add context to a response body
