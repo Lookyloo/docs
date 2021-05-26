@@ -310,7 +310,9 @@ Type=forking
 WorkingDirectory=/home/lookyloo/gits/lookyloo
 Environment="PATH=/home/lookyloo/.local/bin:/usr/bin"
 ExecStart=/bin/bash -c "exec poetry run start"
-ExecStop=/bin/bash -c "exec poetry run stop"
+ExecStop=/bin/bash -c "exec poetry run stop"a
+StandardOutput=append:/var/log/lookyloo_message.log
+StandardError=append:/var/log/lookyloo_error.log
 
 
 [Install]
@@ -414,6 +416,8 @@ RemainAfterExit=true
 WorkingDirectory=/home/lookyloo/aquarium
 ExecStart=/usr/bin/docker-compose up -d --remove-orphans
 ExecStop=/usr/bin/docker-compose down
+StandardOutput=append:/var/log/aquarium_message.log
+StandardError=append:/var/log/aquarium_error.log
 
 [Install]
 WantedBy=multi-user.target
@@ -457,6 +461,25 @@ sudo systemctl status aquarium</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable aquarium</code></pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logging_and_rotation"><a class="anchor" href="#_logging_and_rotation"></a>Logging and rotation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The systemd services write the <code>stdout</code> and <code>stderr</code> logs into <code>/var/log</code>. Over time, these files will
+keep growing and it may become a problem.
+If you want to avoid that, you can add the logrotate configurations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">---
+cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
+cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
+sudo systemctl restart logrotate
+---</code></pre>
 </div>
 </div>
 </div>
