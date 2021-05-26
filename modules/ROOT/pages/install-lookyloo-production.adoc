@@ -82,7 +82,9 @@ Type=forking
 WorkingDirectory=/home/lookyloo/gits/lookyloo
 Environment="PATH=/home/lookyloo/.local/bin:/usr/bin"
 ExecStart=/bin/bash -c "exec poetry run start"
-ExecStop=/bin/bash -c "exec poetry run stop"
+ExecStop=/bin/bash -c "exec poetry run stop"a
+StandardOutput=append:/var/log/lookyloo_message.log
+StandardError=append:/var/log/lookyloo_error.log
 
 
 [Install]
@@ -159,6 +161,8 @@ RemainAfterExit=true
 WorkingDirectory=/home/lookyloo/aquarium
 ExecStart=/usr/bin/docker-compose up -d --remove-orphans
 ExecStop=/usr/bin/docker-compose down
+StandardOutput=append:/var/log/aquarium_message.log
+StandardError=append:/var/log/aquarium_error.log
 
 [Install]
 WantedBy=multi-user.target
@@ -196,6 +200,19 @@ If everything is fine, enable the service so it automatically starts on reboot:
 ----
 sudo systemctl enable aquarium
 ----
+
+== Logging and rotation
+
+The systemd services write the `stdout` and `stderr` logs into `/var/log`. Over time, these files will
+keep growing and it may become a problem.
+If you want to avoid that, you can add the logrotate configurations:
+
+[source, bash]
+---
+cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
+cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
+sudo systemctl restart logrotate
+---
 
 == Final remarks
 
