@@ -266,31 +266,20 @@ in the redirected nodes up to the one containing the rendered page.</p>
 <h2 id="_misp"><a class="anchor" href="#_misp"></a>MISP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Note</strong>: For now, this module only supports submitting a capture to a MISP instance.
-Lookup of indicators against a MISP instance will be implemented soon.</p>
-</div>
-<div class="paragraph">
 <p>Connecting Lookyloo to <a href="https://www.misp-project.org/">MISP - Open Source Threat Intelligence Platform</a>
 will make it possible to share captures within your sharing community.</p>
 </div>
 <div class="paragraph">
-<p>The module is disabled by default. To enable the module, you need to set at least an
-<code>url</code>, an <code>apikey</code>, and set <code>enable_push</code> to <code>true</code> in <code>config/modules.json</code>, section <code>MISP</code>.</p>
-</div>
-<div class="paragraph">
-<p>You may want to set <code>verify_tls_cert</code> to <code>false</code> if you&#8217;re using a self-signed certificate,
+<p>To use this module, you need to have access to a MISP instance
+and set at least an <code>url</code> and an <code>apikey</code> in <code>config/modules.json</code>, section <code>MISP</code>.
+You may also want to set <code>verify_tls_cert</code> to <code>false</code> if you&#8217;re using a self-signed certificate,
 and modify the <code>timeout</code> if the MISP instance is very slow.</p>
 </div>
 <div class="paragraph">
-<p>You can also add a list of default tags that will be attached to every event created by Lookyloo
-in <code>default_tags</code>, and automatically publish the MISP events by setting <code>auto_publish</code> to <code>true</code>
-(in that case, the user must have the publisher permission in MISP).</p>
-</div>
-<div class="paragraph">
-<p><strong>Important</strong>: the MISP publish feature is only available for <a href="lookyloo-auth.html" class="page">authenticated users</a>.</p>
-</div>
-<div class="paragraph">
 <p><code>allow_auto_trigger</code> is currently not used.</p>
+</div>
+<div class="paragraph">
+<p><strong>Important</strong>: the MISP publish and lookup features are only available for <a href="lookyloo-auth.html" class="page">authenticated users</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_recommended_setup_on_misp_side"><a class="anchor" href="#_recommended_setup_on_misp_side"></a>Recommended setup on MISP side</h3>
@@ -308,6 +297,36 @@ before they submit it, you need to:</p>
 <p>Mark them as favorite <strong>for the dedicated user</strong></p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: If you want to publish the events on creation, the <strong>dedicated user</strong> must have the <strong>publisher</strong> rights.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_push_to_a_misp_instance"><a class="anchor" href="#_push_to_a_misp_instance"></a>Push to a MISP instance</h3>
+<div class="paragraph">
+<p>The module is disabled by default. In order to enable it, you need to set <code>enable_push</code> to <code>true</code> in
+<code>config/modules.json</code>, section <code>MISP</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can also add a list of default tags that will be attached to every event created by Lookyloo
+in <code>default_tags</code>, and automatically publish the MISP events by setting <code>auto_publish</code> to <code>true</code>
+(in that case, the user must have the publisher permission in MISP).</p>
+</div>
+<div class="paragraph">
+<p>If everything is working as it should, you will see a link in the top menu of the tree page.
+Otherwise, look at the Lookyloo logs, it is probably because your MISP instance is unreachable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lookup_on_a_misp_instance"><a class="anchor" href="#_lookup_on_a_misp_instance"></a>Lookup on a MISP instance</h3>
+<div class="paragraph">
+<p>The module is disabled by default. In order to enable it, you need to set <code>enable_lookup</code> to <code>true</code> in
+<code>config/modules.json</code>, section <code>MISP</code>.</p>
+</div>
+<div class="paragraph">
+<p>If everything is working as it should, you will see a link in the top menu of the tree page.
+Otherwise, look at the Lookyloo logs, it is probably because your MISP instance is unreachable.</p>
 </div>
 </div>
 </div>
