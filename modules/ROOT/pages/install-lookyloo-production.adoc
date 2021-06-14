@@ -82,7 +82,7 @@ Type=forking
 WorkingDirectory=/home/lookyloo/gits/lookyloo
 Environment="PATH=/home/lookyloo/.local/bin:/usr/bin"
 ExecStart=/bin/bash -c "exec poetry run start"
-ExecStop=/bin/bash -c "exec poetry run stop"a
+ExecStop=/bin/bash -c "exec poetry run stop"
 StandardOutput=append:/var/log/lookyloo_message.log
 StandardError=append:/var/log/lookyloo_error.log
 
