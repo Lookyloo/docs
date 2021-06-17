@@ -182,7 +182,7 @@ Copy the file to the expected directory:
 
 [source, bash]
 ----
-cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
+sudo cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
 sudo systemctl daemon-reload
 ----
 
@@ -209,8 +209,8 @@ If you want to avoid that, you can add the logrotate configurations:
 
 [source, bash]
 ---
-cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
-cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
+sudo cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
+sudo cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
 sudo systemctl restart logrotate
 ---
 

@@ -3,7 +3,7 @@
 
 [IMPORTANT]
 ====
-Requires Python 3.7 or higher, expects Ubuntu 20.04 or more recent.
+Requires Python 3.8 or higher, expects Ubuntu 20.04 or more recent.
 ====
 
 == Install Lookyloo Dependencies
@@ -29,8 +29,12 @@ link:https://splash.readthedocs.io/en/stable/install.html[Docker].
 
 NOTE: If you xref:prerequisites-for-windows.adoc[installed Lookyloo on Windows], you already installed docker. You only have to execute the second line of the following snippet
 
+NOTE: On Ubuntu, you may want to have a look at link:https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04[this installation guide], which will provide a more recent version of docker.
+
+And if you just want to get going on linux, here it is:
+
 ```bash
-sudo apt install docker.io #not for Windows users
+sudo apt install docker.io
 sudo docker pull scrapinghub/splash
 ```
 
@@ -52,14 +56,14 @@ sudo apt install build-essential tcl
 ```bash
 git clone https://github.com/antirez/redis.git
 cd redis
-git checkout 6.0
+git checkout 6.2
 make
 # Optionally, you can run the tests:
 make test
 cd ..
 ```
 
-=== Install uwhoisd
+=== Install uwhoisd (Optional)
 
 In order to use the Universal Whois you have to install uwhoisd from Lookyloo repository and the whois package:
 
@@ -130,7 +134,7 @@ instead of
 
   #!/usr/bin/env python
 
-=== Install pymisp dependencies
+=== Install pymisp dependencies (optional)
 If you want to install the pymisp dependencies, please install libfuzzy-dev and the run poetry with -E option
 ```bash
 sudo apt-get install libfuzzy-dev
