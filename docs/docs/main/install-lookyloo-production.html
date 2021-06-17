@@ -310,7 +310,7 @@ Type=forking
 WorkingDirectory=/home/lookyloo/gits/lookyloo
 Environment="PATH=/home/lookyloo/.local/bin:/usr/bin"
 ExecStart=/bin/bash -c "exec poetry run start"
-ExecStop=/bin/bash -c "exec poetry run stop"a
+ExecStop=/bin/bash -c "exec poetry run stop"
 StandardOutput=append:/var/log/lookyloo_message.log
 StandardError=append:/var/log/lookyloo_error.log
 
@@ -441,7 +441,7 @@ WantedBy=multi-user.target</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
 sudo systemctl daemon-reload</code></pre>
 </div>
 </div>
@@ -476,8 +476,8 @@ If you want to avoid that, you can add the logrotate configurations:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">---
-cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
-cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
+sudo cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
+sudo cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
 sudo systemctl restart logrotate
 ---</code></pre>
 </div>
