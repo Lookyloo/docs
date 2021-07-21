@@ -20,8 +20,9 @@
 ** xref:lookyloo-tutorial.adoc[Lookyloo Tutorial]
 
 
-* xref:pylookyloo-overview.adoc[PyLookyloo]
-** xref:pylookyloo-commands.adoc[Usage]
+* xref:lookyloo-api.adoc[API]
+** xref:lookyloo-pylookyloo.adoc[PyLookyloo]
+** xref:lookyloo-rest.adoc[REST Interface]
 
 * xref:contributing.adoc[Contributing to Lookyloo]
 ** xref:contributor-guide.adoc[Contributor Guide]

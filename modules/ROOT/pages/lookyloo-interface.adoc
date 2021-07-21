@@ -4,7 +4,7 @@
 
 You can start a Lookyloo capture navigating to our website instance. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.
 
-image::lookyloo_start_new_capture.png[]
+image::capture.png[]
 
 Enter the the required fields to start a capture.
 
@@ -14,8 +14,7 @@ Enter the the required fields to start a capture.
 The Lookyloo interface is comprised of the following:
 
 * Tree of Domains
-* Lookyloo Menu
-* Tree Details
+* Menu (left and top)
 * Legend
 
 image::sample_github.png[GitHub Capture]
@@ -27,43 +26,20 @@ Lookyloo displays a tree of the domains that call one another.
 
 == Lookyloo Menu
 
-* *Go back to index*: Return to the index page (list of all the captures)
-
-* *Show third party reports*: (Optional) Query 3rd party services and display the result
-
-* *Manage categories*: (Optional) Manage the categories attached to this capture
-
-* *Show statistics*: Overview of the number of unique URLs/Hostnames, and cookies present in the capture
-
-* *Download redirects*: Download the redirects up to the final URL as displayed in the browser (text file)
-
-* *Download screenshot*: Download the screenshot of the page as it yould be displayed in the browser
-
-* *Show screenshot*: Show the screenshot of the page as it yould be displayed in the browser
-
-* *Notify by mail*: (Optional) Send a notification to the entity managing the platform
-
-
-== Tree Details
-
-* *Root URL*: Initial URL of the capture, before any processing
-
-* *Start time*: Start time of the capture
-
-* *User Agent*: User Agent passed to the capture
-
-* *OS*: Full text name of the Operating system (extracted from the User Agent)
-
-* *Browser*: Full text name of the browser (extracted from the User Agent)
+* *Capture Details*: Show details about the capture
+* *Lookyloo Manual*: Link to this documentation
+* *Homepage*: Return to the index page (list of all the captures)
+* *Page screenshot*: Show the screenshot of the page as it yould be displayed in the browser
+* *Tree statistics*: Overview of the number of unique URLs/Hostnames, and cookies present in the capture
+* *Third party reports*: (Optional) Query 3rd party services and display the result
+* *Run Subsequent Captures*: List all the URLs in the landing page and trigger subsequest capture while keeping the session (useragent, cookies, referer)
+* *Contact Local Administrator*: (Optional) Send a notification to the entity managing the platform
 
 
 == Legend
 
 image::sample_github_legend.png[]
 
-* *Known node*: The node only contains resources that are either part of link:https://cdnjs.com/[CDNJS], or marked as known in lookyloo.
-  Click on the hostname for details.
-* *Malicious node*: The node only contains resources that are marked as malicious in lookyloo. Click on the hostname for details.
 * *Insecure requests*: At least one for the requests in the node is unencrypted (HTTP).
 * *Empty responses*: All the responses in the node are empty.
 * *Javascript*: The responses contain javascript.

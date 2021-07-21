@@ -1,0 +1,19 @@
+[id="rest"]
+
+= What is a REST API?
+
+A REST API is a way to query a system with a simple HTTP request.
+
+The easiest way to do that is to use cURL (on linux). For example, the command below
+will return the statistics of the main public instance:
+
+```bash
+curl -X 'GET' 'https://lookyloo.circl.lu/json/stats' -H 'accept: application/json'
+```
+
+== Usage
+
+The documentation of the REST API is automatically generated and avaliable over
+the lookyloo web interface. If you want to run queries against the public instance,
+you can use link:https://lookyloo.circl.lu/doc/[this documentation].
+

@@ -1,0 +1,11 @@
+[id="api"]
+
+= API
+
+In order to use Lookyloo, you can also use the application programming interface (API)
+and trigger all kind of actions in the applications.
+
+The two main approaches are the following:
+
+* xref:lookyloo-pylookyloo.adoc[Pylookyloo], either via the command line, or as a python library (easy)
+* xref:lookyloo-rest.adoc[REST queries], using something like cURL, or your own favorite programming language (slightly more complicated)

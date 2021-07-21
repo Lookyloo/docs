@@ -34,6 +34,16 @@ Usecase: some websites block requests if they're not initiated by an internal UR
 
 Note: It may not be enough and the wensite may also require a cookie. If it is the case, see below.
 
+=== Proxy
+
+The link:https://en.wikipedia.org/wiki/Proxy_server[proxy] is optional but it must follow the format
+provided in the field if you want to use it.
+
+Usecase: some websites block requests if they're not initiated from a specific country, or IP block.
+If that's the case, you can pass the proxy settings to the capture.
+
+Note: You need to setup your own proxy server, or you can use tor as a socks5 proxy.
+
 === Cookies
 
 It will be empty by default, but please refer to the related documentation in order to
