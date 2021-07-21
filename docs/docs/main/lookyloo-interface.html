@@ -102,10 +102,13 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="pylookyloo-overview.html">PyLookyloo</a>
+    <a class="nav-link" href="lookyloo-api.html">API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="pylookyloo-commands.html">Usage</a>
+    <a class="nav-link" href="lookyloo-pylookyloo.html">PyLookyloo</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lookyloo-rest.html">REST Interface</a>
   </li>
 </ul>
   </li>
@@ -184,7 +187,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/lookyloo_start_new_capture.png" alt="lookyloo start new capture">
+<img src="_images/capture.png" alt="capture">
 </div>
 </div>
 <div class="paragraph">
@@ -204,10 +207,7 @@
 <p>Tree of Domains</p>
 </li>
 <li>
-<p>Lookyloo Menu</p>
-</li>
-<li>
-<p>Tree Details</p>
+<p>Menu (left and top)</p>
 </li>
 <li>
 <p>Legend</p>
@@ -235,52 +235,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Go back to index</strong>: Return to the index page (list of all the captures)</p>
+<p><strong>Capture Details</strong>: Show details about the capture</p>
 </li>
 <li>
-<p><strong>Show third party reports</strong>: (Optional) Query 3rd party services and display the result</p>
+<p><strong>Lookyloo Manual</strong>: Link to this documentation</p>
 </li>
 <li>
-<p><strong>Manage categories</strong>: (Optional) Manage the categories attached to this capture</p>
+<p><strong>Homepage</strong>: Return to the index page (list of all the captures)</p>
 </li>
 <li>
-<p><strong>Show statistics</strong>: Overview of the number of unique URLs/Hostnames, and cookies present in the capture</p>
+<p><strong>Page screenshot</strong>: Show the screenshot of the page as it yould be displayed in the browser</p>
 </li>
 <li>
-<p><strong>Download redirects</strong>: Download the redirects up to the final URL as displayed in the browser (text file)</p>
+<p><strong>Tree statistics</strong>: Overview of the number of unique URLs/Hostnames, and cookies present in the capture</p>
 </li>
 <li>
-<p><strong>Download screenshot</strong>: Download the screenshot of the page as it yould be displayed in the browser</p>
+<p><strong>Third party reports</strong>: (Optional) Query 3rd party services and display the result</p>
 </li>
 <li>
-<p><strong>Show screenshot</strong>: Show the screenshot of the page as it yould be displayed in the browser</p>
+<p><strong>Run Subsequent Captures</strong>: List all the URLs in the landing page and trigger subsequest capture while keeping the session (useragent, cookies, referer)</p>
 </li>
 <li>
-<p><strong>Notify by mail</strong>: (Optional) Send a notification to the entity managing the platform</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tree_details"><a class="anchor" href="#_tree_details"></a>Tree Details</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Root URL</strong>: Initial URL of the capture, before any processing</p>
-</li>
-<li>
-<p><strong>Start time</strong>: Start time of the capture</p>
-</li>
-<li>
-<p><strong>User Agent</strong>: User Agent passed to the capture</p>
-</li>
-<li>
-<p><strong>OS</strong>: Full text name of the Operating system (extracted from the User Agent)</p>
-</li>
-<li>
-<p><strong>Browser</strong>: Full text name of the browser (extracted from the User Agent)</p>
+<p><strong>Contact Local Administrator</strong>: (Optional) Send a notification to the entity managing the platform</p>
 </li>
 </ul>
 </div>
@@ -296,13 +272,6 @@
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><strong>Known node</strong>: The node only contains resources that are either part of <a href="https://cdnjs.com/">CDNJS</a>, or marked as known in lookyloo.
-Click on the hostname for details.</p>
-</li>
-<li>
-<p><strong>Malicious node</strong>: The node only contains resources that are marked as malicious in lookyloo. Click on the hostname for details.</p>
-</li>
 <li>
 <p><strong>Insecure requests</strong>: At least one for the requests in the node is unencrypted (HTTP).</p>
 </li>

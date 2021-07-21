@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Update Lookyloo :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/update-lookyloo.html">
+    <title>API :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-api.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -74,7 +74,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="lookyloo-configuration.html">Main configuration options</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="update-lookyloo.html">Update Lookyloo</a>
   </li>
 </ul>
@@ -100,7 +100,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="lookyloo-api.html">API</a>
 <ul class="nav-list">
@@ -170,154 +170,30 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="installation.html">Installing Lookyloo</a></li>
-    <li><a href="update-lookyloo.html">Update Lookyloo</a></li>
+    <li><a href="lookyloo-api.html">API</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/update-lookyloo.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/lookyloo-api.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Update Lookyloo</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
+<h1 class="page">API</h1>
 <div class="paragraph">
-<p>It assumes you installed lookyloo with the procedure describe on this website.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_update_lookyloo"><a class="anchor" href="#_update_lookyloo"></a>Update lookyloo</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The recommended way to update Lookyloo is to run the following command, from the directory you cloned lookyloo into:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry run update</code></pre>
-</div>
+<p>In order to use Lookyloo, you can also use the application programming interface (API)
+and trigger all kind of actions in the applications.</p>
 </div>
 <div class="paragraph">
-<p>It will do the following (you can stop at any point if you hit <code>n</code>):</p>
+<p>The two main approaches are the following:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Pull the lookyloo repository.</p>
-<div class="literalblock">
-<div class="content">
-<pre>**Note**: if the update script is modified by the pull, the script will stop
-          and you will be asked to re-run it.</pre>
-</div>
-</div>
+<p><a href="lookyloo-pylookyloo.html" class="page">Pylookyloo</a>, either via the command line, or as a python library (easy)</p>
 </li>
 <li>
-<p>Make sure the version of poetry you&#8217;re using is recent enough.</p>
+<p><a href="lookyloo-rest.html" class="page">REST queries</a>, using something like cURL, or your own favorite programming language (slightly more complicated)</p>
 </li>
-<li>
-<p>Install the right version of the dependencies.</p>
-</li>
-<li>
-<p>Validate the current status of the configuration files.</p>
-</li>
-<li>
-<p>Update the configuration files with the default values from the sample file (if missing).</p>
-</li>
-<li>
-<p>Pull the expected version of the 3rd party javascript dependencies.</p>
-</li>
-<li>
-<p>Restart the website and the other scripts.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The sections below are only required if the tools have been updated, or if upgrading lookyloo suggests you to do so.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_update_poetry"><a class="anchor" href="#_update_poetry"></a>Update poetry</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry self update</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_update_splash"><a class="anchor" href="#_update_splash"></a>Update Splash</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo docker pull scrapinghub/splash</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then, kill the splash instances you have running and restart it. If you use aquarium, please refer to the aquarium install guide.
-Otherwise, you can simply run the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-caches</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_update_redis"><a class="anchor" href="#_update_redis"></a>Update Redis</h3>
-<div class="paragraph">
-<p>It requires to shutdown lookyloo completely.</p>
-</div>
-<div class="paragraph">
-<p>From the lookyloo repository:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry run stop</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>From the directory you cloned redis into:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Optional: git checkout &lt;version&gt;
-git pull
-make</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then, back in the lookyloo repository:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">poetry run start</code></pre>
-</div>
-</div>
-</div>
-</div>
+</ul>
 </div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
