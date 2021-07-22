@@ -236,10 +236,10 @@ index page of the domain to capture:</p>
 <p>The <a href="https://en.wikipedia.org/wiki/HTTP_referer">referer</a> is optional but it must be a full URL if you want to use it.</p>
 </div>
 <div class="paragraph">
-<p>Usecase: some websites block requests if they&#8217;re not initiated by an internal URL. If that&#8217;s the case, pass the required URL in the referer field.</p>
+<p><strong>Usecase</strong>: some websites block requests if they&#8217;re not initiated by an internal URL. If that&#8217;s the case, pass the required URL in the referer field.</p>
 </div>
 <div class="paragraph">
-<p>Note: It may not be enough and the wensite may also require a cookie. If it is the case, see below.</p>
+<p><strong>Note</strong>: It may not be enough and the wensite may also require a cookie. If it is the case, see below.</p>
 </div>
 </div>
 <div class="sect2">
@@ -249,11 +249,19 @@ index page of the domain to capture:</p>
 provided in the field if you want to use it.</p>
 </div>
 <div class="paragraph">
-<p>Usecase: some websites block requests if they&#8217;re not initiated from a specific country, or IP block.
-If that&#8217;s the case, you can pass the proxy settings to the capture.</p>
+<p><strong>Usecase</strong>: some websites block requests if they&#8217;re not initiated from a specific country, or IP block.
+If that&#8217;s the case, you can pass a proxy to the capture.</p>
 </div>
 <div class="paragraph">
-<p>Note: You need to setup your own proxy server, or you can use tor as a socks5 proxy.</p>
+<p><strong>Note</strong>: You need to setup your own proxy server, or you can use tor as a socks5 proxy.
+If you use tor with the default configuration, the socks5 proxy will only be listening
+on 127.0.0.1, which is not accessible from splash because is running in a docker package.
+In order for it to work, the easiest way is to make tor listening on every interfaces
+by adding <code>SocksPort 0.0.0.0:9050</code> in <code>/etc/tor/torrc</code>, restart tor, and then you can pass
+<code>socks5://&lt;IP_of_your_host&gt;:9050</code> in the proxy field of Lookyloo.
+If it doesn&#8217;t work, try opening <code><a href="http://&lt;IP_of_your_host&gt;:9050" class="bare">http://&lt;IP_of_your_host&gt;:9050</a></code> in your browser. You should
+have a notification from tor telling you it is a socks5 proxy and not an http proxy.
+If you don&#8217;t have that, something is incorrect with your tor configuration .</p>
 </div>
 </div>
 <div class="sect2">
@@ -274,10 +282,10 @@ The user-agent used in the one in the last dropdown menu (this one will be used 
 <p>You can also pass the user-agent of your own browser by ticking the box.</p>
 </div>
 <div class="paragraph">
-<p>Note: If your browser has a very special user-agent, it may leak information about you.</p>
+<p><strong>Note</strong>: If your browser has a very special user-agent, it may leak information about you.</p>
 </div>
 <div class="paragraph">
-<p>Note: If you want to pass a very specific user-agent for the capture, you can change your
+<p><strong>Note</strong>: If you want to pass a very specific user-agent for the capture, you can change your
       user-agent in the parameters of your browser and reload the page.</p>
 </div>
 </div>
