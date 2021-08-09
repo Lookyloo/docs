@@ -1,0 +1,31 @@
+[id="other-tools"]
+= Alternatives to Lookyloo
+
+Lookyloo is a tool that will allow you to dig into a website you know nothing about
+and assist you to understand how it works. Some 3rd party tools are integrated and
+it give you some contextual informations about the content, but you may want to use an other
+service instead, depending on your use-case.
+
+== shouldiclick.org
+
+link:https://www.shouldiclick.org/[shouldiclick.org] is a very user-friendly and simple interface
+aimed at looking up phishing websites and tell a non-technical user if they should open that link or not.
+
+It uses the API of urlscan.io to produce a report.
+
+== urlscan.io
+
+link:https://urlscan.io/[urlscan.io] gives a lot of quite technical information
+about a specific URL, including a very technical but human-readable overview of what is happening.
+
+It provides more information about the URL than Lookyloo does but represents it differently.
+It is mostly useful for security investigations when lookyloo can also be used
+to investigate tracking and debug a website.
+
+== Chrome/Chromium/Firefox development tools
+
+The development/inspection interfaces in the browsers are extremely useful to
+investigate a website when you're a developer, but if you try to use it to understand a
+complex website, it gets pretty complicated quick.
+And reproducing a capture is not easy, even if you use a private session to clear the
+state of your browser, as you will need to close all whe windows between each investigation.

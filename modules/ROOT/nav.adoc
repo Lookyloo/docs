@@ -4,6 +4,7 @@
 ** xref:concepts.adoc[Concepts]
 *** xref:implementation-details.adoc[Implementation Details]
 *** xref:glossary.adoc[Glossary]
+** xref:other-tools.adoc[Other Tools]
 
 * xref:installation.adoc[Installing Lookyloo]
 ** xref:prerequisites-for-windows.adoc[Prerequisites for windows]
