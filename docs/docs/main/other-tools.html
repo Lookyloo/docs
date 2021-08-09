@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/contributor-style-guide.html">
+    <title>Alternatives to Lookyloo :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/other-tools.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -56,7 +56,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="other-tools.html">Other Tools</a>
   </li>
 </ul>
@@ -132,7 +132,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="contributor-guide-docs.html"> Contributing to Docs</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="contributor-style-guide.html">Style Guide</a>
   </li>
 </ul>
@@ -173,16 +173,63 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="contributing.html">Contributing to Lookyloo</a></li>
-    <li><a href="contributor-guide-docs.html"> Contributing to Docs</a></li>
-    <li><a href="contributor-style-guide.html">Style Guide</a></li>
+    <li><a href="lookyloo-explained.html">What is Lookyloo?</a></li>
+    <li><a href="other-tools.html">Other Tools</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/contributor-style-guide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/other-tools.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-
+<h1 class="page">Alternatives to Lookyloo</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lookyloo is a tool that will allow you to dig into a website you know nothing about
+and assist you to understand how it works. Some 3rd party tools are integrated and
+it give you some contextual informations about the content, but you may want to use an other
+service instead, depending on your use-case.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shouldiclick_org"><a class="anchor" href="#_shouldiclick_org"></a>shouldiclick.org</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.shouldiclick.org/">shouldiclick.org</a> is a very user-friendly and simple interface
+aimed at looking up phishing websites and tell a non-technical user if they should open that link or not.</p>
+</div>
+<div class="paragraph">
+<p>It uses the API of urlscan.io to produce a report.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_urlscan_io"><a class="anchor" href="#_urlscan_io"></a>urlscan.io</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://urlscan.io/">urlscan.io</a> gives a lot of quite technical information
+about a specific URL, including a very technical but human-readable overview of what is happening.</p>
+</div>
+<div class="paragraph">
+<p>It provides more information about the URL than Lookyloo does but represents it differently.
+It is mostly useful for security investigations when lookyloo can also be used
+to investigate tracking and debug a website.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chromechromiumfirefox_development_tools"><a class="anchor" href="#_chromechromiumfirefox_development_tools"></a>Chrome/Chromium/Firefox development tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The development/inspection interfaces in the browsers are extremely useful to
+investigate a website when you&#8217;re a developer, but if you try to use it to understand a
+complex website, it gets pretty complicated quick.
+And reproducing a capture is not easy, even if you use a private session to clear the
+state of your browser, as you will need to close all whe windows between each investigation.</p>
+</div>
+</div>
+</div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
