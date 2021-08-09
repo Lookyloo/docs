@@ -1,7 +1,13 @@
-= Lookyloo Tutorial 
+= Lookyloo Tutorial
 
 
 The Lookyloo tutorial explains the benefits, pitfalls, and limitations of scraping, and why Lookyloo is an important tool.
 
-A Lookyloo tutorial can be accessed in our link:https://github.com/Lookyloo/scraping-tutorial[GitHub repository]. 
+A Lookyloo tutorial can be accessed in our link:https://github.com/Lookyloo/scraping-tutorial[GitHub repository].
 
+== Testing
+
+Weird things can happen on webpages, it can be legitimate, a bug or straight malicious. In order to keep track of
+that, we have a link:https://github.com/Lookyloo/testing/[testing repository].
+
+This testing website is also link:[accessible publicly], if you want to use it for your own services.
