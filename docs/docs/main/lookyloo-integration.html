@@ -269,6 +269,57 @@ in the redirected nodes up to the one containing the rendered page.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_urlscan_io"><a class="anchor" href="#_urlscan_io"></a>urlscan.io</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(this is a very new integration, it will be officially supported in the upcoming release, v1.8)</p>
+</div>
+<div class="paragraph">
+<p><a href="https://urlscan.io/">urlscan.io</a> is a service to scan and analyze websites. It is quite similar
+to Lookyloo that way, but is aimed at identifying malicious activities, and
+has a very different approach to represent a capture.</p>
+</div>
+<div class="paragraph">
+<p>The similarity and differences make it a great complement to Lookyloo.</p>
+</div>
+<div class="paragraph">
+<p>By default the module will only submit the initial URL (with referer and user-agent)
+for analysis to urlscan.io is you set <code>autosubmit</code> to <code>true</code> in <code>config/modules.json</code>, section <code>UrlScan</code>.</p>
+</div>
+<div class="paragraph">
+<p>The module is not enabled by default because you need to create an account, and use an API key (you need to create an account).</p>
+</div>
+<div class="paragraph">
+<p>There are a few options to configure the visibility of the captures you&#8217;re making on urlscan.io,
+and you can configure it with the <code>force_visibility</code> key:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>false</code> (default): <code>unlisted</code> on urlscan.io side for hidden captures on Lookyloo, <code>public</code> for the others</p>
+</li>
+<li>
+<p><code>"key"</code>: default visibility as configured on urlscan.io for the API key you&#8217;re using</p>
+</li>
+<li>
+<p><code>"public"</code>, <code>"unlisted"</code> or <code>"private"</code>: all the captures will use the same visibility</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Important</strong>: The API key is rate limited and you should <a href="https://urlscan.io/user/quotas/">keep an eye on the quotas</a>,
+especially since they vary depending on the visibility you&#8217;re using.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> will automatically submit the URL (if <code>autosubmit</code> is enabled) for each URLs.
+Be careful with the quotas of the key you&#8217;re using with this feature.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_misp"><a class="anchor" href="#_misp"></a>MISP</h2>
 <div class="sectionbody">
 <div class="paragraph">
