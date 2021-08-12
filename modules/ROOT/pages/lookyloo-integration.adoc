@@ -56,6 +56,39 @@ in the redirected nodes up to the one containing the rendered page.
 
 **Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
+
+== urlscan.io
+
+(this is a very new integration, it will be officially supported in the upcoming release, v1.8)
+
+link:https://urlscan.io/[urlscan.io] is a service to scan and analyze websites. It is quite similar
+to Lookyloo that way, but is aimed at identifying malicious activities, and
+has a very different approach to represent a capture.
+
+The similarity and differences make it a great complement to Lookyloo.
+
+By default the module will only submit the initial URL (with referer and user-agent)
+for analysis to urlscan.io is you set `autosubmit` to `true` in `config/modules.json`, section `UrlScan`.
+
+The module is not enabled by default because you need to create an account, and use an API key (you need to create an account).
+
+There are a few options to configure the visibility of the captures you're making on urlscan.io,
+and you can configure it with the `force_visibility` key:
+
+* `false` (default): `unlisted` on urlscan.io side for hidden captures on Lookyloo, `public` for the others
+* `"key"`: default visibility as configured on urlscan.io for the API key you're using
+* `"public"`, `"unlisted"` or `"private"`: all the captures will use the same visibility
+
+
+**Important**: The API key is rate limited and you should link:https://urlscan.io/user/quotas/[keep an eye on the quotas],
+especially since they vary depending on the visibility you're using.
+
+`allow_auto_trigger` will automatically submit the URL (if `autosubmit` is enabled) for each URLs.
+Be careful with the quotas of the key you're using with this feature.
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
+
+
 == MISP
 
 Connecting Lookyloo to link:https://www.misp-project.org/[MISP - Open Source Threat Intelligence Platform]
