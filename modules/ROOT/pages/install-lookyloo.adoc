@@ -170,6 +170,8 @@ sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-c
 # sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash -s 100 -m 50000 --disable-browser-caches
 ```
 
+**Note**: you may want to remove `--disable-browser-caches`, as it is causing issue on some websites (generally, splash segfaults).
+
 == Run the app
 
 ```bash
