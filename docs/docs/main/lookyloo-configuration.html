@@ -241,6 +241,11 @@ The two sources are <code>web</code> and <code>api</code>. If you have <a href="
 you can set a specific priority for each of them individually in the <code>users</code> key.
 Example, is you have an user called <code>admin</code>, you can add <code>admin: 10</code>.</p>
 </li>
+<li>
+<p><code>archive</code>: Number of days (rounded to the 1st day of the month before) of captures to keep in the main directory.
+The archived captures are still accessible over the web interface, but the cache isn&#8217;t loaded by default
+in the index (it is created on-demand instead, if The UUID of the capture is queried).</p>
+</li>
 </ul>
 </div>
 </div>
