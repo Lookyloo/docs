@@ -28,6 +28,9 @@ This document will explain them in more details.
               The two sources are `web` and `api`. If you have xref:lookyloo-auth.adoc[authenticated] users,
               you can set a specific priority for each of them individually in the `users` key.
               Example, is you have an user called `admin`, you can add `admin: 10`.
+* `archive`: Number of days (rounded to the 1st day of the month before) of captures to keep in the main directory.
+             The archived captures are still accessible over the web interface, but the cache isn't loaded by default
+             in the index (it is created on-demand instead, if The UUID of the capture is queried).
 
 == Optional features
 
