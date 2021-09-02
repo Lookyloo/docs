@@ -1,0 +1,73 @@
+[id="dev-release"]
+
+= Release procedure
+
+This a quick checklist to run through when we're preparing for a new release.
+
+== Core dependencies
+
+The following packages must be updated to the same version as Lookyloo.
+For example, if the lookyloo release is `v1.8.0` their version must be `v1.8.X`.
+The last digit will mainly be used for bug and security fixes, but it might also be
+used for new features.
+
+* link:https://github.com/Lookyloo/har2tree[har2tree]
+* link:https://github.com/Lookyloo/ScrapySplashWrapper[ScrapySplashWrapper]
+* link:https://github.com/Lookyloo/PyLookyloo[PyLookyloo]
+
+
+=== Bump versions
+
+Across all the packages, bumping version means the following:
+
+1. Edit `pyproject.toml`, key `version` to the version you want. Example: `1.8.0`.
+2. Edit `setup.py`, key `version` to the next development version. Example: `1.9-dev`.
+3. Run `poetry update` to update all the dependencies.
+4. Commit and push.
+5. Wait for the continuous integration to finish, fix the code if needed.
+6. Tag and sign the last commit. Example: `git tag -s v1.8.0`.
+7. Push the tags with `git push --tags`.
+
+=== Publish packages
+
+For all the dependencies, we must also push the packages to PyPi, do as follows:
+
+1. Build the package: `poetry build`
+2. Publish the package: `poetry publish`
+
+The packages will be available on PyPi:
+
+* link:https://pypi.org/project/har2tree/[har2tree]
+* link:https://pypi.org/project/ScrapySplashWrapper[ScrapySplashWrapper]
+* link:https://pypi.org/project/PyLookyloo[PyLookyloo]
+
+
+== Lookyloo
+
+The release process will be very similar to the core dependencies, but with a few additions
+
+=== Bump version
+
+1. Edit `pyproject.toml`:
+
+    * Bump the key `version` to the version you want. Example: `1.8.0`.
+    * Bump the required version of the core dependencies to the new release. Example: `^1.8`.
+
+2. Edit `setup.py`, key `version` to the next development version. Example: `1.9-dev`.
+3. Run `poetry update` to update all the dependencies.
+    * **Note**: The packages for the core dependencies may not be available immediately,
+    if you see an error, go get a glass of water and try again in 5 min.
+
+4. Update the 3rd party dependencies used in the website:
+
+    * Check the latest release of link:https://cdn.datatables.net/releases.html[DataTables]
+    * Check the latest release of link:https://github.com/d3/d3/releases[D3.js]
+    * If needed, update `tools/3rdparty.py` accordingly
+    * Run `tools/3rdparty.py`
+    * Run `tools/generate_sri.py`
+    * Make sure to restart and check if the website is still working as it should.
+
+5. Commit and push.
+6. Wait for the continuous integration to finish, fix the code if needed.
+7. Tag and sign the last commit. Example: `git tag -s v1.8.0`.
+8. Push the tags with `git push --tags`.

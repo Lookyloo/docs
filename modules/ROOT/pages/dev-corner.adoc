@@ -1,0 +1,11 @@
+[id="dev-corner"]
+
+= Developers Corner
+
+In this section, you will find document relevant to your interest if youŕe planning
+to work on Lookyloo's codebase. This is a work in progress, so do not hesitate to
+link:https://github.com/Lookyloo/lookyloo/discussions[get in touch] if you have any question.
+
+** xref:dev-release.adoc[Release procedure]
+** xref:dev-docs.adoc[Developers documentation]
+

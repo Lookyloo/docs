@@ -25,6 +25,10 @@
 ** xref:lookyloo-pylookyloo.adoc[PyLookyloo]
 ** xref:lookyloo-rest.adoc[REST Interface]
 
+* xref:dev-corner.adoc[Dev corner]
+** xref:dev-release.adoc[Release procedure]
+** xref:dev-docs.adoc[Developers documentation]
+
 * xref:contributing.adoc[Contributing to Lookyloo]
 ** xref:contributor-guide.adoc[Contributor Guide]
 *** xref:contributor-git.adoc[Using Git]
