@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Lookyloo Use Cases :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/use-cases.html">
+    <title>Release procedure :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/dev-release.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -35,7 +35,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="lookyloo-explained.html">What is Lookyloo?</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="use-cases.html">Use Cases</a>
 <ul class="nav-list">
@@ -119,7 +119,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="dev-corner.html">Dev corner</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="dev-release.html">Release procedure</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -185,152 +185,185 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="lookyloo-explained.html">What is Lookyloo?</a></li>
-    <li><a href="use-cases.html">Use Cases</a></li>
+    <li><a href="dev-corner.html">Dev corner</a></li>
+    <li><a href="dev-release.html">Release procedure</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/use-cases.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/dev-release.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Lookyloo Use Cases</h1>
+<h1 class="page">Release procedure</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using Lookyloo, you can extract data from a webpage so it can be assessed and visualized.</p>
-</div>
-<div class="paragraph">
-<p><strong>Use Lookyloo to</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>observe who has access to your information when you visit a site</p>
-</li>
-<li>
-<p>identify malicious activity</p>
-</li>
-<li>
-<p>recognize phishing activity</p>
-</li>
-<li>
-<p>pinpoint lapses in security and flag suspicious behavior</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Lookyloo can be used by various professionals, including&#8230;&#8203;</p>
+<p>This a quick checklist to run through when we&#8217;re preparing for a new release.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_journalists"><a class="anchor" href="#_journalists"></a>Journalists</h2>
+<h2 id="_core_dependencies"><a class="anchor" href="#_core_dependencies"></a>Core dependencies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As a <strong>journalist</strong>, I can uses Lookyloo to:</p>
+<p>The following packages must be updated to the same version as Lookyloo.
+For example, if the lookyloo release is <code>v1.8.0</code> their version must be <code>v1.8.X</code>.
+The last digit will mainly be used for bug and security fixes, but it might also be
+used for new features.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>investigate privacy violations</p>
+<p><a href="https://github.com/Lookyloo/har2tree">har2tree</a></p>
 </li>
 <li>
-<p>investigate ad tech</p>
+<p><a href="https://github.com/Lookyloo/ScrapySplashWrapper">ScrapySplashWrapper</a></p>
 </li>
 <li>
-<p>take snapshots of websites at a specific time, from a specific source</p>
+<p><a href="https://github.com/Lookyloo/PyLookyloo">PyLookyloo</a></p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="_bump_versions"><a class="anchor" href="#_bump_versions"></a>Bump versions</h3>
+<div class="paragraph">
+<p>Across all the packages, bumping version means the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit <code>pyproject.toml</code>, key <code>version</code> to the version you want. Example: <code>1.8.0</code>.</p>
+</li>
+<li>
+<p>Edit <code>setup.py</code>, key <code>version</code> to the next development version. Example: <code>1.9-dev</code>.</p>
+</li>
+<li>
+<p>Run <code>poetry update</code> to update all the dependencies.</p>
+</li>
+<li>
+<p>Commit and push.</p>
+</li>
+<li>
+<p>Wait for the continuous integration to finish, fix the code if needed.</p>
+</li>
+<li>
+<p>Tag and sign the last commit. Example: <code>git tag -s v1.8.0</code>.</p>
+</li>
+<li>
+<p>Push the tags with <code>git push --tags</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_publish_packages"><a class="anchor" href="#_publish_packages"></a>Publish packages</h3>
+<div class="paragraph">
+<p>For all the dependencies, we must also push the packages to PyPi, do as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Build the package: <code>poetry build</code></p>
+</li>
+<li>
+<p>Publish the package: <code>poetry publish</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The packages will be available on PyPi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pypi.org/project/har2tree/">har2tree</a></p>
+</li>
+<li>
+<p><a href="https://pypi.org/project/ScrapySplashWrapper">ScrapySplashWrapper</a></p>
+</li>
+<li>
+<p><a href="https://pypi.org/project/PyLookyloo">PyLookyloo</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_legal_professionals"><a class="anchor" href="#_legal_professionals"></a>Legal Professionals</h2>
+<h2 id="_lookyloo"><a class="anchor" href="#_lookyloo"></a>Lookyloo</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As a <strong>legal professional</strong>, I can use Lookyloo to:</p>
+<p>The release process will be very similar to the core dependencies, but with a few additions</p>
 </div>
+<div class="sect2">
+<h3 id="_bump_version"><a class="anchor" href="#_bump_version"></a>Bump version</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit <code>pyproject.toml</code>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>investigate potential privacy violations in websites (GDPR)</p>
+<p>Bump the key <code>version</code> to the version you want. Example: <code>1.8.0</code>.</p>
 </li>
 <li>
-<p>investigate and validate third party components</p>
-</li>
-<li>
-<p>investigate ad tech</p>
+<p>Bump the required version of the core dependencies to the new release. Example: <code>^1.8</code>.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_site_administrators"><a class="anchor" href="#_site_administrators"></a>Site Administrators</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As a <strong>site administrator</strong>, I can use Lookyloo to:</p>
-</div>
+</li>
+<li>
+<p>Edit <code>setup.py</code>, key <code>version</code> to the next development version. Example: <code>1.9-dev</code>.</p>
+</li>
+<li>
+<p>Run <code>poetry update</code> to update all the dependencies.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>understand how the website developed by a third party works</p>
-</li>
-<li>
-<p>figure out potential bottlenecks in websites</p>
-</li>
-<li>
-<p>visualize third party components and their interactions</p>
+<p><strong>Note</strong>: The packages for the core dependencies may not be available immediately,
+if you see an error, go get a glass of water and try again in 5 min.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_forensic_investigators"><a class="anchor" href="#_forensic_investigators"></a>Forensic Investigators</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As a <strong>forensic investigator</strong>, I can use Lookyloo to:</p>
-</div>
+</li>
+<li>
+<p>Update the 3rd party dependencies used in the website:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>understand how a malicious website tricks users</p>
+<p>Check the latest release of <a href="https://cdn.datatables.net/releases.html">DataTables</a></p>
 </li>
 <li>
-<p>understand techniques used by attackers to create phishing websites</p>
+<p>Check the latest release of <a href="https://github.com/d3/d3/releases">D3.js</a></p>
 </li>
 <li>
-<p>gather indicators (IP addresses, domain names) in order to take down malicious content on websites</p>
+<p>If needed, update <code>tools/3rdparty.py</code> accordingly</p>
 </li>
 <li>
-<p>take a snapshot of a website for further investigations</p>
+<p>Run <code>tools/3rdparty.py</code></p>
 </li>
 <li>
-<p>detect potential privacy violations and security issues</p>
+<p>Run <code>tools/generate_sri.py</code></p>
+</li>
+<li>
+<p>Make sure to restart and check if the website is still working as it should.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_educators"><a class="anchor" href="#_educators"></a>Educators</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As an <strong>educator</strong>, I can use Lookyloo to:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>explain how websites work</p>
 </li>
 <li>
-<p>show how different concepts (redirects, CNAMEs, iFrames, cookies) interact together on modern websites</p>
+<p>Commit and push.</p>
 </li>
 <li>
-<p>introduce beginners to web development</p>
+<p>Wait for the continuous integration to finish, fix the code if needed.</p>
 </li>
-</ul>
+<li>
+<p>Tag and sign the last commit. Example: <code>git tag -s v1.8.0</code>.</p>
+</li>
+<li>
+<p>Push the tags with <code>git push --tags</code>.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

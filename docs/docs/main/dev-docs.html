@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Lookyloo Use Cases :: Lookyloo</title>
-    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/use-cases.html">
+    <title>Developers Documentation :: Lookyloo</title>
+    <link rel="canonical" href="https://www.lookyloo.eu/docs/main/dev-docs.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -35,7 +35,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="lookyloo-explained.html">What is Lookyloo?</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="use-cases.html">Use Cases</a>
 <ul class="nav-list">
@@ -122,7 +122,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="dev-release.html">Release procedure</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="dev-docs.html">Developers documentation</a>
   </li>
 </ul>
@@ -185,150 +185,144 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Lookyloo</a></li>
-    <li><a href="lookyloo-explained.html">What is Lookyloo?</a></li>
-    <li><a href="use-cases.html">Use Cases</a></li>
+    <li><a href="dev-corner.html">Dev corner</a></li>
+    <li><a href="dev-docs.html">Developers documentation</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/use-cases.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/Lookyloo/docs/edit/main/modules/ROOT/pages/dev-docs.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Lookyloo Use Cases</h1>
+<h1 class="page">Developers Documentation</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using Lookyloo, you can extract data from a webpage so it can be assessed and visualized.</p>
+<p>This page will give you the basics when you want to work on Lookyloo&#8217;s
+source code.</p>
 </div>
 <div class="paragraph">
-<p><strong>Use Lookyloo to</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>observe who has access to your information when you visit a site</p>
-</li>
-<li>
-<p>identify malicious activity</p>
-</li>
-<li>
-<p>recognize phishing activity</p>
-</li>
-<li>
-<p>pinpoint lapses in security and flag suspicious behavior</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Lookyloo can be used by various professionals, including&#8230;&#8203;</p>
+<p>We assume here that you already <a href="install-lookyloo.html" class="page">installed the platform</a>
+and gave it a try.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_journalists"><a class="anchor" href="#_journalists"></a>Journalists</h2>
+<h2 id="_general_guidelines"><a class="anchor" href="#_general_guidelines"></a>General guidelines</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>As a <strong>journalist</strong>, I can uses Lookyloo to:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>investigate privacy violations</p>
+<p>After editing a file, you can run the <code>stop</code> and <code>start</code> scripts to restart the platform and see the changes.
+It will restart everything, including the redis databases, and can take a bot of time. See below if you&#8217;re
+working on a specific part of the tool and want to stop/start a specific module.</p>
 </li>
 <li>
-<p>investigate ad tech</p>
+<p>You can disable individual services by commenting them out in <code>bin/start.py</code></p>
 </li>
 <li>
-<p>take snapshots of websites at a specific time, from a specific source</p>
+<p>All the services can be started/killed manually (<code>CTRL+c</code> to kill)</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_legal_professionals"><a class="anchor" href="#_legal_professionals"></a>Legal Professionals</h2>
+<h2 id="_scripts"><a class="anchor" href="#_scripts"></a>Scripts</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>As a <strong>legal professional</strong>, I can use Lookyloo to:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>investigate potential privacy violations in websites (GDPR)</p>
+<p><code>start</code>: Starts all the services</p>
 </li>
 <li>
-<p>investigate and validate third party components</p>
+<p><code>stop</code>: Triggers <code>shutdown</code>, stop redis databases.</p>
 </li>
 <li>
-<p>investigate ad tech</p>
+<p><code>shutdown</code>: Requests the services to stop by putting a <code>shutdown</code> key in redis, wait for all of them to stop.</p>
+</li>
+<li>
+<p><code>run_backend</code>: Starts/stops redis databases</p>
+</li>
+<li>
+<p><code>async_capture</code>: Triggers a capture from the queue. Multiple instances of this process can be run in parallel
+(when multiple instances of splash are available, see <a href="install-lookyloo-production.html" class="page">production install guide</a>)</p>
+</li>
+<li>
+<p><code>background_indexer</code>: Caches the captures in redis, creates the tree pickles, adds the urls, cookies,
+and body hashes in indexes for fast lookup</p>
+</li>
+<li>
+<p><code>archiver</code>: Archives the old captures (default: 180+ days), maintain the indexes files in the capture directories</p>
+</li>
+<li>
+<p><code>processing</code>: Triggers actions happening once a day. Currently: creates the user-agent file of the users of the platform (if enabled)</p>
+</li>
+<li>
+<p><code>start_website</code>: Starts the website (launches gunicorn processes)</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>A few scripts are for maintenance only:
+* <code>rebuild_caches</code>: clears the cache database, they will need to be rebuild for lookyloo to work
+* <code>update</code>: Used in production to update lookyloo from git.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_site_administrators"><a class="anchor" href="#_site_administrators"></a>Site Administrators</h2>
+<h2 id="_website"><a class="anchor" href="#_website"></a>Website</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As a <strong>site administrator</strong>, I can use Lookyloo to:</p>
+<p>All the files related exclusively to the web interface and the API are in the <code>website</code> directory.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>understand how the website developed by a third party works</p>
-</li>
-<li>
-<p>figure out potential bottlenecks in websites</p>
-</li>
-<li>
-<p>visualize third party components and their interactions</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>If you&#8217;re working on the web interface, you probably want to comment out <code>start_website</code> in <code>bin/start.py</code>,
+and start/kill it manually.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+If you change anything in <code>website/web/static/</code> you must run <code>tools/generate_sri.py</code>
+before restarting the website in order to update the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">SRI hashes</a>
+of each resources. If you don&#8217;t do that, your browser will refuse to load them and you will be frustrated.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_forensic_investigators"><a class="anchor" href="#_forensic_investigators"></a>Forensic Investigators</h2>
+<h2 id="_modules"><a class="anchor" href="#_modules"></a>Modules</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>As a <strong>forensic investigator</strong>, I can use Lookyloo to:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>understand how a malicious website tricks users</p>
+<p><code>lookyloo.py</code>: Main class, does all the heavy lifting to trigger the capture and access the results.</p>
 </li>
 <li>
-<p>understand techniques used by attackers to create phishing websites</p>
+<p><code>modules.py</code>: Connectors to <a href="lookyloo-integration.html" class="page">3rd party modules</a>.</p>
 </li>
 <li>
-<p>gather indicators (IP addresses, domain names) in order to take down malicious content on websites</p>
+<p><code>indexing.py</code>: Indexer for URLs, hashes, and cookies (creation and access).</p>
 </li>
 <li>
-<p>take a snapshot of a website for further investigations</p>
+<p><code>context.py</code>: Manage contextualization of captures and specific entries.</p>
 </li>
 <li>
-<p>detect potential privacy violations and security issues</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_educators"><a class="anchor" href="#_educators"></a>Educators</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>As an <strong>educator</strong>, I can use Lookyloo to:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>explain how websites work</p>
+<p><code>abstractmanager.py</code>: Main class for all the services.</p>
 </li>
 <li>
-<p>show how different concepts (redirects, CNAMEs, iFrames, cookies) interact together on modern websites</p>
+<p><code>capturecache.py</code>: Gives access to a cached capture in a pythonic way.</p>
 </li>
 <li>
-<p>introduce beginners to web development</p>
+<p><code>helpers.py</code>: A bunch of methods useful all over the project.</p>
+</li>
+<li>
+<p><code>exceptions.py</code>: The exceptions that can be emitted by different part of the project.</p>
 </li>
 </ul>
 </div>
