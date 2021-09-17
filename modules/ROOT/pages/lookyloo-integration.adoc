@@ -34,6 +34,29 @@ for all the redirected nodes up to the one containing the rendered page.
 
 **Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
+== Phishtank Lookup (v1.9+)
+
+link:https://phishtank.org[Phishtank] is a service that analizes and validates phishing webistes, they also
+provide an hourly dump of the link:https://phishtank.org/developer_info.php[currently active] phishing URLs
+they're aware of. In order to avoid too many queries on the public API, we developped a simple standalone
+system called link:https://github.com/Lookyloo/phishtank-lookup[Phishtank Lookup] that loads the hourly
+dump and makes it accessible via link:https://phishtankapi.circl.lu/[its API].
+
+The only URLs passed to the module are the ones up to the rendered page. Soon, we will add a lookup
+for the IP address and URLs of all the entries on the tree.
+
+The module is not enabled by default. In order to use it, you can either use the
+link:https://phishtankapi.circl.lu/[public instance], or
+link:https://github.com/Lookyloo/phishtank-lookup#install-guide[install your own instance] of Phishtank Lookup.
+
+To enable it, set `enabled` to `true` in section `Phishtank`.
+If you install your own instance, you need to set the `url` key to the appropriate value (e.g. `http://127.0.0.1:5300`).
+If you use the public instance, you can leave it to `null` and it will default back to it.
+
+`allow_auto_trigger` to `true` (default if the module is enabled) will automatically trigger a lookup.
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
+
 == Virus Total
 
 link:https://www.virustotal.com/[VirusTotal] is well known for having a huge database of
@@ -57,9 +80,7 @@ in the redirected nodes up to the one containing the rendered page.
 **Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
 
-== urlscan.io
-
-(this is a very new integration, it will be officially supported in the upcoming release, v1.8)
+== urlscan.io (v1.8+)
 
 link:https://urlscan.io/[urlscan.io] is a service to scan and analyze websites. It is quite similar
 to Lookyloo that way, but is aimed at identifying malicious activities, and
