@@ -249,6 +249,38 @@ for all the redirected nodes up to the one containing the rendered page.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_phishtank_lookup_v1_9"><a class="anchor" href="#_phishtank_lookup_v1_9"></a>Phishtank Lookup (v1.9+)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://phishtank.org">Phishtank</a> is a service that analizes and validates phishing webistes, they also
+provide an hourly dump of the <a href="https://phishtank.org/developer_info.php">currently active</a> phishing URLs
+they&#8217;re aware of. In order to avoid too many queries on the public API, we developped a simple standalone
+system called <a href="https://github.com/Lookyloo/phishtank-lookup">Phishtank Lookup</a> that loads the hourly
+dump and makes it accessible via <a href="https://phishtankapi.circl.lu/">its API</a>.</p>
+</div>
+<div class="paragraph">
+<p>The only URLs passed to the module are the ones up to the rendered page. Soon, we will add a lookup
+for the IP address and URLs of all the entries on the tree.</p>
+</div>
+<div class="paragraph">
+<p>The module is not enabled by default. In order to use it, you can either use the
+<a href="https://phishtankapi.circl.lu/">public instance</a>, or
+<a href="https://github.com/Lookyloo/phishtank-lookup#install-guide">install your own instance</a> of Phishtank Lookup.</p>
+</div>
+<div class="paragraph">
+<p>To enable it, set <code>enabled</code> to <code>true</code> in section <code>Phishtank</code>.
+If you install your own instance, you need to set the <code>url</code> key to the appropriate value (e.g. <code><a href="http://127.0.0.1:5300" class="bare">http://127.0.0.1:5300</a></code>).
+If you use the public instance, you can leave it to <code>null</code> and it will default back to it.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> to <code>true</code> (default if the module is enabled) will automatically trigger a lookup.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_virus_total"><a class="anchor" href="#_virus_total"></a>Virus Total</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -281,11 +313,8 @@ in the redirected nodes up to the one containing the rendered page.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_urlscan_io"><a class="anchor" href="#_urlscan_io"></a>urlscan.io</h2>
+<h2 id="_urlscan_io_v1_8"><a class="anchor" href="#_urlscan_io_v1_8"></a>urlscan.io (v1.8+)</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>(this is a very new integration, it will be officially supported in the upcoming release, v1.8)</p>
-</div>
 <div class="paragraph">
 <p><a href="https://urlscan.io/">urlscan.io</a> is a service to scan and analyze websites. It is quite similar
 to Lookyloo that way, but is aimed at identifying malicious activities, and
