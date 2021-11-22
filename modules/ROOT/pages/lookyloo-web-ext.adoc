@@ -14,6 +14,7 @@ on the link:https://lookyloo.circl.lu[demo interface].
 
 The plugin will allow you to easily submit the URL if the tab you're currently seeing
 in your browser and you can optionnally pass along the following parameters:
+
 * The User-Agent of your browser (it will otherwise default to the ones configured in Lookyloo).
 * The referer of the curent page (if any).
 * The **complete** cookie jar of your browser. This feature is *dangerous* as it will
