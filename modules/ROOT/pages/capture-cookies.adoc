@@ -19,3 +19,15 @@ On the capture page, select that file and capture the website.
 
 You can also replay the downloaded cookies from an hostnode popup in an existing capture.
 
+== Manually pass cookies
+
+If the two options above aren't working for you, the expected input is a json document in the format below.
+The keys are explained in the link:https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie[MDN Web Docs].
+
+  [
+    {
+      'key': 'value',
+      ...
+    }
+  ]
+

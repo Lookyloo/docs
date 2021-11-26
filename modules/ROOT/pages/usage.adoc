@@ -5,11 +5,13 @@
 Before you start using lookyloo, you should be familiar with a few xref:concepts.adoc[concepts],
 otherwise it won't make much sense.
 
-== How to use Lookyloo
+We strongly recommend to setup and use your own Lookyloo instance, especially if you're using it a lot
+or are submitting URLs you'd rather not have publicly available to anyone using the demo instance.
 
-To learn more about using Lookyloo read through our documentation.
+If you're fine with that, and just want to give it a try, you can start a Lookyloo capture navigating
+to our link:https://lookyloo.circl.lu/[demo instance]. On the loaded page click **Start a new capture**.
 
-== Capture a website
+== Start a New Capture
 
 This is the entry point when you want to investigate a website.
 
@@ -26,15 +28,54 @@ Or a more complete URL:
 
 * link:https://www.iana.org/domains/reserved[https://www.iana.org/domains/reserved]
 
-=== Referer
+The other fields can be left blank and the default parameters for the instance will be used.
+
+=== Browser Configuration
+
+Lookyloo will **always** use an emulated browser (link:https://splash.readthedocs.io/en/stable/[splash]),
+but you can pass it parameters, such as the user agent.
+
+The user agents listed on the page can come from two sources:
+
+1. (Default on a fresh instance) the most recent link:https://github.com/Lookyloo/lookyloo/tree/main/user_agents[pre-packaged] file.
+2. (Default on the demo instance) dynamically based on the user-agents seen by the web interface the day before (if it is link:https://www.lookyloo.eu/docs/main/lookyloo-configuration.html#_optional_features[configured this way]).
+
+In either case, the most frequently used user-agent will be selected by default,
+it is the one in the last dropdown menu when you load the page.
+
+If you want to use the user-agent of a specific browser on a specific operating system, you can pick one in the lists.
+
+*Or* you pass the user-agent of your own browser by ticking the box.
+
+*Note*: If your browser has a very special user-agent, it may leak information about you.
+
+*Or* you can use the free-text field to pass the string you want as a user agent.
+
+*Note*: The capture may fail because the websites refuses the User-Agent.
+
+=== Capture Configuration
+
+This section will allow you to pass more advanced parameters to the capture, please only use it if you know
+what you're doing, especially if you're using the demo interface, as some of them may contain private information.
+
+image::capture-advanced.png[]
+
+==== Referer
 
 The link:https://en.wikipedia.org/wiki/HTTP_referer[referer] is optional but it must be a full URL if you want to use it.
 
 *Usecase*: some websites block requests if they're not initiated by an internal URL. If that's the case, pass the required URL in the referer field.
 
-*Note*: It may not be enough and the wensite may also require a cookie. If it is the case, see below.
+*Note*: It may not be enough and the website may also require a cookie. If it is the case, see below.
 
-=== Proxy
+==== Other HTTP Headers
+
+This is a free text filed where you can pass a list of link:https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers[HTTP headers]
+to the capture. They must be in the following format: `<HEADER_NAME>: <VALUE>`, and one per line. Anything else will be ignored.
+
+*Usecase*: Some websites will redirect you to a specific URL if the `Accept-Language` header is set by your browser.
+
+==== Proxy
 
 The link:https://en.wikipedia.org/wiki/Proxy_server[proxy] is optional but it must follow the format
 provided in the field if you want to use it.
@@ -52,25 +93,12 @@ If it doesn't work, try opening `http://<IP_of_your_host>:9050` in your browser.
 have a notification from tor telling you it is a socks5 proxy and not an http proxy.
 If you don't have that, something is incorrect with your tor configuration .
 
-=== Cookies
+==== Cookies
 
 It will be empty by default, but please refer to the related documentation in order to
 initiate a new capture with xref:capture-cookies.adoc[a pre-refined cookie].
 
-=== Browser configuration
-
-By default, lookyloo passes a relatively common user-agent when it captures a page.
-You can change it by picking the type of operating system and the browser type in the dropdown boxes.
-The user-agent used in the one in the last dropdown menu (this one will be used by default).
-
-You can also pass the user-agent of your own browser by ticking the box.
-
-*Note*: If your browser has a very special user-agent, it may leak information about you.
-
-*Note*: If you want to pass a very specific user-agent for the capture, you can change your
-      user-agent in the parameters of your browser and reload the page.
-
-=== Depth
+==== Depth
 
 It is not enabled by default because it will most of the time take too long on most websites. The default depth is 1 (capture only the given URL).
 

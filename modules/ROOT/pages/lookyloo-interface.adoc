@@ -1,14 +1,5 @@
 = Lookyloo Interface
 
-== Start a New Capture
-
-You can start a Lookyloo capture navigating to our website instance. Enter `https://lookyloo.circl.lu/` in a browser. On the loaded page click **Start a new capture**.
-
-image::capture.png[]
-
-Enter the the required fields to start a capture.
-
-
 == Capture Visualization
 
 The Lookyloo interface is comprised of the following:
@@ -18,7 +9,6 @@ The Lookyloo interface is comprised of the following:
 * Legend
 
 image::sample_github.png[GitHub Capture]
-
 
 == Tree of Domains
 
