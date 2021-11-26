@@ -203,18 +203,18 @@
 <p>Before you start using lookyloo, you should be familiar with a few <a href="concepts.html" class="page">concepts</a>,
 otherwise it won&#8217;t make much sense.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_how_to_use_lookyloo"><a class="anchor" href="#_how_to_use_lookyloo"></a>How to use Lookyloo</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>To learn more about using Lookyloo read through our documentation.</p>
+<p>We strongly recommend to setup and use your own Lookyloo instance, especially if you&#8217;re using it a lot
+or are submitting URLs you&#8217;d rather not have publicly available to anyone using the demo instance.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;re fine with that, and just want to give it a try, you can start a Lookyloo capture navigating
+to our <a href="https://lookyloo.circl.lu/">demo instance</a>. On the loaded page click <strong>Start a new capture</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_capture_a_website"><a class="anchor" href="#_capture_a_website"></a>Capture a website</h2>
+<h2 id="_start_a_new_capture"><a class="anchor" href="#_start_a_new_capture"></a>Start a New Capture</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the entry point when you want to investigate a website.</p>
@@ -247,9 +247,62 @@ index page of the domain to capture:</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>The other fields can be left blank and the default parameters for the instance will be used.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_referer"><a class="anchor" href="#_referer"></a>Referer</h3>
+<h3 id="_browser_configuration"><a class="anchor" href="#_browser_configuration"></a>Browser Configuration</h3>
+<div class="paragraph">
+<p>Lookyloo will <strong>always</strong> use an emulated browser (<a href="https://splash.readthedocs.io/en/stable/">splash</a>),
+but you can pass it parameters, such as the user agent.</p>
+</div>
+<div class="paragraph">
+<p>The user agents listed on the page can come from two sources:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>(Default on a fresh instance) the most recent <a href="https://github.com/Lookyloo/lookyloo/tree/main/user_agents">pre-packaged</a> file.</p>
+</li>
+<li>
+<p>(Default on the demo instance) dynamically based on the user-agents seen by the web interface the day before (if it is <a href="https://www.lookyloo.eu/docs/main/lookyloo-configuration.html#_optional_features">configured this way</a>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In either case, the most frequently used user-agent will be selected by default,
+it is the one in the last dropdown menu when you load the page.</p>
+</div>
+<div class="paragraph">
+<p>If you want to use the user-agent of a specific browser on a specific operating system, you can pick one in the lists.</p>
+</div>
+<div class="paragraph">
+<p><strong>Or</strong> you pass the user-agent of your own browser by ticking the box.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: If your browser has a very special user-agent, it may leak information about you.</p>
+</div>
+<div class="paragraph">
+<p><strong>Or</strong> you can use the free-text field to pass the string you want as a user agent.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The capture may fail because the websites refuses the User-Agent.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_capture_configuration"><a class="anchor" href="#_capture_configuration"></a>Capture Configuration</h3>
+<div class="paragraph">
+<p>This section will allow you to pass more advanced parameters to the capture, please only use it if you know
+what you&#8217;re doing, especially if you&#8217;re using the demo interface, as some of them may contain private information.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/capture-advanced.png" alt="capture advanced">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_referer"><a class="anchor" href="#_referer"></a>Referer</h4>
 <div class="paragraph">
 <p>The <a href="https://en.wikipedia.org/wiki/HTTP_referer">referer</a> is optional but it must be a full URL if you want to use it.</p>
 </div>
@@ -257,11 +310,21 @@ index page of the domain to capture:</p>
 <p><strong>Usecase</strong>: some websites block requests if they&#8217;re not initiated by an internal URL. If that&#8217;s the case, pass the required URL in the referer field.</p>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong>: It may not be enough and the wensite may also require a cookie. If it is the case, see below.</p>
+<p><strong>Note</strong>: It may not be enough and the website may also require a cookie. If it is the case, see below.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_proxy"><a class="anchor" href="#_proxy"></a>Proxy</h3>
+<div class="sect3">
+<h4 id="_other_http_headers"><a class="anchor" href="#_other_http_headers"></a>Other HTTP Headers</h4>
+<div class="paragraph">
+<p>This is a free text filed where you can pass a list of <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP headers</a>
+to the capture. They must be in the following format: <code>&lt;HEADER_NAME&gt;: &lt;VALUE&gt;</code>, and one per line. Anything else will be ignored.</p>
+</div>
+<div class="paragraph">
+<p><strong>Usecase</strong>: Some websites will redirect you to a specific URL if the <code>Accept-Language</code> header is set by your browser.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_proxy"><a class="anchor" href="#_proxy"></a>Proxy</h4>
 <div class="paragraph">
 <p>The <a href="https://en.wikipedia.org/wiki/Proxy_server">proxy</a> is optional but it must follow the format
 provided in the field if you want to use it.</p>
@@ -282,39 +345,22 @@ have a notification from tor telling you it is a socks5 proxy and not an http pr
 If you don&#8217;t have that, something is incorrect with your tor configuration .</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_cookies"><a class="anchor" href="#_cookies"></a>Cookies</h3>
+<div class="sect3">
+<h4 id="_cookies"><a class="anchor" href="#_cookies"></a>Cookies</h4>
 <div class="paragraph">
 <p>It will be empty by default, but please refer to the related documentation in order to
 initiate a new capture with <a href="capture-cookies.html" class="page">a pre-refined cookie</a>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_browser_configuration"><a class="anchor" href="#_browser_configuration"></a>Browser configuration</h3>
-<div class="paragraph">
-<p>By default, lookyloo passes a relatively common user-agent when it captures a page.
-You can change it by picking the type of operating system and the browser type in the dropdown boxes.
-The user-agent used in the one in the last dropdown menu (this one will be used by default).</p>
-</div>
-<div class="paragraph">
-<p>You can also pass the user-agent of your own browser by ticking the box.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: If your browser has a very special user-agent, it may leak information about you.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: If you want to pass a very specific user-agent for the capture, you can change your
-      user-agent in the parameters of your browser and reload the page.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_depth"><a class="anchor" href="#_depth"></a>Depth</h3>
+<div class="sect3">
+<h4 id="_depth"><a class="anchor" href="#_depth"></a>Depth</h4>
 <div class="paragraph">
 <p>It is not enabled by default because it will most of the time take too long on most websites. The default depth is 1 (capture only the given URL).</p>
 </div>
 <div class="paragraph">
 <p>If you enable the feature, a value of 2 will capture the given URL, extract all the links in the page, pick all the ones with the same hostname as the
 initial URL, and capture them. As you can imagine, it may get huge very fast.</p>
+</div>
 </div>
 </div>
 </div>
