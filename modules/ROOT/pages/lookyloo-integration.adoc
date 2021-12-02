@@ -34,6 +34,27 @@ for all the redirected nodes up to the one containing the rendered page.
 
 **Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
+
+== Hashlookup (v1.10+)
+
+This module generates the hash (SHA1) of all the ressources of a capture and search them
+on link:https://www.circl.lu/services/hashlookup/[Hashlookup].
+Hashlookup is a public API to lookup hash values against known database of files
+(the list of sources is link:https://www.circl.lu/services/hashlookup/#circl-hashlookup-hashlookup-circl-lu[on the website]).
+
+The module isn't enabled by default. If you want to enable it, you need to set
+`enabled` to `true` in `config/modules.json`, section `Hashlookup`, and you will use the
+link:https://hashlookup.circl.lu/[public instance].
+
+`allow_auto_trigger` will automatically trigger a lookup for all the ressources
+immediately after the capture is done. If you turn it to `false`, the lookup will be triggered
+when you click on `Hashlookup hits` in the menu of the capture page.
+
+**Note**: The link to view the hits will only be visible to xref:lookyloo-auth.adoc[authenticated users].
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
+
+
 == Phishtank Lookup (v1.9+)
 
 link:https://phishtank.org[Phishtank] is a service that analizes and validates phishing webistes, they also
