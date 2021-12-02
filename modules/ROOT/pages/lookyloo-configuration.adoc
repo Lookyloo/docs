@@ -31,6 +31,8 @@ This document will explain them in more details.
 * `archive`: Number of days (rounded to the 1st day of the month before) of captures to keep in the main directory.
              The archived captures are still accessible over the web interface, but the cache isn't loaded by default
              in the index (it is created on-demand instead, if The UUID of the capture is queried).
+* `default_public`: If true (the default), the capture is public and will be visible on the index page
+                    by default (can be unticked on the capture page).
 
 == Optional features
 
