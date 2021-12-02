@@ -252,6 +252,33 @@ for all the redirected nodes up to the one containing the rendered page.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_hashlookup_v1_10"><a class="anchor" href="#_hashlookup_v1_10"></a>Hashlookup (v1.10+)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This module generates the hash (SHA1) of all the ressources of a capture and search them
+on <a href="https://www.circl.lu/services/hashlookup/">Hashlookup</a>.
+Hashlookup is a public API to lookup hash values against known database of files
+(the list of sources is <a href="https://www.circl.lu/services/hashlookup/#circl-hashlookup-hashlookup-circl-lu">on the website</a>).</p>
+</div>
+<div class="paragraph">
+<p>The module isn&#8217;t enabled by default. If you want to enable it, you need to set
+<code>enabled</code> to <code>true</code> in <code>config/modules.json</code>, section <code>Hashlookup</code>, and you will use the
+<a href="https://hashlookup.circl.lu/">public instance</a>.</p>
+</div>
+<div class="paragraph">
+<p><code>allow_auto_trigger</code> will automatically trigger a lookup for all the ressources
+immediately after the capture is done. If you turn it to <code>false</code>, the lookup will be triggered
+when you click on <code>Hashlookup hits</code> in the menu of the capture page.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The link to view the hits will only be visible to <a href="lookyloo-auth.html" class="page">authenticated users</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_phishtank_lookup_v1_9"><a class="anchor" href="#_phishtank_lookup_v1_9"></a>Phishtank Lookup (v1.9+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
