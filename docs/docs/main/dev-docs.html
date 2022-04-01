@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Developers Documentation :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/dev-docs.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -204,7 +204,7 @@
 source code.</p>
 </div>
 <div class="paragraph">
-<p>We assume here that you already <a href="install-lookyloo.html" class="page">installed the platform</a>
+<p>We assume here that you already <a href="install-lookyloo.html" class="xref page">installed the platform</a>
 and gave it a try.</p>
 </div>
 </div>
@@ -248,7 +248,7 @@ working on a specific part of the tool and want to stop/start a specific module.
 </li>
 <li>
 <p><code>async_capture</code>: Triggers a capture from the queue. Multiple instances of this process can be run in parallel
-(when multiple instances of splash are available, see <a href="install-lookyloo-production.html" class="page">production install guide</a>)</p>
+(when multiple instances of splash are available, see <a href="install-lookyloo-production.html" class="xref page">production install guide</a>)</p>
 </li>
 <li>
 <p><code>background_indexer</code>: Caches the captures in redis, creates the tree pickles, adds the urls, cookies,
@@ -307,7 +307,7 @@ of each resources. If you don&#8217;t do that, your browser will refuse to load 
 <p><code>lookyloo.py</code>: Main class, does all the heavy lifting to trigger the capture and access the results.</p>
 </li>
 <li>
-<p><code>modules.py</code>: Connectors to <a href="lookyloo-integration.html" class="page">3rd party modules</a>.</p>
+<p><code>modules.py</code>: Connectors to <a href="lookyloo-integration.html" class="xref page">3rd party modules</a>.</p>
 </li>
 <li>
 <p><code>indexing.py</code>: Indexer for URLs, hashes, and cookies (creation and access).</p>

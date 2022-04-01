@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Main configuration options :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-configuration.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -201,7 +201,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can find the configuration options in <code>config/generic.json</code> and the sample file is <code>config/generic.json.sample</code>.
-The default options will work out of the box on a <a href="install-lookyloo.html" class="page">default installation</a>.</p>
+The default options will work out of the box on a <a href="install-lookyloo.html" class="xref page">default installation</a>.</p>
 </div>
 <div class="paragraph">
 <p>This document will explain them in more details.</p>
@@ -247,12 +247,12 @@ A very high number will use <strong>a lot</strong> of ram.</p>
 It expects a dictionary in this format: <code>{"weeks": 1, "days": 0, "hours": 0}</code></p>
 </li>
 <li>
-<p><code>users</code>: It is some kind of an admin accounts. See <a href="lookyloo-auth.html" class="page">authentication</a> for more details.</p>
+<p><code>users</code>: It is some kind of an admin accounts. See <a href="lookyloo-auth.html" class="xref page">authentication</a> for more details.</p>
 </li>
 <li>
 <p><code>priority</code>: Define the priority of a new capture. A capture from the web interface has priority
 over a capture from the API, same for authenticated user vs. anonymous.
-The two sources are <code>web</code> and <code>api</code>. If you have <a href="lookyloo-auth.html" class="page">authenticated</a> users,
+The two sources are <code>web</code> and <code>api</code>. If you have <a href="lookyloo-auth.html" class="xref page">authenticated</a> users,
 you can set a specific priority for each of them individually in the <code>users</code> key.
 Example, is you have an user called <code>admin</code>, you can add <code>admin: 10</code>.</p>
 </li>

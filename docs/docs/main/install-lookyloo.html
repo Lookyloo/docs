@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Install Lookyloo :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/install-lookyloo.html">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -226,7 +226,7 @@ as well as building and packaging of Python packages.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -sSL https://install.python-poetry.org | python3 -</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -250,7 +250,7 @@ It&#8217;s a lightweight browser with an HTTP API, implemented in Python 3 using
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you <a href="prerequisites-for-windows.html" class="page">installed Lookyloo on Windows</a>, you already installed docker. You only have to execute the second line of the following snippet
+If you <a href="prerequisites-for-windows.html" class="xref page">installed Lookyloo on Windows</a>, you already installed docker. You only have to execute the second line of the following snippet
 </td>
 </tr>
 </table>
@@ -307,7 +307,7 @@ sudo apt install build-essential tcl</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/antirez/redis.git
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/redis/redis.git
 cd redis
 git checkout 6.2
 make
@@ -380,7 +380,15 @@ as the one you will be cloning Lookyloo in to.</p>
 <li>
 <p>Splash is installed.</p>
 </li>
+<li>
+<p>Python3 development package</p>
+</li>
 </ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install python3-dev</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -399,7 +407,7 @@ as the one you will be cloning Lookyloo in to.</p>
 <p>Change directory</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>cd lookyloo</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">cd lookyloo</code></pre>
 </div>
 </div>
 </li>
@@ -407,7 +415,7 @@ as the one you will be cloning Lookyloo in to.</p>
 <p>Run the commands:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>poetry install
+<pre class="highlightjs highlight"><code class="language-none hljs">poetry install
 echo LOOKYLOO_HOME="'`pwd`'" &gt; .env</code></pre>
 </div>
 </div>
@@ -471,8 +479,8 @@ cp config/modules.json.sample config/modules.json</code></pre>
 </li>
 <li>
 <p>Edit the config files accordingly to your needs: see the <code>_notes</code> key in the JSON file.
-You can also look at the <a href="lookyloo-integration.html" class="page">integration page</a> for more information regarding the modules,
-and the <a href="lookyloo-configuration.html" class="page">configuration page</a> for the generic configuration options.</p>
+You can also look at the <a href="lookyloo-integration.html" class="xref page">integration page</a> for more information regarding the modules,
+and the <a href="lookyloo-configuration.html" class="xref page">configuration page</a> for the generic configuration options.</p>
 </li>
 <li>
 <p>Make sure the configuration files are valid, and pull the 3rd party dependencies for the website</p>
