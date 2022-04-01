@@ -14,7 +14,7 @@ link:https://python-poetry.org/[Poetry] is tool to handle dependency installatio
 as well as building and packaging of Python packages.
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
+curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 More details in the the link:https://github.com/python-poetry/poetry/#installation[installation guide].
@@ -103,6 +103,12 @@ sudo systemctl enable uwhoisd
 * Redis is installed from the source. The repository must be in the same directory
   as the one you will be cloning Lookyloo in to.
 * Splash is installed.
+
+* Python3 development package
+
+```bash
+sudo apt install python3-dev
+```
 
 === Procedure
 

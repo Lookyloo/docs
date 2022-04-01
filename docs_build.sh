@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "${0%/*}" # cd to the folder with script
 
-antora #Verify Antora is installed
+npx antora #Verify Antora is installed
 RESULT=($?)
 if [ $RESULT -eq 127 ]; then #if Antora is not found in $PATH (probably not installed)
     echo -e '>> \e[31mFAIL\e[0m Antora not found in \$PATH, Install Antora from https://docs.antora.org/antora/2.3/install/install-antora/'
@@ -11,9 +11,9 @@ elif [ -f local-site.yml ]; then
     echo -e '>> \e[34mINFO\e[0m Building docs with Antora'
     if [ "${1}" = "--prod" ]
     then
-        antora --fetch prod-site.yml # build documentation with antora
+        npx antora --fetch prod-site.yml # build documentation with antora
     else
-        antora --fetch local-site.yml # build documentation with antora
+        npx antora --fetch local-site.yml # build documentation with antora
     fi
     echo -e '>> \e[92mDONE\e[0m Review the generated documentation in index.html, commit the changes and submit a pull request to Lookyloo docs.'
 else
