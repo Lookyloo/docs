@@ -19,25 +19,6 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 More details in the the link:https://github.com/python-poetry/poetry/#installation[installation guide].
 
-=== Install Splash
-
-link:https://splash.readthedocs.io/en/stable/[Splash] is a javascript rendering service with an HTTP API.
-It's a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.
-
-You will need a running instance, and the preferred way is via
-link:https://splash.readthedocs.io/en/stable/install.html[Docker].
-
-NOTE: If you xref:prerequisites-for-windows.adoc[installed Lookyloo on Windows], you already installed docker. You only have to execute the second line of the following snippet
-
-NOTE: On Ubuntu, you may want to have a look at link:https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04[this installation guide], which will provide a more recent version of docker.
-
-And if you just want to get going on linux, here it is:
-
-```bash
-sudo apt install docker.io
-sudo docker pull scrapinghub/splash
-```
-
 === Install Redis
 
 link:https://redis.io/[Redis]: An open source (BSD licensed), in-memory data structure
@@ -99,16 +80,23 @@ sudo systemctl enable uwhoisd
 == Install Lookyloo
 
 === Prerequisites
+
 * Poetry is installed.
 * Redis is installed from the source. The repository must be in the same directory
   as the one you will be cloning Lookyloo in to.
-* Splash is installed.
 
 * Python3 development package
 
 ```bash
 sudo apt install python3-dev
 ```
+
+* Dependencies for link:https://playwright.dev/python/docs/intro#installation[playwright]:
+
+```bash
+sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0
+```
+
 
 === Procedure
 
@@ -165,18 +153,6 @@ cp config/modules.json.sample config/modules.json
 ```bash
 poetry run update --yes
 ```
-
-== Run Splash
-
-* From another terminal, run the following command:
-
-```bash
-sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-caches
-# If you have a lot of ram at hand, you may want to run it this way:
-# sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash -s 100 -m 50000 --disable-browser-caches
-```
-
-**Note**: you may want to remove `--disable-browser-caches`, as it is causing issue on some websites (generally, splash segfaults).
 
 == Run the app
 

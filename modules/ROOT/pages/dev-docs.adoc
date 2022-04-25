@@ -23,7 +23,6 @@ and gave it a try.
 * `shutdown`: Requests the services to stop by putting a `shutdown` key in redis, wait for all of them to stop.
 * `run_backend`: Starts/stops redis databases
 * `async_capture`: Triggers a capture from the queue. Multiple instances of this process can be run in parallel
-  (when multiple instances of splash are available, see xref:install-lookyloo-production.adoc[production install guide])
 * `background_indexer`: Caches the captures in redis, creates the tree pickles, adds the urls, cookies,
   and body hashes in indexes for fast lookup
 * `archiver`: Archives the old captures (default: 180+ days), maintain the indexes files in the capture directories

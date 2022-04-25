@@ -7,4 +7,3 @@ Lookyloo also works with the following :
 * link:https://github.com/Lookyloo/ScrapySplashWrapper[ScrapySplashWrapper]
 * link:https://github.com/Lookyloo/PySaneJS[PySaneJS]
 * link:https://github.com/Lookyloo/sanejs[sanejs]
-* link:https://github.com/Lookyloo/aquarium[Aquarium]

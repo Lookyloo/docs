@@ -40,19 +40,6 @@ The sections below are only required if the tools have been updated, or if upgra
 poetry self update
 ```
 
-== Update Splash
-
-```bash
-sudo docker pull scrapinghub/splash
-```
-
-Then, kill the splash instances you have running and restart it. If you use aquarium, please refer to the aquarium install guide.
-Otherwise, you can simply run the following command:
-
-```bash
-sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-caches
-```
-
 === Update Redis
 
 It requires to shutdown lookyloo completely.

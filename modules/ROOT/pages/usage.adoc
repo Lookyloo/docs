@@ -32,7 +32,7 @@ The other fields can be left blank and the default parameters for the instance w
 
 === Browser Configuration
 
-Lookyloo will **always** use an emulated browser (link:https://splash.readthedocs.io/en/stable/[splash]),
+Lookyloo will **always** use a dedicated browser (link://playwright.dev/python/[playwright]),
 but you can pass it parameters, such as the user agent.
 
 The user agents listed on the page can come from two sources:
@@ -85,7 +85,7 @@ If that's the case, you can pass a proxy to the capture.
 
 *Note*: You need to setup your own proxy server, or you can use tor as a socks5 proxy.
 If you use tor with the default configuration, the socks5 proxy will only be listening
-on 127.0.0.1, which is not accessible from splash because is running in a docker package.
+on 127.0.0.1.
 In order for it to work, the easiest way is to make tor listening on every interfaces
 by adding `SocksPort 0.0.0.0:9050` in `/etc/tor/torrc`, restart tor, and then you can pass
 `socks5://<IP_of_your_host>:9050` in the proxy field of Lookyloo.

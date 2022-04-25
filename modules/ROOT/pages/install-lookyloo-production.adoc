@@ -116,91 +116,6 @@ If everything is fine, enable the service so it automatically starts on reboot:
 sudo systemctl enable lookyloo
 ----
 
-== Multi-users App
-
-If you expect to have multiple users of Lookyloo at the same time, it is strongly recommended to use
-link:https://github.com/Lookyloo/aquarium[aquarium].
-
-Aquarium is a haproxy + splash bundle that will allow to capture multiple websites at the same time with
-Lookyloo, making it more reliable for concurrent users.
-
-Follow the link:https://github.com/Lookyloo/aquarium#usage[documentation] if you want to use it.
-
-The initial version of the project was created by link:https://github.com/TeamHG-Memex/aquarium[TeamHG-Memex],
-but our link:https://github.com/Lookyloo/aquarium[dedicated repository] fits our needs better.
-
-=== Adapt the service file to your system
-
-The relevant sample configuration file is:
-
-  etc/systemd/system/aquarium.service.sample
-
-In this one, you will need to edit the file accordingly to your configuration:
-
-* `User`: system user used to install lookyloo
-* `Group`: group of the user used to install lookyloo
-* `WorkingDirectory`: path to the directory where you installed aquarium
-+
-In this case, you will use: `/home/lookyloo/aquarium`.
-+
-
-In the end, the service file should look something like that:
-
-[source, ini]
-----
-[Unit]
-Description=aquarium service with docker compose
-Requires=docker.service
-After=docker.service
-
-[Service]
-User=lookyloo
-Group=lookyloo
-Type=forking
-RemainAfterExit=true
-WorkingDirectory=/home/lookyloo/aquarium
-ExecStart=/usr/bin/docker-compose up -d --remove-orphans
-ExecStop=/usr/bin/docker-compose down
-StandardOutput=append:/var/log/aquarium_message.log
-StandardError=append:/var/log/aquarium_error.log
-
-[Install]
-WantedBy=multi-user.target
-[Install]
-WantedBy=multi-user.target
-----
-
-=== Set it up
-
-Add the user to docker group
-[source, bash]
-----
-sudo usermod -aG docker $USER
-----
-
-Copy the file to the expected directory:
-
-[source, bash]
-----
-sudo cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
-sudo systemctl daemon-reload
-----
-
-Start, and check the status of the systemd service:
-
-[source, bash]
-----
-sudo systemctl start aquarium
-sudo systemctl status aquarium
-----
-
-If everything is fine, enable the service so it automatically starts on reboot:
-
-[source, bash]
-----
-sudo systemctl enable aquarium
-----
-
 == Logging and rotation
 
 The systemd services write the `stdout` and `stderr` logs into `/var/log`. Over time, these files will
@@ -210,7 +125,6 @@ If you want to avoid that, you can add the logrotate configurations:
 [source, bash]
 ---
 sudo cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
-sudo cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
 sudo systemctl restart logrotate
 ---
 

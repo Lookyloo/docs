@@ -11,11 +11,9 @@ This document will explain them in more details.
 * `website_listen_ip`: IP where the webserver (flask) will be listening for requests. Defaults to 0.0.0.0, meaning all interfaces.
 * `website_listen_port`: Port where the webserver (flask) will be listening for requests.
 * `public_domain`: Domain where the instance can be reached. Used for permalinks (e-mail, MISP export).
-* `splash_url`: URL to connect to the splash instance, probably dockerized.
 * `default_user_agent`: Ultimate fallback if the capture form, or the asynchronous submission, doesn't provide a user agent.
 * `max_depth`: Maximum depth for scraping. Anything > 1 will be exponentially bigger.
-* `async_capture_processes`: Number of async_capture processes to start. This should not be
-                             higher than the number of splash instances you have running.
+* `async_capture_processes`: Number of async_capture processes to start.
                              A very high number will use *a lot* of ram.
 
 * `public_instance`: true means disabling features deemed unsafe on a public instance (such as indexing private captures)
@@ -52,5 +50,3 @@ This document will explain them in more details.
 
 * `loglevel`: General log level for Lookyloo itself. It can be one of the level described
               link:https://docs.python.org/3/library/logging.html#levels[there].
-* `splash_loglevel`: Loglevel for link:https://splash.readthedocs.io/en/stable/index.html[splash].
-                     It expects the same values as above, but be careful: `INFO` will be pretty verbose.

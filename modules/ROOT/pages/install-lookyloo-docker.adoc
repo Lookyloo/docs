@@ -13,8 +13,8 @@ Lookyloo stores the scraped data in /lookyloo/scraped. If you want to persist th
 
 == Running a Complete Setup with Docker Compose
 
-Additionally you can start a complete setup, including the necessary Docker instance of splashy, by using
-Docker Compose and the included service definition in [docker-compose.yml](docker-compose.yml) by running
+Additionally you can start a complete setup, by using Docker Compose and the
+included service definition in [docker-compose.yml](docker-compose.yml) with:
 
 ```
 docker-compose up
