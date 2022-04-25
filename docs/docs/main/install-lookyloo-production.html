@@ -373,120 +373,6 @@ sudo systemctl status lookyloo</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_multi_users_app"><a class="anchor" href="#_multi_users_app"></a>Multi-users App</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you expect to have multiple users of Lookyloo at the same time, it is strongly recommended to use
-<a href="https://github.com/Lookyloo/aquarium">aquarium</a>.</p>
-</div>
-<div class="paragraph">
-<p>Aquarium is a haproxy + splash bundle that will allow to capture multiple websites at the same time with
-Lookyloo, making it more reliable for concurrent users.</p>
-</div>
-<div class="paragraph">
-<p>Follow the <a href="https://github.com/Lookyloo/aquarium#usage">documentation</a> if you want to use it.</p>
-</div>
-<div class="paragraph">
-<p>The initial version of the project was created by <a href="https://github.com/TeamHG-Memex/aquarium">TeamHG-Memex</a>,
-but our <a href="https://github.com/Lookyloo/aquarium">dedicated repository</a> fits our needs better.</p>
-</div>
-<div class="sect2">
-<h3 id="_adapt_the_service_file_to_your_system"><a class="anchor" href="#_adapt_the_service_file_to_your_system"></a>Adapt the service file to your system</h3>
-<div class="paragraph">
-<p>The relevant sample configuration file is:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>etc/systemd/system/aquarium.service.sample</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In this one, you will need to edit the file accordingly to your configuration:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>User</code>: system user used to install lookyloo</p>
-</li>
-<li>
-<p><code>Group</code>: group of the user used to install lookyloo</p>
-</li>
-<li>
-<p><code>WorkingDirectory</code>: path to the directory where you installed aquarium</p>
-<div class="paragraph">
-<p>In this case, you will use: <code>/home/lookyloo/aquarium</code>.</p>
-</div>
-<div class="paragraph">
-<p>In the end, the service file should look something like that:</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-ini hljs" data-lang="ini">[Unit]
-Description=aquarium service with docker compose
-Requires=docker.service
-After=docker.service
-
-[Service]
-User=lookyloo
-Group=lookyloo
-Type=forking
-RemainAfterExit=true
-WorkingDirectory=/home/lookyloo/aquarium
-ExecStart=/usr/bin/docker-compose up -d --remove-orphans
-ExecStop=/usr/bin/docker-compose down
-StandardOutput=append:/var/log/aquarium_message.log
-StandardError=append:/var/log/aquarium_error.log
-
-[Install]
-WantedBy=multi-user.target
-[Install]
-WantedBy=multi-user.target</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_set_it_up_2"><a class="anchor" href="#_set_it_up_2"></a>Set it up</h3>
-<div class="paragraph">
-<p>Add the user to docker group</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo usermod -aG docker $USER</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Copy the file to the expected directory:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo cp etc/systemd/system/aquarium.service.sample /etc/systemd/system/aquarium.service
-sudo systemctl daemon-reload</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Start, and check the status of the systemd service:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl start aquarium
-sudo systemctl status aquarium</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If everything is fine, enable the service so it automatically starts on reboot:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable aquarium</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_logging_and_rotation"><a class="anchor" href="#_logging_and_rotation"></a>Logging and rotation</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -498,7 +384,6 @@ If you want to avoid that, you can add the logrotate configurations:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">---
 sudo cp etc/logrotate.d/lookyloo /etc/logrotate.d/lookyloo
-sudo cp etc/logrotate.d/aquarium /etc/logrotate.d/aquarium
 sudo systemctl restart logrotate
 ---</code></pre>
 </div>

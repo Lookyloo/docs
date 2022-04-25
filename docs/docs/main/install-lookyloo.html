@@ -234,50 +234,6 @@ as well as building and packaging of Python packages.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_install_splash"><a class="anchor" href="#_install_splash"></a>Install Splash</h3>
-<div class="paragraph">
-<p><a href="https://splash.readthedocs.io/en/stable/">Splash</a> is a javascript rendering service with an HTTP API.
-It&#8217;s a lightweight browser with an HTTP API, implemented in Python 3 using Twisted and QT5.</p>
-</div>
-<div class="paragraph">
-<p>You will need a running instance, and the preferred way is via
-<a href="https://splash.readthedocs.io/en/stable/install.html">Docker</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you <a href="prerequisites-for-windows.html" class="xref page">installed Lookyloo on Windows</a>, you already installed docker. You only have to execute the second line of the following snippet
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-On Ubuntu, you may want to have a look at <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">this installation guide</a>, which will provide a more recent version of docker.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>And if you just want to get going on linux, here it is:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install docker.io
-sudo docker pull scrapinghub/splash</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
 <h3 id="_install_redis"><a class="anchor" href="#_install_redis"></a>Install Redis</h3>
 <div class="paragraph">
 <p><a href="https://redis.io/">Redis</a>: An open source (BSD licensed), in-memory data structure
@@ -378,9 +334,6 @@ sudo systemctl status uwhoisd</code></pre>
 as the one you will be cloning Lookyloo in to.</p>
 </li>
 <li>
-<p>Splash is installed.</p>
-</li>
-<li>
 <p>Python3 development package</p>
 </li>
 </ul>
@@ -388,6 +341,18 @@ as the one you will be cloning Lookyloo in to.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install python3-dev</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dependencies for <a href="https://playwright.dev/python/docs/intro#installation">playwright</a>:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0</code></pre>
 </div>
 </div>
 </div>
@@ -491,28 +456,6 @@ and the <a href="lookyloo-configuration.html" class="xref page">configuration pa
 </div>
 </li>
 </ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_run_splash"><a class="anchor" href="#_run_splash"></a>Run Splash</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>From another terminal, run the following command:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash --disable-browser-caches
-# If you have a lot of ram at hand, you may want to run it this way:
-# sudo docker run -p 8050:8050 -p 5023:5023 scrapinghub/splash -s 100 -m 50000 --disable-browser-caches</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: you may want to remove <code>--disable-browser-caches</code>, as it is causing issue on some websites (generally, splash segfaults).</p>
 </div>
 </div>
 </div>
