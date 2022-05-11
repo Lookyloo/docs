@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Install Lookyloo :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/install-lookyloo.html">
-    <meta name="generator" content="Antora 3.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -273,50 +273,6 @@ cd ..</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_install_uwhoisd_optional"><a class="anchor" href="#_install_uwhoisd_optional"></a>Install uwhoisd (Optional)</h3>
-<div class="paragraph">
-<p>In order to use the Universal Whois you have to install uwhoisd from Lookyloo repository and the whois package:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get update
-sudo apt-get install whois</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/Lookyloo/uwhoisd
-cd uwhoisd
-poetry install</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then configure the service file</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nano etc/systemd/system/uwhoisd.service.sample</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo cp etc/systemd/system/uwhoisd.service.sample /etc/systemd/system/uwhoisd.service
-cd ..
-sudo systemctl daemon-reload
-sudo systemctl start uwhoisd
-sudo systemctl status uwhoisd</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If everything is ok, activate the service for reboot</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable uwhoisd</code></pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -352,7 +308,7 @@ as the one you will be cloning Lookyloo in to.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0 libxcomposite1 libxfixes3 libxrandr2</code></pre>
 </div>
 </div>
 </div>
@@ -474,6 +430,50 @@ and the <a href="lookyloo-configuration.html" class="xref page">configuration pa
 <div class="sectionbody">
 <div class="paragraph">
 <p>Unless you changed the default in <code>config/generic.json</code>, the web interface will be reachable at <code><a href="http://0.0.0.0:5100/" class="bare">http://0.0.0.0:5100/</a></code></p>
+</div>
+<div class="sect2">
+<h3 id="_install_uwhoisd_optional"><a class="anchor" href="#_install_uwhoisd_optional"></a>Install uwhoisd (Optional)</h3>
+<div class="paragraph">
+<p>In order to use the Universal Whois you have to install uwhoisd from Lookyloo repository and the whois package:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get update
+sudo apt-get install whois</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/Lookyloo/uwhoisd
+cd uwhoisd
+poetry install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then configure the service file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nano etc/systemd/system/uwhoisd.service.sample</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo cp etc/systemd/system/uwhoisd.service.sample /etc/systemd/system/uwhoisd.service
+cd ..
+sudo systemctl daemon-reload
+sudo systemctl start uwhoisd
+sudo systemctl status uwhoisd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If everything is ok, activate the service for reboot</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable uwhoisd</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
