@@ -44,39 +44,6 @@ make test
 cd ..
 ```
 
-=== Install uwhoisd (Optional)
-
-In order to use the Universal Whois you have to install uwhoisd from Lookyloo repository and the whois package:
-
-```bash
-sudo apt-get update
-sudo apt-get install whois
-```
-
-```bash
-git clone https://github.com/Lookyloo/uwhoisd
-cd uwhoisd
-poetry install
-```
-
-Then configure the service file
-```bash
-nano etc/systemd/system/uwhoisd.service.sample
-```
-
-```bash
-sudo cp etc/systemd/system/uwhoisd.service.sample /etc/systemd/system/uwhoisd.service
-cd ..
-sudo systemctl daemon-reload
-sudo systemctl start uwhoisd
-sudo systemctl status uwhoisd
-```
-
-If everything is ok, activate the service for reboot
-```bash
-sudo systemctl enable uwhoisd
-```
-
 == Install Lookyloo
 
 === Prerequisites
@@ -94,7 +61,7 @@ sudo apt install python3-dev
 * Dependencies for link:https://playwright.dev/python/docs/intro#installation[playwright]:
 
 ```bash
-sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0
+sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0 libxcomposite1 libxfixes3 libxrandr2
 ```
 
 
@@ -163,3 +130,38 @@ poetry run start
 == Open the website
 
 Unless you changed the default in `config/generic.json`, the web interface will be reachable at `http://0.0.0.0:5100/`
+
+
+=== Install uwhoisd (Optional)
+
+In order to use the Universal Whois you have to install uwhoisd from Lookyloo repository and the whois package:
+
+```bash
+sudo apt-get update
+sudo apt-get install whois
+```
+
+```bash
+git clone https://github.com/Lookyloo/uwhoisd
+cd uwhoisd
+poetry install
+```
+
+Then configure the service file
+```bash
+nano etc/systemd/system/uwhoisd.service.sample
+```
+
+```bash
+sudo cp etc/systemd/system/uwhoisd.service.sample /etc/systemd/system/uwhoisd.service
+cd ..
+sudo systemctl daemon-reload
+sudo systemctl start uwhoisd
+sudo systemctl status uwhoisd
+```
+
+If everything is ok, activate the service for reboot
+```bash
+sudo systemctl enable uwhoisd
+```
+
