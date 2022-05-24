@@ -216,20 +216,19 @@ developed by others.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_splash_and_scrapy"><a class="anchor" href="#_splash_and_scrapy"></a>Splash and Scrapy</h3>
+<h3 id="_playwright"><a class="anchor" href="#_playwright"></a>Playwright</h3>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Splash is a JavaScript rendering service. It is a lightweight web browser with an HTTP API, implemented in Python 3 using Twisted and QT5. The (twisted) QT reactor is used to make the service fully asynchronous allowing users to take
-advantage of webkit concurrency via QT main loop.</p>
+<p>Playwright is a Python library to automate Chromium, Firefox and WebKit browsers with a single API. Playwright delivers automation that is ever-green, capable, reliable and fast.</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>To learn more about Splash, see the on the <a href="https://splash.readthedocs.io/en/stable">official website</a>.</p>
+<p>To learn more about Playwright, see the on the <a href="https://playwright.dev/python/docs/intro">official website</a>.</p>
 </div>
 <div class="paragraph">
-<p>In Lookyloo, Splash loads a web page in a similar fashion to a web browser. When the
+<p>In Lookyloo, the Playwright capture module loads a web page in a headless web browser. When the
 page is done loading, it scrolls down and waits a little bit longer. When it is done, it returns an <a href="http://www.softwareishard.com/blog/har-12-spec/">HTTP Archive (HAR)</a>:</p>
 </div>
 <div class="ulist">
@@ -250,25 +249,7 @@ viewing the source of the page in your browser)</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The capture is controlled by a <a href="https://github.com/Lookyloo/ScrapySplashWrapper/blob/main/scrapysplashwrapper/crawl.lua">LUA script</a>.</p>
-</div>
-<div class="paragraph">
-<p>In order to extract information from the page and instrument the capture itself, we use <a href="https://scrapy.org/">Scrapy</a>:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>Scrapy is a fast high-level web crawling and web scraping framework, used to crawl
-websites and extract structured data from their pages. It can be used for a wide
-range of purposes, from data mining to monitoring and automated testing.</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>We use Scrapy along with a lightweight connector called <a href="https://github.com/scrapy-plugins/scrapy-splash">scrapy-splash</a>.</p>
-</div>
-<div class="paragraph">
-<p>The whole system is bundled in an home-made standalone wrapper called <a href="https://github.com/Lookyloo/ScrapySplashWrapper">ScrapySplashWrapper</a>.</p>
+<p>The capture is controlled by a <a href="https://github.com/Lookyloo/PlaywrightCapture/blob/main/playwrightcapture/capture.py">Python script</a>.</p>
 </div>
 </div>
 <div class="sect2">
