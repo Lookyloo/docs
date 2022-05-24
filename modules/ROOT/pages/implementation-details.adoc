@@ -10,16 +10,15 @@ developed by others.
 
 link:https://redis.io/[Redis] is the database used to store the cached information visualized on the web interface.
 
-=== Splash and Scrapy
+=== Playwright
 
 ====
-Splash is a JavaScript rendering service. It is a lightweight web browser with an HTTP API, implemented in Python 3 using Twisted and QT5. The (twisted) QT reactor is used to make the service fully asynchronous allowing users to take
-advantage of webkit concurrency via QT main loop.
+Playwright is a Python library to automate Chromium, Firefox and WebKit browsers with a single API. Playwright delivers automation that is ever-green, capable, reliable and fast.
 ====
 
-To learn more about Splash, see the on the link:https://splash.readthedocs.io/en/stable[official website].
+To learn more about Playwright, see the on the link:https://playwright.dev/python/docs/intro[official website].
 
-In Lookyloo, Splash loads a web page in a similar fashion to a web browser. When the
+In Lookyloo, the Playwright capture module loads a web page in a headless web browser. When the
 page is done loading, it scrolls down and waits a little bit longer. When it is done, it returns an link:http://www.softwareishard.com/blog/har-12-spec/[HTTP Archive (HAR)]:
 
 * the **page rendered at the end of the capture** (that would be the same as what you would see when
@@ -28,19 +27,8 @@ viewing the source of the page in your browser)
 * **all the cookies** what were received and created during the capture
 * the **URL in the address bar** of the browser
 
-The capture is controlled by a link:https://github.com/Lookyloo/ScrapySplashWrapper/blob/main/scrapysplashwrapper/crawl.lua[LUA script].
+The capture is controlled by a link:https://github.com/Lookyloo/PlaywrightCapture/blob/main/playwrightcapture/capture.py[Python script].
 
-In order to extract information from the page and instrument the capture itself, we use link:https://scrapy.org/[Scrapy]:
-
-====
-Scrapy is a fast high-level web crawling and web scraping framework, used to crawl
-websites and extract structured data from their pages. It can be used for a wide
-range of purposes, from data mining to monitoring and automated testing.
-====
-
-We use Scrapy along with a lightweight connector called link:https://github.com/scrapy-plugins/scrapy-splash[scrapy-splash].
-
-The whole system is bundled in an home-made standalone wrapper called link:https://github.com/Lookyloo/ScrapySplashWrapper[ScrapySplashWrapper].
 
 === ETE Toolkit & har2tree
 

@@ -12,7 +12,7 @@ The last digit will mainly be used for bug and security fixes, but it might also
 used for new features.
 
 * link:https://github.com/Lookyloo/har2tree[har2tree]
-* link:https://github.com/Lookyloo/ScrapySplashWrapper[ScrapySplashWrapper]
+* link:https://github.com/Lookyloo/PlaywrightCapture[PlaywrightCapture]
 * link:https://github.com/Lookyloo/PyLookyloo[PyLookyloo]
 
 
@@ -38,7 +38,7 @@ For all the dependencies, we must also push the packages to PyPi, do as follows:
 The packages will be available on PyPi:
 
 * link:https://pypi.org/project/har2tree/[har2tree]
-* link:https://pypi.org/project/ScrapySplashWrapper[ScrapySplashWrapper]
+* link:https://pypi.org/project/PlaywrightCapture[PlaywrightCapture]
 * link:https://pypi.org/project/PyLookyloo[PyLookyloo]
 
 
