@@ -11,8 +11,6 @@ This document will explain them in more details.
 * `website_listen_ip`: IP where the webserver (flask) will be listening for requests. Defaults to 0.0.0.0, meaning all interfaces.
 * `website_listen_port`: Port where the webserver (flask) will be listening for requests.
 * `public_domain`: Domain where the instance can be reached. Used for permalinks (e-mail, MISP export).
-* `default_user_agent`: Ultimate fallback if the capture form, or the asynchronous submission, doesn't provide a user agent.
-* `max_depth`: Maximum depth for scraping. Anything > 1 will be exponentially bigger.
 * `async_capture_processes`: Number of async_capture processes to start.
                              A very high number will use *a lot* of ram.
 
