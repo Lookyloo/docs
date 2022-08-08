@@ -217,15 +217,15 @@ to our <a href="https://lookyloo.circl.lu/">demo instance</a>. On the loaded pag
 <h2 id="_start_a_new_capture"><a class="anchor" href="#_start_a_new_capture"></a>Start a New Capture</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is the entry point when you want to investigate a website.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="_images/capture.png" alt="Capture form">
-</div>
+<p>This is the entry point when you want to investigate a website. You must give a URL, or submit a document, but all the other fields are optional.</p>
 </div>
 <div class="sect2">
 <h3 id="_url"><a class="anchor" href="#_url"></a>URL</h3>
+<div class="imageblock">
+<div class="content">
+<img src="_images/capture_url.png" alt="URL(s) capture field">
+</div>
+</div>
 <div class="paragraph">
 <p>The only required field is the <strong>URL</strong>, which is the URL you want to capture. It might be the
 index page of the domain to capture:</p>
@@ -248,11 +248,27 @@ index page of the domain to capture:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The other fields can be left blank and the default parameters for the instance will be used.</p>
+<p>If you tick the multiple capture box, you can capture multiple URLs ar once (one per line).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_web_enabled_document"><a class="anchor" href="#_web_enabled_document"></a>Web enabled document</h3>
+<div class="imageblock">
+<div class="content">
+<img src="_images/capture_doc.png" alt="Web document capture field">
+</div>
+</div>
+<div class="paragraph">
+<p>You can select a file (preferably HTML) on your disk and submit it to Lookyloo.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_browser_configuration"><a class="anchor" href="#_browser_configuration"></a>Browser Configuration</h3>
+<div class="imageblock">
+<div class="content">
+<img src="_images/capture_browser_config.png" alt="Configuration options for the browser doing the capture">
+</div>
+</div>
 <div class="paragraph">
 <p>Lookyloo will <strong>always</strong> use a dedicated browser (<a href="//playwright.dev/python/">playwright</a>),
 but you can pass it parameters, such as the user agent.</p>
@@ -298,7 +314,7 @@ what you&#8217;re doing, especially if you&#8217;re using the demo interface, as
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/capture-advanced.png" alt="capture advanced">
+<img src="_images/capture_config.png" alt="Configuration options the capture itself">
 </div>
 </div>
 <div class="sect3">
@@ -312,6 +328,15 @@ what you&#8217;re doing, especially if you&#8217;re using the demo interface, as
 <div class="paragraph">
 <p><strong>Note</strong>: It may not be enough and the website may also require a cookie. If it is the case, see below.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_do_not_track"><a class="anchor" href="#_do_not_track"></a>Do not Track</h3>
+<div class="paragraph">
+<p>The <a href="https://en.wikipedia.org/wiki/Do_Not_Track">DNT</a> header is optional and will not be set unless you select one of the value (0, 1, null).</p>
+</div>
+<div class="paragraph">
+<p><strong>Usecase</strong>: the header is deprecated and will be ignored by many websites. It might still be interested to see how different websites handle its presence.</p>
 </div>
 <div class="sect3">
 <h4 id="_other_http_headers"><a class="anchor" href="#_other_http_headers"></a>Other HTTP Headers</h4>
@@ -350,16 +375,6 @@ If you don&#8217;t have that, something is incorrect with your tor configuration
 <div class="paragraph">
 <p>It will be empty by default, but please refer to the related documentation in order to
 initiate a new capture with <a href="capture-cookies.html" class="xref page">a pre-refined cookie</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_depth"><a class="anchor" href="#_depth"></a>Depth</h4>
-<div class="paragraph">
-<p>It is not enabled by default because it will most of the time take too long on most websites. The default depth is 1 (capture only the given URL).</p>
-</div>
-<div class="paragraph">
-<p>If you enable the feature, a value of 2 will capture the given URL, extract all the links in the page, pick all the ones with the same hostname as the
-initial URL, and capture them. As you can imagine, it may get huge very fast.</p>
 </div>
 </div>
 </div>

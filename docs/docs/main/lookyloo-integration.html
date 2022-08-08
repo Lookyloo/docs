@@ -252,6 +252,26 @@ for all the redirected nodes up to the one containing the rendered page.</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_riskiq_v1_14"><a class="anchor" href="#_riskiq_v1_14"></a>RiskIQ (v1.14+)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This module triggers a request against the Passive DNS endpoint of <a href="https://api.riskiq.net/api/concepts.html">RiskIQ</a>
+for the domain of the final URL (after all the redirects).</p>
+</div>
+<div class="paragraph">
+<p>The module is not enabled by default because you need to create an account, and use
+an API key.</p>
+</div>
+<div class="paragraph">
+<p><strong>Important</strong>: the query limit for a standard API key is very low, so you will hit
+it very fast if you do not have a paid plan with them.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: <code>allow_auto_trigger</code> is ignored if <code>auto_trigger_modules</code> in <code>config/generic.json</code> is <code>false</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_hashlookup_v1_10"><a class="anchor" href="#_hashlookup_v1_10"></a>Hashlookup (v1.10+)</h2>
 <div class="sectionbody">
 <div class="paragraph">
