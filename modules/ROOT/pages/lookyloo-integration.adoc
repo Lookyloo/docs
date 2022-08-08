@@ -34,6 +34,19 @@ for all the redirected nodes up to the one containing the rendered page.
 
 **Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
+== RiskIQ (v1.14+)
+
+This module triggers a request against the Passive DNS endpoint of link:https://api.riskiq.net/api/concepts.html[RiskIQ]
+for the domain of the final URL (after all the redirects).
+
+The module is not enabled by default because you need to create an account, and use
+an API key.
+
+**Important**: the query limit for a standard API key is very low, so you will hit
+it very fast if you do not have a paid plan with them.
+
+**Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
+
 
 == Hashlookup (v1.10+)
 

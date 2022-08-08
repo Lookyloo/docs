@@ -13,11 +13,11 @@ to our link:https://lookyloo.circl.lu/[demo instance]. On the loaded page click 
 
 == Start a New Capture
 
-This is the entry point when you want to investigate a website.
-
-image::capture.png[Capture form]
+This is the entry point when you want to investigate a website. You must give a URL, or submit a document, but all the other fields are optional.
 
 === URL
+
+image::capture_url.png[URL(s) capture field]
 
 The only required field is the **URL**, which is the URL you want to capture. It might be the
 index page of the domain to capture:
@@ -28,9 +28,17 @@ Or a more complete URL:
 
 * link:https://www.iana.org/domains/reserved[https://www.iana.org/domains/reserved]
 
-The other fields can be left blank and the default parameters for the instance will be used.
+If you tick the multiple capture box, you can capture multiple URLs ar once (one per line).
+
+=== Web enabled document
+
+image::capture_doc.png[Web document capture field]
+
+You can select a file (preferably HTML) on your disk and submit it to Lookyloo.
 
 === Browser Configuration
+
+image::capture_browser_config.png[Configuration options for the browser doing the capture]
 
 Lookyloo will **always** use a dedicated browser (link://playwright.dev/python/[playwright]),
 but you can pass it parameters, such as the user agent.
@@ -58,7 +66,7 @@ If you want to use the user-agent of a specific browser on a specific operating 
 This section will allow you to pass more advanced parameters to the capture, please only use it if you know
 what you're doing, especially if you're using the demo interface, as some of them may contain private information.
 
-image::capture-advanced.png[]
+image::capture_config.png[Configuration options the capture itself]
 
 ==== Referer
 
@@ -67,6 +75,12 @@ The link:https://en.wikipedia.org/wiki/HTTP_referer[referer] is optional but it 
 *Usecase*: some websites block requests if they're not initiated by an internal URL. If that's the case, pass the required URL in the referer field.
 
 *Note*: It may not be enough and the website may also require a cookie. If it is the case, see below.
+
+=== Do not Track
+
+The link:https://en.wikipedia.org/wiki/Do_Not_Track[DNT] header is optional and will not be set unless you select one of the value (0, 1, null).
+
+*Usecase*: the header is deprecated and will be ignored by many websites. It might still be interested to see how different websites handle its presence.
 
 ==== Other HTTP Headers
 
@@ -97,13 +111,6 @@ If you don't have that, something is incorrect with your tor configuration .
 
 It will be empty by default, but please refer to the related documentation in order to
 initiate a new capture with xref:capture-cookies.adoc[a pre-refined cookie].
-
-==== Depth
-
-It is not enabled by default because it will most of the time take too long on most websites. The default depth is 1 (capture only the given URL).
-
-If you enable the feature, a value of 2 will capture the given URL, extract all the links in the page, pick all the ones with the same hostname as the
-initial URL, and capture them. As you can imagine, it may get huge very fast.
 
 == Investigate a capture
 
