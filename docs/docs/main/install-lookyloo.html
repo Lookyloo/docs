@@ -252,6 +252,18 @@ the same directory as the one you will be cloning Lookyloo in to.
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Since Lookyloo 1.15, redis 7.0 is required.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>In order to compile and test redis, you will need a few packages:</p>
 </div>
@@ -265,7 +277,7 @@ sudo apt install build-essential tcl</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/redis/redis.git
 cd redis
-git checkout 6.2
+git checkout 7.0
 make
 # Optionally, you can run the tests:
 make test
