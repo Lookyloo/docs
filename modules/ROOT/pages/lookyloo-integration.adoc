@@ -34,6 +34,13 @@ for all the redirected nodes up to the one containing the rendered page.
 
 **Note**: `allow_auto_trigger` is ignored if `auto_trigger_modules` in `config/generic.json` is `false`.
 
+== Pandora (v1.15+)
+
+This module allows to submit a downloaded file to a link:https://github.com/pandora-analysis[Pandora] instance.
+
+The module is not enabled by default but if you have a pandora instance available, you simply need to se the `url`
+key to the appropriate value (ex.: `https://my.pandora.instance`).
+
 == RiskIQ (v1.14+)
 
 This module triggers a request against the Passive DNS endpoint of link:https://api.riskiq.net/api/concepts.html[RiskIQ]

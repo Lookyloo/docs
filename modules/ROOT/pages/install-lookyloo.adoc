@@ -27,6 +27,8 @@ store, used as a database, cache and message broker.
 NOTE: Redis should be installed from the source, and the repository must be in
 the same directory as the one you will be cloning Lookyloo in to.
 
+NOTE: Since Lookyloo 1.15, redis 7.0 is required.
+
 In order to compile and test redis, you will need a few packages:
 
 ```bash
@@ -37,7 +39,7 @@ sudo apt install build-essential tcl
 ```bash
 git clone https://github.com/redis/redis.git
 cd redis
-git checkout 6.2
+git checkout 7.0
 make
 # Optionally, you can run the tests:
 make test
