@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Run Lookyloo in Production :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/install-lookyloo-production.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -210,6 +210,56 @@ Please follow the <a href="install-lookyloo.html" class="xref page">default inst
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_remote_captures_with_lacus_v1_16"><a class="anchor" href="#_remote_captures_with_lacus_v1_16"></a>Remote captures with Lacus (v1.16+)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, Lookyloo will use <a href="https://github.com/ail-project/lacuscore">LacusCore</a> to capture websites.
+It is all done locally on the same machine as the one you installed Lookyloo on and you have nothing else to do.</p>
+</div>
+<div class="paragraph">
+<p>But if you want to trigger captures from another system than the one you installed Lookyloo on,
+you can use <a href="https://github.com/ail-project/lacus">Lacus</a> as a service instead.</p>
+</div>
+<div class="paragraph">
+<p>For that, you&#8217;ll need to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/ail-project/Lacus#install-guide">Install Lacus</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can make sure it works by loading <code><a href="http://127.0.0.1:7100" class="bare">http://127.0.0.1:7100</a></code>
+on the machine you have it running on (7100 is the default port, you can of course change it)</p>
+</li>
+<li>
+<p>Trigger a capture from the lacus web interface</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Edit the config file <code>config/generic.json</code> (key <code>remote_lacus</code>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set <code>enable</code> to <code>true</code></p>
+</li>
+<li>
+<p>Set <code>url</code> to the url your loolyloo instance can use to connect to lacus: <code><a href="http://&lt;ip&gt;:&lt;port&gt" class="bare">http://&lt;ip&gt;:&lt;port&gt</a>;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Restart lookyloo and give it a try</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

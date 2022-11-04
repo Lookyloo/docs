@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Main configuration options :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-configuration.html">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.0.3">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -254,6 +254,11 @@ in the index (it is created on-demand instead, if The UUID of the capture is que
 <li>
 <p><code>default_public</code>: If true (the default), the capture is public and will be visible on the index page
 by default (can be unticked on the capture page).</p>
+</li>
+<li>
+<p><code>remote_lacus</code>: (v1.16+) If enabled, and the URL of a <a href="https://github.com/ail-project/lacus">Lacus instance</a> is given,
+the captures will be submitted and processed on a decidated Lacus instance.
+Do not enable it (the default) to trigger the captures locally with <a href="https://github.com/ail-project/lacuscore">LacusCore</a>.</p>
 </li>
 </ul>
 </div>
