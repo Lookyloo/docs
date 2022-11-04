@@ -5,6 +5,29 @@
 [IMPORTANT]
 Please follow the xref:install-lookyloo.adoc[default installation guide] first.
 
+== Remote captures with Lacus (v1.16+)
+
+By default, Lookyloo will use link:https://github.com/ail-project/lacuscore[LacusCore] to capture websites.
+It is all done locally on the same machine as the one you installed Lookyloo on and you have nothing else to do.
+
+But if you want to trigger captures from another system than the one you installed Lookyloo on,
+you can use link:https://github.com/ail-project/lacus[Lacus] as a service instead.
+
+For that, you'll need to:
+
+1. link:https://github.com/ail-project/Lacus#install-guide[Install Lacus]
+
+    * You can make sure it works by loading `http://127.0.0.1:7100`
+      on the machine you have it running on (7100 is the default port, you can of course change it)
+    * Trigger a capture from the lacus web interface
+
+2. Edit the config file `config/generic.json` (key `remote_lacus`)
+
+  * Set `enable` to `true`
+  * Set `url` to the url your loolyloo instance can use to connect to lacus: `http://<ip>:<port>`
+
+3. Restart lookyloo and give it a try
+
 == Reverse proxy (nginx)
 
 The relevant sample configuration file is:

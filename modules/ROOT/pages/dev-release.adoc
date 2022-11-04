@@ -14,6 +14,8 @@ used for new features.
 * link:https://github.com/Lookyloo/har2tree[har2tree]
 * link:https://github.com/Lookyloo/PlaywrightCapture[PlaywrightCapture]
 * link:https://github.com/Lookyloo/PyLookyloo[PyLookyloo]
+* link:https://github.com/ail-project/LacusCore[LacusCore]
+* link:https://github.com/ail-project/PyLacus[PyLacus]
 
 
 === Bump versions
@@ -40,6 +42,8 @@ The packages will be available on PyPi:
 * link:https://pypi.org/project/har2tree/[har2tree]
 * link:https://pypi.org/project/PlaywrightCapture[PlaywrightCapture]
 * link:https://pypi.org/project/PyLookyloo[PyLookyloo]
+* link:https://pypi.org/project/LacusCore[LacusCore]
+* link:https://pypi.org/project/PyLacus[PyLacus]
 
 
 == Lookyloo

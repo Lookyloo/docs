@@ -29,6 +29,9 @@ This document will explain them in more details.
              in the index (it is created on-demand instead, if The UUID of the capture is queried).
 * `default_public`: If true (the default), the capture is public and will be visible on the index page
                     by default (can be unticked on the capture page).
+* `remote_lacus`: (v1.16+) If enabled, and the URL of a https://github.com/ail-project/lacus[Lacus instance] is given,
+                  the captures will be submitted and processed on a decidated Lacus instance.
+                  Do not enable it (the default) to trigger the captures locally with https://github.com/ail-project/lacuscore[LacusCore].
 
 == Optional features
 
