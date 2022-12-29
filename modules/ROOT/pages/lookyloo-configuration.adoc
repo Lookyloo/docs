@@ -32,6 +32,8 @@ This document will explain them in more details.
 * `remote_lacus`: (v1.16+) If enabled, and the URL of a https://github.com/ail-project/lacus[Lacus instance] is given,
                   the captures will be submitted and processed on a decidated Lacus instance.
                   Do not enable it (the default) to trigger the captures locally with https://github.com/ail-project/lacuscore[LacusCore].
+* `max_capture_time`: (v1.17+) The maximal amount of time a capture is allowed to take. After that time, the capture is killed regardless its status.
+* `max_tree_create_time`: (v1.17+) The maximal amount of time the creation of a tree can take, capture considered broken after that time.
 
 == Optional features
 
