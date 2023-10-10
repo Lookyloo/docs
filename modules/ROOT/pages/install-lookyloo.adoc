@@ -3,7 +3,7 @@
 
 [IMPORTANT]
 ====
-Requires Python 3.8 or higher, expects Ubuntu 20.04 or more recent.
+Requires Python 3.8 or higher (3.10 prefered), expects Ubuntu 22.04 or more recent.
 ====
 
 == Install Lookyloo Dependencies
@@ -39,7 +39,7 @@ sudo apt install build-essential tcl
 ```bash
 git clone https://github.com/redis/redis.git
 cd redis
-git checkout 7.0
+git checkout 7.2
 make
 # Optionally, you can run the tests:
 make test
@@ -59,13 +59,6 @@ cd ..
 ```bash
 sudo apt install python3-dev
 ```
-
-* Dependencies for link:https://playwright.dev/python/docs/intro#installation[playwright]:
-
-```bash
-sudo apt install libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxkbcommon0 libxdamage1 libgbm1 libpango-1.0-0 libcairo2 libatspi2.0-0 libxcomposite1 libxfixes3 libxrandr2
-```
-
 
 === Procedure
 
@@ -88,20 +81,12 @@ poetry install
 echo LOOKYLOO_HOME="'`pwd`'" > .env
 ```
 
-NOTE: If you have error messages about python 2.7, it is an issue with poetry,
-and the quick and dirty fix is to edit `~/.poetry/bin/poetry` and add a `3` at the end of the line:
+. Install the dependencies for playwright (requires sudo), and the browsers:
 
-  #!/usr/bin/env python3
-
-instead of
-
-  #!/usr/bin/env python
-
-=== Install pymisp dependencies (optional)
-If you want to install the pymisp dependencies, please install libfuzzy-dev and the run poetry with -E option
-```bash
-sudo apt-get install libfuzzy-dev
-poetry install -E misp
+```
+poetry shell
+playwright install-deps
+playwright install
 ```
 
 == Configuration
