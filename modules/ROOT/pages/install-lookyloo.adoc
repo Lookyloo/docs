@@ -132,6 +132,12 @@ sudo apt-get install whois
 git clone https://github.com/Lookyloo/uwhoisd
 cd uwhoisd
 poetry install
+echo UWHOISD_HOME="'`pwd`'" > .env
+poetry run start
+```
+
+==== Configure services (Optional)
+
 ```
 
 Then configure the service file
