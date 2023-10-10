@@ -418,15 +418,18 @@ sudo apt-get install whois</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/Lookyloo/uwhoisd
 cd uwhoisd
-poetry install</code></pre>
+poetry install
+echo UWHOISD_HOME="'`pwd`'" &gt; .env
+poetry run start</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Then configure the service file</p>
-</div>
+<div class="sect3">
+<h4 id="_configure_services_optional"><a class="anchor" href="#_configure_services_optional"></a>Configure services (Optional)</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nano etc/systemd/system/uwhoisd.service.sample</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">Then configure the service file
+```bash
+nano etc/systemd/system/uwhoisd.service.sample</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -444,6 +447,7 @@ sudo systemctl status uwhoisd</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo systemctl enable uwhoisd</code></pre>
+</div>
 </div>
 </div>
 </div>
