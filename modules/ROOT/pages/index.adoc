@@ -20,6 +20,54 @@ In L.A. usually the lookyloos cause more accidents by not paying full attention 
 
 More seriously, xref:lookyloo-explained.adoc[have a look] at what lookyloo is, and at some of our xref:use-cases.adoc[use cases].
 
+== Standalone projects with Lookyloo connectors
+
+The goal is to keep Lookyloo as focused as possible on the rendering of URLs an ease their investigation but
+there are quite a few usecases that are either covered by other tools that existed before, or required custom development.
+
+=== Lacus
+
+Initially, the code using link:https://playwright.dev/python/[Playwright] to capture URLs was integrated to Lookyloo itself with
+link:https://github.com/Lookyloo/PlaywrightCapture[PlaywrightCapture] but capturing an URL is a fairly common task
+(see link:https://github.com/ail-project/ail-framework[Ail Framework])
+so it made sense to split it into a dedicated and standalone project called link:https://github.com/ail-project/lacus[lacus].
+The advantage of using Lacus is that you can run the browsers loading arbitrary URLs on a dedicated machine that could
+potentially be compromised. link:https://github.com/ail-project/PyLacus[PyLacus] is the python module ou can use to integrate
+Lacus with your own tool.
+
+Note that Lookyloo itself doesn't requires a standalone lacus as it will fallback to link:https://github.com/ail-project/LacusCore[LacusCore]
+and run the capture on the same machine. If you want to implement a similar fallback mechanism to be able to either pick PyLacus or Lacuscore in
+your own project, have a look at the documentations of the respective projects, the API is made in a way it is relatively easy.
+
+=== Monitoring
+
+Capturing one single URL is nice, but sometimes you want to monitor it. It can either be in order to see if something unexpected changes (defacement),
+but also to be informed when a phishing website has been taken down, or to be informed when a newly registered domain that was a parking page becomes
+something else. That's where the link:https://github.com/Lookyloo/monitoring[monitoring] platform becomes useful.
+When enabled, you can trigger a monitoring session from Lookyloo, or via the python module, link:https://github.com/Lookyloo/PyLookylooMonitoring[PyLookylooMonitoring].
+
+The monitoring plarform will automatically notify you when something changes between the last two captures. The diff is done on all the URLs up to the
+final redirect, and by comparing the ressources loaded on that page (with the possibility to exclude some).
+
+=== Universal Whois
+
+In order to get contact info for IPs and domains, it is handy to be able to get the relevant whois entry. link:https://github.com/Lookyloo/uwhoisd[uWhois]
+will do that, but also keep a record of that entry, offering a WhoWas service too.
+
+=== Pandora
+
+Sometime, URLs point to a file, and Lookyloo itself can't do anything with that so if you enable the link:https://github.com/pandora-analysis/pandora[Pandora]
+connector, you can submit that file (or any file encountered during the capture) to a Pandora instance and investigate it from there.
+
+And if your pandora is configured that way, you can also submit a URL from there to Lookyloo.
+
+=== MISP
+
+Lookyloo will extract a lot of indicators out of the URL captures, and these indicators will be correlated across the captures on that lookyloo instance.
+It is not made (and won't be) to either search on other Lookyloo instance, or share indicators with other systems (but you could implement it yourself
+using link:https://github.com/Lookyloo/PyLookyloo[PyLookyloo] if you really want to).
+The recommended way to do that is to use link:https://www.misp-project.org/[MISP] as a storing/sharing platform for the indicators.
+
 == Learn More
 
 Read through our documentation for more information. Please also visit our link:https://github.com/Lookyloo/Lookyloo[GitHub repo] and join our link:https://github.com/Lookyloo[organization].
