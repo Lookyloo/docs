@@ -239,6 +239,71 @@ In L.A. usually the lookyloos cause more accidents by not paying full attention 
 </div>
 </div>
 <div class="sect1">
+<h2 id="_standalone_projects_with_lookyloo_connectors"><a class="anchor" href="#_standalone_projects_with_lookyloo_connectors"></a>Standalone projects with Lookyloo connectors</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The goal is to keep Lookyloo as focused as possible on the rendering of URLs an ease their investigation but
+there are quite a few usecases that are either covered by other tools that existed before, or required custom development.</p>
+</div>
+<div class="sect2">
+<h3 id="_lacus"><a class="anchor" href="#_lacus"></a>Lacus</h3>
+<div class="paragraph">
+<p>Initially, the code using <a href="https://playwright.dev/python/">Playwright</a> to capture URLs was integrated to Lookyloo itself with
+<a href="https://github.com/Lookyloo/PlaywrightCapture">PlaywrightCapture</a> but capturing an URL is a fairly common task
+(see <a href="https://github.com/ail-project/ail-framework">Ail Framework</a>)
+so it made sense to split it into a dedicated and standalone project called <a href="https://github.com/ail-project/lacus">lacus</a>.
+The advantage of using Lacus is that you can run the browsers loading arbitrary URLs on a dedicated machine that could
+potentially be compromised. <a href="https://github.com/ail-project/PyLacus">PyLacus</a> is the python module ou can use to integrate
+Lacus with your own tool.</p>
+</div>
+<div class="paragraph">
+<p>Note that Lookyloo itself doesn&#8217;t requires a standalone lacus as it will fallback to <a href="https://github.com/ail-project/LacusCore">LacusCore</a>
+and run the capture on the same machine. If you want to implement a similar fallback mechanism to be able to either pick PyLacus or Lacuscore in
+your own project, have a look at the documentations of the respective projects, the API is made in a way it is relatively easy.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_monitoring"><a class="anchor" href="#_monitoring"></a>Monitoring</h3>
+<div class="paragraph">
+<p>Capturing one single URL is nice, but sometimes you want to monitor it. It can either be in order to see if something unexpected changes (defacement),
+but also to be informed when a phishing website has been taken down, or to be informed when a newly registered domain that was a parking page becomes
+something else. That&#8217;s where the <a href="https://github.com/Lookyloo/monitoring">monitoring</a> platform becomes useful.
+When enabled, you can trigger a monitoring session from Lookyloo, or via the python module, <a href="https://github.com/Lookyloo/PyLookylooMonitoring">PyLookylooMonitoring</a>.</p>
+</div>
+<div class="paragraph">
+<p>The monitoring plarform will automatically notify you when something changes between the last two captures. The diff is done on all the URLs up to the
+final redirect, and by comparing the ressources loaded on that page (with the possibility to exclude some).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_universal_whois"><a class="anchor" href="#_universal_whois"></a>Universal Whois</h3>
+<div class="paragraph">
+<p>In order to get contact info for IPs and domains, it is handy to be able to get the relevant whois entry. <a href="https://github.com/Lookyloo/uwhoisd">uWhois</a>
+will do that, but also keep a record of that entry, offering a WhoWas service too.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pandora"><a class="anchor" href="#_pandora"></a>Pandora</h3>
+<div class="paragraph">
+<p>Sometime, URLs point to a file, and Lookyloo itself can&#8217;t do anything with that so if you enable the <a href="https://github.com/pandora-analysis/pandora">Pandora</a>
+connector, you can submit that file (or any file encountered during the capture) to a Pandora instance and investigate it from there.</p>
+</div>
+<div class="paragraph">
+<p>And if your pandora is configured that way, you can also submit a URL from there to Lookyloo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_misp"><a class="anchor" href="#_misp"></a>MISP</h3>
+<div class="paragraph">
+<p>Lookyloo will extract a lot of indicators out of the URL captures, and these indicators will be correlated across the captures on that lookyloo instance.
+It is not made (and won&#8217;t be) to either search on other Lookyloo instance, or share indicators with other systems (but you could implement it yourself
+using <a href="https://github.com/Lookyloo/PyLookyloo">PyLookyloo</a> if you really want to).
+The recommended way to do that is to use <a href="https://www.misp-project.org/">MISP</a> as a storing/sharing platform for the indicators.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_learn_more"><a class="anchor" href="#_learn_more"></a>Learn More</h2>
 <div class="sectionbody">
 <div class="paragraph">
