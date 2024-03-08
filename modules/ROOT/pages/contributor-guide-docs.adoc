@@ -21,7 +21,7 @@ Examples of behavior that contributes to creating a positive environment include
 == Before You Begin
 
 * link:https:[Get started] by installing and getting familiar with link:https://git-scm.com/doc[Git].
-* Use link:https:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] to contribute to Lookyloo documentation.
+* Use link:https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc] to contribute to Lookyloo documentation.
 * Refer to our xref:contributor-style-guide[style guide] for guidance on formatting your documentation contributions.
 
 
@@ -49,7 +49,7 @@ When reporting an issue, you can use the link:https://github.com/Lookyloo/lookyl
 
 The documentation is written in the Asciidoc markup language and uses Antora.
 
-The source documentation files are located in the `modules/ROOT/pages/` directory in the link:https://github.com/Lookyloo/lookyloo/issues[Lookyloo documentation repository].
+The source documentation files are located in the `modules/ROOT/pages/` directory in the link:https://github.com/Lookyloo/docs[Lookyloo documentation repository].
 
 
 === Prerequisites
