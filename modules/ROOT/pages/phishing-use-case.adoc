@@ -23,7 +23,7 @@ As represented by the lock icon, the site contains insecure requests (HTTP).
 
 image::polish_site_screenshot_phishing_select.png[]
 
-As indicated in the tree of domains, a user is redirected to a series of insecure sites, before a request is sent to `pay.ecard.pi`.
+As indicated in the tree of domains, a user is redirected to a series of insecure sites, before a request is sent to `pay.ecard.pl`.
 
 image::polish_site_virus_total.png[]
 

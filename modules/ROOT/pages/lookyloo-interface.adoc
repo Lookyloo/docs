@@ -16,32 +16,58 @@ Lookyloo displays a tree of the domains that call one another.
 
 == Lookyloo Menu
 
-* *Capture Details*: Show details about the capture
-* *Lookyloo Manual*: Link to this documentation
-* *Homepage*: Return to the index page (list of all the captures)
-* *Page screenshot*: Show the screenshot of the page as it yould be displayed in the browser
-* *Tree statistics*: Overview of the number of unique URLs/Hostnames, and cookies present in the capture
-* *Third party reports*: (Optional) Query 3rd party services and display the result
-* *Run Subsequent Captures*: List all the URLs in the landing page and trigger subsequest capture while keeping the session (useragent, cookies, referer)
-* *Contact Local Administrator*: (Optional) Send a notification to the entity managing the platform
+* *New capture*: Start a new capture
+* *Monitor capture*: (Optional) Monitor the capture
+* *Report suspicious capture*: (Optional) Send a notification to the entity managing the platform
+* *Capture*
+** *Capture Details*: Show details about the capture
+** *Statistics*: Overview of the number of unique URLs/Hostnames, and cookies present in the capture
+** *Page screenshot*: Show the screenshot of the page as it yould be displayed in the browser
+* *Analytical Tools*
+** *Third Party Reports*: (Optional) Query 3rd party services and display the result
+** *Historical lookups*: Historical data and context about this capture
+** *Hashlookup hits*: Hits in Hashlookup
+** *Resources*: All resources contained in the tree
+** *Hostnames*: All hostnames contained in the tree
+** *URLs*: All URLs contained in the tree
+** *Favicons*: Favicons found on the rendered page
+** *(Fuzzy)Hashes types*: Compare hashes of the rendered page
+** *Other Identifiers*: Identifiers found on the rendered page
+* *Actions*
+** *Subsequent Captures*: List all the URLs in the landing page and trigger subsequent capture while keeping the session (useragent, cookies, referer)
+** *Re-Capture*: Submit the URL again
+** *Download elements*: Download specific elements of the capture
+* *Admin only*
+** *Rebuild capture*: Rebuild the capture
+** *Hide capture*: Remove the capture from the public side and hide it
+** *Remove capture*: Remove the capture from Lookyloo
+** *Prepare push to MISP*: (Optional) Push the URL to MISP
+** *Search events in MISP*: (Optional) Look for events in MISP containing the URLs
+** *Logout*: Log out the current user
+* *Extras*
+** *Manage categories*: (Optional) Manage the categories
+** *Unbookmark all nodes*: (Optional) Unbookmark all marked nodes
+** *Mark all the captures' entries as known*: (Optional) Mark the capture as legitimate
+* *?*: Link to Lookyloo's documentation
 
 
 == Legend
 
 image::sample_github_legend.png[]
 
-* *Insecure requests*: At least one for the requests in the node is unencrypted (HTTP).
+* *Unencrypted requests*: At least one for the requests in the node is unencrypted (HTTP).
 * *Empty responses*: All the responses in the node are empty.
-* *Javascript*: The responses contain javascript.
 * *Cookie received*: The responses contain cookies.
 * *Cookie read*: The requests contain cookies (cookies are sent to the server).
 * *Redirect*: The requests contain redirects.
+* *iFrame*: The responses are loaded from iFrames.
+* *Javascript*: The responses contain javascript.
 * *Font*: The responses contain fonts.
 * *HTML*: The responses contain HTML.
 * *JSON*: The responses contain Json.
 * *CSS*: The responses contain CSS.
 * *EXE*: The responses contain executables.
-* *Image*: The responses contain images
-* *Video*: The responses contain videos
-* *iFrame*: The responses are loaded from iFrames.
-* *Content type not set/unknown*: The content of the responses is unknown.
+* *Image*: The responses contain images.
+* *Video*: The responses contain videos.
+* *Unknown content*: The content of the responses is unknown.
+* *Downloaded file*: The node contains a downloaded file.
