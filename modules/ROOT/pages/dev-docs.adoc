@@ -45,6 +45,7 @@ and start/kill it manually.
 If you change anything in `website/web/static/` you must run `tools/generate_sri.py`
 before restarting the website in order to update the link:https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity[SRI hashes]
 of each resources. If you don't do that, your browser will refuse to load them and you will be frustrated.
+Or set `ignore_sri` to `true` in `config/generic.json` in order to ignore the SRI hashes.
 
 == Modules
 
