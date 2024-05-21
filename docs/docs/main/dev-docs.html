@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Developers Documentation :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/dev-docs.html">
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -291,6 +291,7 @@ and start/kill it manually.</p>
 If you change anything in <code>website/web/static/</code> you must run <code>tools/generate_sri.py</code>
 before restarting the website in order to update the <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity">SRI hashes</a>
 of each resources. If you don&#8217;t do that, your browser will refuse to load them and you will be frustrated.
+Or set <code>ignore_sri</code> to <code>true</code> in <code>config/generic.json</code> in order to ignore the SRI hashes.
 </td>
 </tr>
 </table>

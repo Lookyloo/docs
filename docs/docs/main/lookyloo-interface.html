@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Lookyloo Interface :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/lookyloo-interface.html">
-    <meta name="generator" content="Antora 3.1.4">
+    <meta name="generator" content="Antora 3.1.7">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -237,28 +237,123 @@
 <div class="ulist">
 <ul>
 <li>
+<p><strong>New capture</strong>: Start a new capture</p>
+</li>
+<li>
+<p><strong>Monitor capture</strong>: (Optional) Monitor the capture</p>
+</li>
+<li>
+<p><strong>Report suspicious capture</strong>: (Optional) Send a notification to the entity managing the platform</p>
+</li>
+<li>
+<p><strong>Capture</strong></p>
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Capture Details</strong>: Show details about the capture</p>
 </li>
 <li>
-<p><strong>Lookyloo Manual</strong>: Link to this documentation</p>
-</li>
-<li>
-<p><strong>Homepage</strong>: Return to the index page (list of all the captures)</p>
+<p><strong>Statistics</strong>: Overview of the number of unique URLs/Hostnames, and cookies present in the capture</p>
 </li>
 <li>
 <p><strong>Page screenshot</strong>: Show the screenshot of the page as it yould be displayed in the browser</p>
 </li>
-<li>
-<p><strong>Tree statistics</strong>: Overview of the number of unique URLs/Hostnames, and cookies present in the capture</p>
+</ul>
+</div>
 </li>
 <li>
-<p><strong>Third party reports</strong>: (Optional) Query 3rd party services and display the result</p>
+<p><strong>Analytical Tools</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Third Party Reports</strong>: (Optional) Query 3rd party services and display the result</p>
 </li>
 <li>
-<p><strong>Run Subsequent Captures</strong>: List all the URLs in the landing page and trigger subsequest capture while keeping the session (useragent, cookies, referer)</p>
+<p><strong>Historical lookups</strong>: Historical data and context about this capture</p>
 </li>
 <li>
-<p><strong>Contact Local Administrator</strong>: (Optional) Send a notification to the entity managing the platform</p>
+<p><strong>Hashlookup hits</strong>: Hits in Hashlookup</p>
+</li>
+<li>
+<p><strong>Resources</strong>: All resources contained in the tree</p>
+</li>
+<li>
+<p><strong>Hostnames</strong>: All hostnames contained in the tree</p>
+</li>
+<li>
+<p><strong>URLs</strong>: All URLs contained in the tree</p>
+</li>
+<li>
+<p><strong>Favicons</strong>: Favicons found on the rendered page</p>
+</li>
+<li>
+<p><strong>(Fuzzy)Hashes types</strong>: Compare hashes of the rendered page</p>
+</li>
+<li>
+<p><strong>Other Identifiers</strong>: Identifiers found on the rendered page</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Actions</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Subsequent Captures</strong>: List all the URLs in the landing page and trigger subsequent capture while keeping the session (useragent, cookies, referer)</p>
+</li>
+<li>
+<p><strong>Re-Capture</strong>: Submit the URL again</p>
+</li>
+<li>
+<p><strong>Download elements</strong>: Download specific elements of the capture</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Admin only</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Rebuild capture</strong>: Rebuild the capture</p>
+</li>
+<li>
+<p><strong>Hide capture</strong>: Remove the capture from the public side and hide it</p>
+</li>
+<li>
+<p><strong>Remove capture</strong>: Remove the capture from Lookyloo</p>
+</li>
+<li>
+<p><strong>Prepare push to MISP</strong>: (Optional) Push the URL to MISP</p>
+</li>
+<li>
+<p><strong>Search events in MISP</strong>: (Optional) Look for events in MISP containing the URLs</p>
+</li>
+<li>
+<p><strong>Logout</strong>: Log out the current user</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Extras</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Manage categories</strong>: (Optional) Manage the categories</p>
+</li>
+<li>
+<p><strong>Unbookmark all nodes</strong>: (Optional) Unbookmark all marked nodes</p>
+</li>
+<li>
+<p><strong>Mark all the captures' entries as known</strong>: (Optional) Mark the capture as legitimate</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>?</strong>: Link to Lookyloo&#8217;s documentation</p>
 </li>
 </ul>
 </div>
@@ -275,13 +370,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Insecure requests</strong>: At least one for the requests in the node is unencrypted (HTTP).</p>
+<p><strong>Unencrypted requests</strong>: At least one for the requests in the node is unencrypted (HTTP).</p>
 </li>
 <li>
 <p><strong>Empty responses</strong>: All the responses in the node are empty.</p>
-</li>
-<li>
-<p><strong>Javascript</strong>: The responses contain javascript.</p>
 </li>
 <li>
 <p><strong>Cookie received</strong>: The responses contain cookies.</p>
@@ -291,6 +383,12 @@
 </li>
 <li>
 <p><strong>Redirect</strong>: The requests contain redirects.</p>
+</li>
+<li>
+<p><strong>iFrame</strong>: The responses are loaded from iFrames.</p>
+</li>
+<li>
+<p><strong>Javascript</strong>: The responses contain javascript.</p>
 </li>
 <li>
 <p><strong>Font</strong>: The responses contain fonts.</p>
@@ -308,16 +406,16 @@
 <p><strong>EXE</strong>: The responses contain executables.</p>
 </li>
 <li>
-<p><strong>Image</strong>: The responses contain images</p>
+<p><strong>Image</strong>: The responses contain images.</p>
 </li>
 <li>
-<p><strong>Video</strong>: The responses contain videos</p>
+<p><strong>Video</strong>: The responses contain videos.</p>
 </li>
 <li>
-<p><strong>iFrame</strong>: The responses are loaded from iFrames.</p>
+<p><strong>Unknown content</strong>: The content of the responses is unknown.</p>
 </li>
 <li>
-<p><strong>Content type not set/unknown</strong>: The content of the responses is unknown.</p>
+<p><strong>Downloaded file</strong>: The node contains a downloaded file.</p>
 </li>
 </ul>
 </div>

@@ -4,7 +4,7 @@ cd "${0%/*}" # cd to the folder with script
 npx antora #Verify Antora is installed
 RESULT=($?)
 if [ $RESULT -eq 127 ]; then #if Antora is not found in $PATH (probably not installed)
-    echo -e '>> \e[31mFAIL\e[0m Antora not found in \$PATH, Install Antora from https://docs.antora.org/antora/2.3/install/install-antora/'
+    echo -e '>> \e[31mFAIL\e[0m Antora not found in \$PATH, Install Antora from https://docs.antora.org/antora/latest/install/install-antora/'
     exit 1
 elif [ -f local-site.yml ]; then
     rm -rf docs/ #remove the existing docs. Just in case there are docs that should not be there.
