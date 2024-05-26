@@ -13,7 +13,7 @@ curl -X 'GET' 'https://lookyloo.circl.lu/json/stats' -H 'accept: application/jso
 
 == Usage
 
-The documentation of the REST API is automatically generated and avaliable over
+The documentation of the REST API is automatically generated and available over
 the lookyloo web interface. If you want to run queries against the public instance,
 you can use link:https://lookyloo.circl.lu/doc/[this documentation].
 
