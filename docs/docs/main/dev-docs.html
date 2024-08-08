@@ -216,7 +216,7 @@ and gave it a try.</p>
 <ul>
 <li>
 <p>After editing a file, you can run the <code>stop</code> and <code>start</code> scripts to restart the platform and see the changes.
-It will restart everything, including the redis databases, and can take a bot of time. See below if you&#8217;re
+It will restart everything, including the valkey databases, and can take a bot of time. See below if you&#8217;re
 working on a specific part of the tool and want to stop/start a specific module.</p>
 </li>
 <li>
@@ -238,19 +238,19 @@ working on a specific part of the tool and want to stop/start a specific module.
 <p><code>start</code>: Starts all the services</p>
 </li>
 <li>
-<p><code>stop</code>: Triggers <code>shutdown</code>, stop redis databases.</p>
+<p><code>stop</code>: Triggers <code>shutdown</code>, stop valkey databases.</p>
 </li>
 <li>
-<p><code>shutdown</code>: Requests the services to stop by putting a <code>shutdown</code> key in redis, wait for all of them to stop.</p>
+<p><code>shutdown</code>: Requests the services to stop by putting a <code>shutdown</code> key in valkey, wait for all of them to stop.</p>
 </li>
 <li>
-<p><code>run_backend</code>: Starts/stops redis databases</p>
+<p><code>run_backend</code>: Starts/stops valkey databases</p>
 </li>
 <li>
 <p><code>async_capture</code>: Triggers a capture from the queue. Multiple instances of this process can be run in parallel</p>
 </li>
 <li>
-<p><code>background_indexer</code>: Caches the captures in redis, creates the tree pickles, adds the urls, cookies,
+<p><code>background_indexer</code>: Caches the captures in valkey, creates the tree pickles, adds the urls, cookies,
 and body hashes in indexes for fast lookup</p>
 </li>
 <li>
