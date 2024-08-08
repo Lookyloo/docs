@@ -6,9 +6,9 @@ developed by others.
 
 == Backend
 
-=== Redis
+=== Valkey
 
-link:https://redis.io/[Redis] is the database used to store the cached information visualized on the web interface.
+link:https://valkey.io/[Valkey] is the database used to store the cached information visualized on the web interface.
 
 === Playwright
 

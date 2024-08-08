@@ -11,7 +11,7 @@ and gave it a try.
 == General guidelines
 
 * After editing a file, you can run the `stop` and `start` scripts to restart the platform and see the changes.
-  It will restart everything, including the redis databases, and can take a bot of time. See below if you're
+  It will restart everything, including the valkey databases, and can take a bot of time. See below if you're
   working on a specific part of the tool and want to stop/start a specific module.
 * You can disable individual services by commenting them out in `bin/start.py`
 * All the services can be started/killed manually (`CTRL+c` to kill)
@@ -19,11 +19,11 @@ and gave it a try.
 == Scripts
 
 * `start`: Starts all the services
-* `stop`: Triggers `shutdown`, stop redis databases.
-* `shutdown`: Requests the services to stop by putting a `shutdown` key in redis, wait for all of them to stop.
-* `run_backend`: Starts/stops redis databases
+* `stop`: Triggers `shutdown`, stop valkey databases.
+* `shutdown`: Requests the services to stop by putting a `shutdown` key in valkey, wait for all of them to stop.
+* `run_backend`: Starts/stops valkey databases
 * `async_capture`: Triggers a capture from the queue. Multiple instances of this process can be run in parallel
-* `background_indexer`: Caches the captures in redis, creates the tree pickles, adds the urls, cookies,
+* `background_indexer`: Caches the captures in valkey, creates the tree pickles, adds the urls, cookies,
   and body hashes in indexes for fast lookup
 * `archiver`: Archives the old captures (default: 180+ days), maintain the indexes files in the capture directories
 * `processing`: Triggers actions happening once a day. Currently: creates the user-agent file of the users of the platform (if enabled)

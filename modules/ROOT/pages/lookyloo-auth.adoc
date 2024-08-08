@@ -30,7 +30,7 @@ To authenticate your session, open `http://your.lookyloo.instance/login`.
 When logged in, you have access to the following URLs:
 
 * `/hidden`: show the tree hidden on the index
-* `/rebuild_cache`: rebuild only the redis cache. Can take a while, but not as much as `/rebuild_all`
+* `/rebuild_cache`: rebuild only the valkey cache. Can take a while, but not as much as `/rebuild_all`
 * `/rebuild_all`: rebuild all the tree (drop all the pickles of all the trees). **warning**: it can take a very, very long time.
 * `/logout`: drop the session
 * `/tree/<string:tree_uuid>/rebuild`: rebuild the tree

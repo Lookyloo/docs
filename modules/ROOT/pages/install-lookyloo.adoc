@@ -3,33 +3,31 @@
 
 [IMPORTANT]
 ====
-Requires Python 3.8 or higher (3.10 prefered), expects Ubuntu 22.04 or more recent.
+Requires Python 3.8 or higher (3.12 prefered), expects Ubuntu 22.04 or more recent (24.04 prefered).
 ====
 
 == Install Lookyloo Dependencies
 
 === Install Poetry
 
-link:https://python-poetry.org/[Poetry] is tool to handle dependency installation
+link:https://python-poetry.org/[Poetry] handles dependency installation
 as well as building and packaging of Python packages.
 
-```bash
-curl -sSL https://install.python-poetry.org | python3 -
-```
+See the link:https://python-poetry.org/docs/#installation[installation guide] for more details.
 
-More details in the the link:https://github.com/python-poetry/poetry/#installation[installation guide].
+=== Install Valkey
 
-=== Install Redis
+NOTE: Lacus supports valkey or redis, but valkey is prefered now due to the change of license.
 
-link:https://redis.io/[Redis]: An open source (BSD licensed), in-memory data structure
+link:https://valkey.io/[Valkey]: An open source (BSD licensed), in-memory data structure
 store, used as a database, cache and message broker.
 
-NOTE: Redis should be installed from the source, and the repository must be in
+NOTE: Valkey should be installed from the source, and the repository must be in
 the same directory as the one you will be cloning Lookyloo in to.
 
-NOTE: Since Lookyloo 1.15, redis 7.0 is required.
+NOTE: Since Lookyloo 1.25, valkey 7.2 is required.
 
-In order to compile and test redis, you will need a few packages:
+In order to compile and test valkey, you will need a few packages:
 
 ```bash
 sudo apt-get update
@@ -37,8 +35,8 @@ sudo apt install build-essential tcl
 ```
 
 ```bash
-git clone https://github.com/redis/redis.git
-cd redis
+git clone https://github.com/valkey-io/valkey
+cd valkey
 git checkout 7.2
 make
 # Optionally, you can run the tests:
@@ -51,8 +49,9 @@ cd ..
 === Prerequisites
 
 * Poetry is installed.
-* Redis is installed from the source. The repository must be in the same directory
+* Valkey is installed from the source. The repository must be in the same directory
   as the one you will be cloning Lookyloo in to.
+
 
 * Python3 development package
 
@@ -66,6 +65,14 @@ sudo apt install python3-dev
 +
 ```bash
 git clone https://github.com/Lookyloo/lookyloo.git
+```
+
+The directory tree must look like that:
+
+```
+.
+├── valkey  => cloned valkey
+└── lookyloo => cloned lookyloo
 ```
 
 . Change directory

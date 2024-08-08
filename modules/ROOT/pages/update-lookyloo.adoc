@@ -40,7 +40,7 @@ The sections below are only required if the tools have been updated, or if upgra
 poetry self update
 ```
 
-=== Update Redis
+=== Update Valkey
 
 It requires to shutdown lookyloo completely.
 
@@ -50,7 +50,7 @@ From the lookyloo repository:
 poetry run stop
 ```
 
-From the directory you cloned redis into:
+From the directory you cloned valkey into:
 
 ```bash
 # Optional: git checkout <version>
