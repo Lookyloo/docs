@@ -10,7 +10,7 @@ Requires Python 3.8 or higher (3.12 prefered), expects Ubuntu 22.04 or more rece
 
 === Install Poetry
 
-link:https://python-poetry.org/[Poetry] handles dependency installation
+link:https://python-poetry.org/[Poetry] 2.0 handles dependency installation
 as well as building and packaging of Python packages.
 
 See the link:https://python-poetry.org/docs/#installation[installation guide] for more details.
@@ -48,7 +48,7 @@ cd ..
 
 === Prerequisites
 
-* Poetry is installed.
+* Poetry 2.0+ is installed.
 * Valkey is installed from the source. The repository must be in the same directory
   as the one you will be cloning Lookyloo in to.
 
