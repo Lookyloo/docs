@@ -91,9 +91,8 @@ echo LOOKYLOO_HOME="'`pwd`'" > .env
 . Install the dependencies for playwright (requires sudo), and the browsers:
 
 ```
-poetry shell
-playwright install-deps
-playwright install
+poetry run playwright install-deps
+poetry run playwright install
 ```
 
 == Configuration
