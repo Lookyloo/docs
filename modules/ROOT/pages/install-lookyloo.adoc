@@ -3,14 +3,14 @@
 
 [IMPORTANT]
 ====
-Requires Python 3.8 or higher (3.12 prefered), expects Ubuntu 22.04 or more recent (24.04 prefered).
+Requires Python 3.9 or higher (3.12 prefered), prefers Ubuntu 24.04 or more recent (can work on 22.04).
 ====
 
 == Install Lookyloo Dependencies
 
 === Install Poetry
 
-link:https://python-poetry.org/[Poetry] 2.0 handles dependency installation
+link:https://python-poetry.org/[Poetry] 2.1 handles dependency installation
 as well as building and packaging of Python packages.
 
 See the link:https://python-poetry.org/docs/#installation[installation guide] for more details.
@@ -44,11 +44,30 @@ make test
 cd ..
 ```
 
+=== [Optional] Install kvrocks (since v1.24)
+
+link:https://kvrocks.apache.org/[Kvrocks]: A distributed key-value database built on top of RocksDB.
+It has the same API as Valkey, but is stored on disk.
+
+It is only useful if you have a lot of captures you want to index for a long time, and run a
+public instance of Lookyloo where some captures are not public, but you still want to search
+for them as platform admin.
+
+The indexing is enabled by `index_everything` in the `config/generic.json` configuration file.
+
+```bash
+
+git clone https://github.com/apache/kvrocks.git
+cd kvrocks
+./x.py build
+
+```
+
 == Install Lookyloo
 
 === Prerequisites
 
-* Poetry 2.0+ is installed.
+* Poetry 2.1+ is installed.
 * Valkey is installed from the source. The repository must be in the same directory
   as the one you will be cloning Lookyloo in to.
 
@@ -72,6 +91,7 @@ The directory tree must look like that:
 ```
 .
 ├── valkey  => cloned valkey
+├── kvrocks  => cloned kvrocks (optional)
 └── lookyloo => cloned lookyloo
 ```
 

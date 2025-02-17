@@ -20,6 +20,7 @@
 ** xref:capture-cookies.adoc[Capture with Pre-defined Cookies]
 ** xref:lookyloo-tutorial.adoc[Lookyloo Tutorial]
 ** xref:lookyloo-web-ext.adoc[Lookyloo Web Extension]
+** xref:lookyloo-headed.adoc[Headed Browser Mode]
 
 
 * xref:lookyloo-api.adoc[API]

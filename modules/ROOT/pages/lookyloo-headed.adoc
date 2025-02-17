@@ -1,0 +1,25 @@
+[id="headed-browser-mode"]
+= Capture a URL with a headed browser (v1.28+)
+
+Normally, a capture is done with a headless browser, which means that the browser is not visible, and
+you can't interact with it while it's capturing the website (all the instrumentation is hardcoded).
+
+It may be an issue if the website you want to capture is using some kind of anti-bot mechanism (like a captcha), or
+if you want to input some data in a form for example.
+
+This approach has one major limitation: lookyloo must be runing on a machine with a graphical interface, so
+you (probably) can't do it on a server, and it will be running on your local machine.
+
+That said, if you still want to enable this feature, you can do it by setting the `allow_headed` parameter to `True` in
+`config/generic.json`, and restart the app.
+
+== How to use it
+
+1. Open the `/capture` page of the lookyloo instance
+2. Configure the capture as you would normally do
+3. Go to the section `Capture configuration` an untick `Use headless browser` (if it is missing, it means that the feature is not enabled in the config file)
+4. (Optionally) Increase the time in the `Max capture time`, if you want to interact more than 90s (the default time) with the page.
+5. Trigger the capture
+
+The browser will open, and you will be able to interact with it. Once you are done, wait for the browser to
+close itself, and the capture will terminate as usual.
