@@ -32,7 +32,7 @@ link:https://github.com/Lookyloo/PlaywrightCapture[PlaywrightCapture] but captur
 (see link:https://github.com/ail-project/ail-framework[Ail Framework])
 so it made sense to split it into a dedicated and standalone project called link:https://github.com/ail-project/lacus[lacus].
 The advantage of using Lacus is that you can run the browsers loading arbitrary URLs on a dedicated machine that could
-potentially be compromised. link:https://github.com/ail-project/PyLacus[PyLacus] is the python module ou can use to integrate
+potentially be compromised. link:https://github.com/ail-project/PyLacus[PyLacus] is the python module you can use to integrate
 Lacus with your own tool.
 
 Note that Lookyloo itself doesn't requires a standalone lacus as it will fallback to link:https://github.com/ail-project/LacusCore[LacusCore]
