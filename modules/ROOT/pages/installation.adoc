@@ -3,7 +3,7 @@
 = Before You Begin
 
 The install guide assumes that you will be running Lookyloo on a Unix based system,
-preferably link:https://releases.ubuntu.com/20.04/[Ubuntu 20.04] or a more recent version.
+preferably link:https://releases.ubuntu.com/24.04/[Ubuntu 24.04] or a more recent version.
 You can however xref:prerequisites-for-windows.adoc[configure a Linux Subsystem on Windows] in order to make Lookyloo work without having to switch to another operating system.
 It is also assumed that the user proceeding with the installation is a sudoer.
 
@@ -14,4 +14,4 @@ You can install Lookyloo using a method that best suits your needs:
 * xref:install-lookyloo-docker.adoc[Fully dockerized]
 
 [NOTE]
-  Currently, the configuration files for Lookyloo on Docker are not fully functional. A usable Docker-based           install guide will be available soon.
+  Currently, the configuration files for Lookyloo on Docker are mostly functional, but you may need to be able to debug some issues.

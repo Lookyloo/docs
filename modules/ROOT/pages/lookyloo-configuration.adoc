@@ -48,6 +48,11 @@ This document will explain them in more details.
 * `auto_trigger_modules`: Automatically trigger the modules when the tree is loaded and when the capture is cached
 * `enable_mail_notification`: Allow users to notify a pre-configured email address about a specific capture
 * `email`: Configuration for sending email notifications
+* `multiple_remote_lacus`: (v1.28+) Configuration for multiple remote Lacuses instances
+* `trusted_timestamp_settings`: (v1.32+) Settings for a Trusted timestamp service. (ignored if using Lacus)
+# `force_trusted_timestamp`: (v1.32+) Request a Trusted timestamp for every capture (ignored if not configured on Lookyloo or lacus)
+* `i2p_proxy`: (v1.32+) The proxy to use for resolving .i2p domains (ignored if using Lacus)
+* `tor_proxy`: (v1.32+) The proxy to use for resolving .i2p domains (ignored if using Lacus)
 
 == Logging
 
