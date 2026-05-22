@@ -56,6 +56,10 @@ for them as platform admin.
 The indexing is enabled by `index_everything` in the `config/generic.json` configuration file.
 
 ```bash
+sudo apt-get install cmake autoconf
+```
+
+```bash
 
 git clone https://github.com/apache/kvrocks.git
 cd kvrocks
