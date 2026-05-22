@@ -54,6 +54,18 @@ public instance of Lookyloo where some captures are not public, but you still wa
 for them as platform admin.
 
 The indexing is enabled by `index_everything` in the `config/generic.json` configuration file.
+It is also possible to use kvrocks to index the public captures (since v1.36.0),
+which reduces greatly the ram used by Lookyloo. To do that enable `kvrocks_index` in `config/generic.json`.
+
+You have two options: getting a pre-build deb package, or building it manually.
+
+==== Pre-build DEB package
+
+You can get it from link:https://github.com/RocksLabs/kvrocks-fpm/releases/tag/2.14.0-1[kvrocks]
+or the link:https://github.com/Lookyloo/kvrocks-fpm/releases/tag/2.14.0-2[lookyloo repo].
+
+==== Manual build
+
 
 ```bash
 sudo apt-get install cmake autoconf
