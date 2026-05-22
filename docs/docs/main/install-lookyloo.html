@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Install Lookyloo :: Lookyloo</title>
     <link rel="canonical" href="https://www.lookyloo.eu/docs/main/install-lookyloo.html">
-    <meta name="generator" content="Antora 3.1.7">
+    <meta name="generator" content="Antora 3.1.14">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -307,13 +307,33 @@ public instance of Lookyloo where some captures are not public, but you still wa
 for them as platform admin.</p>
 </div>
 <div class="paragraph">
-<p>The indexing is enabled by <code>index_everything</code> in the <code>config/generic.json</code> configuration file.</p>
+<p>The indexing is enabled by <code>index_everything</code> in the <code>config/generic.json</code> configuration file.
+It is also possible to use kvrocks to index the public captures (since v1.36.0),
+which reduces greatly the ram used by Lookyloo. To do that enable <code>kvrocks_index</code> in <code>config/generic.json</code>.</p>
+</div>
+<div class="paragraph">
+<p>You have two options: getting a pre-build deb package, or building it manually.</p>
+</div>
+<div class="sect3">
+<h4 id="_pre_build_deb_package"><a class="anchor" href="#_pre_build_deb_package"></a>Pre-build DEB package</h4>
+<div class="paragraph">
+<p>You can get it from <a href="https://github.com/RocksLabs/kvrocks-fpm/releases/tag/2.14.0-1">kvrocks</a>
+or the <a href="https://github.com/Lookyloo/kvrocks-fpm/releases/tag/2.14.0-2">lookyloo repo</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manual_build"><a class="anchor" href="#_manual_build"></a>Manual build</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get install cmake autoconf</code></pre>
+</div>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/apache/kvrocks.git
 cd kvrocks
 ./x.py build</code></pre>
+</div>
 </div>
 </div>
 </div>
